@@ -1,0 +1,83 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "type": "object",
+    "properties": {
+        "global": {
+            "type": "object"
+        },
+        "jupyterhub": {
+            "form": true,
+            "type": "object",
+            "properties": {
+                "singleuser": {
+                    "type": "object",
+                    "properties": {
+                        "cpu": {
+                            "type": "object",
+                            "properties": {
+                                "guarantee": {
+                                    "type": "number",
+                                    "title": "CPU guarantee for each single user notebook",
+                                    "form": true,
+                                    "render": "slider",
+                                    "sliderMin": "1",
+                                    "sliderMax": "40",
+                                    "sliderStep": "1"
+                                },
+                                "limit": {
+                                    "type": "number",
+                                    "title": "CPU limit for each single user notebook",
+                                    "form": true,
+                                    "render": "slider",
+                                    "sliderMin": "1",
+                                    "sliderMax": "40",
+                                    "sliderStep": "1"
+                                }
+                            }
+                        },
+                        "memory": {
+                            "type": "object",
+                            "properties": {
+                                "guarantee": {
+                                    "type": "string",
+                                    "title": "Memory guarantee for each single user notebook",
+                                    "form": true,
+                                    "render": "slider",
+                                    "sliderMin": "1",
+                                    "sliderMax": "512",
+                                    "sliderStep": 1,
+                                    "sliderUnit": "G"
+                                },
+                                "limit": {
+                                    "type": "string",
+                                    "title": "Memory limit for each single user notebook",
+                                    "form": true,
+                                    "render": "slider",
+                                    "sliderMin": "1",
+                                    "sliderMax": "512",
+                                    "sliderStep": 1,
+                                    "sliderUnit": "G"
+                                }
+                            }
+                        },
+                        "storage": {
+                            "type": "object",
+                            "properties": {
+                                "capacity": {
+                                    "type": "string",
+                                    "title": "Local storage capacity for each user notebook",
+                                    "form": true,
+                                    "render": "slider",
+                                    "sliderMin": "10",
+                                    "sliderMax": "300",
+                                    "sliderStep": 5,
+                                    "sliderUnit": "Gi"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
