@@ -1,0 +1,22 @@
+apiVersion: v1
+entries:
+  jupyterhub-azimuth:
+  - apiVersion: v2
+    appVersion: d34ffa8
+    created: "2022-05-17T14:05:01.270022427Z"
+    dependencies:
+    - name: jupyterhub
+      repository: https://jupyterhub.github.io/helm-chart/
+      version: 1.2.0
+    description: Multi-user Jupyter installation
+    digest: 07733f8188411a780484f304d7d504601253e2a4fc31071cf176349450942053
+    icon: https://raw.githubusercontent.com/jupyterhub/helm-chart/gh-pages/images/hublogo.svg
+    keywords:
+    - jupyter
+    - jupyterhub
+    name: jupyterhub-azimuth
+    type: application
+    urls:
+    - jupyterhub-azimuth-0.1.0-dev.0.main.4.tgz
+    version: 0.1.0-dev.0.main.4
+generated: "2022-05-17T14:05:01.265192549Z"
