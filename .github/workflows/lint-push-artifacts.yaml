@@ -25,11 +25,11 @@ jobs:
         uses: helm/chart-testing-action@v2.2.1
 
       - name: Run chart-testing (lint)
-        run: > 
-          ct lint --config .github/config/ct.yaml 
-                  --chart-yaml-schema .github/config/chart_schema.yaml 
-                  --lint-conf .github/config/lintconf.yaml 
-                  --all
+        run: |
+          ct lint --config .github/config/ct.yaml \
+          --chart-yaml-schema .github/config/chart_schema.yaml \
+          --lint-conf .github/config/lintconf.yaml \
+          --all
 
   build_push_chart:
     name: Build and push Helm charts
