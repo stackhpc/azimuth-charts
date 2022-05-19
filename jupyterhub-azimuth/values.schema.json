@@ -5,9 +5,23 @@
         "global": {
             "type": "object"
         },
+        "zenithClient": {
+          "type": "object",
+          "properties": {
+            "serviceName":
+              "type": "object",
+              "properties": {
+                 "form": true,
+                 "title": "JupyterHub identifier",
+                 "type": "string",
+                 "description": "An name for this JupyterHub cluster to identify it in the Cluster Details dialog. Defaults to 'Name' if unset."
+                 }
+            }
+        },
         "jupyterhub": {
             "form": true,
             "type": "object",
+            "title": "JupyterHub Singleuser pod configuration",
             "properties": {
                 "singleuser": {
                     "type": "object",
