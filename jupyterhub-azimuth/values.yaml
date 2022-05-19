@@ -1,7 +1,7 @@
 zenithClient:
-  serviceName:
   iconUrl: https://raw.githubusercontent.com/jupyter/design/master/logos/Square%20Logo/squarelogo-greytext-orangebody-greymoons/squarelogo-greytext-orangebody-greymoons.png
   description:
+  serviceName: ""
 
 jupyterhub:
   prePuller:
