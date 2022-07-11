@@ -1,0 +1,13 @@
+apiVersion: zenith.stackhpc.com/v1alpha1
+kind: Reservation
+metadata:
+  name: {{ include "daskhub-azimuth.fullname" . }}
+  labels: {{ include "daskhub-azimuth.labels" . | nindent 4 }}
+  annotations:
+    {{- include "daskhub-azimuth.serviceLabel" . | indent 4 }}
+    azimuth.stackhpc.com/service-icon-url: {{ .Values.zenithClient.iconUrl }}
+    {{- with .Values.zenithClient.description }}
+    azimuth.stackhpc.com/service-description: {{ quote . }}
+    {{- end }}
+spec:
+  credentialSecretName: {{ include "daskhub-azimuth.fullname" . }}-credential

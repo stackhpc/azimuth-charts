@@ -1,0 +1,9 @@
+apiVersion: zenith.stackhpc.com/v1alpha1
+kind: Client
+metadata:
+  name: {{ include "daskhub-azimuth.fullname" . }}
+  labels: {{ include "daskhub-azimuth.labels" . | nindent 4 }}
+spec:
+  reservationName: {{ include "daskhub-azimuth.fullname" . }}
+  upstream:
+    serviceName: "dask-jupyterhub-proxy-public"

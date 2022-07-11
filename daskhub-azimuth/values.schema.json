@@ -1,0 +1,276 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "type": "object",
+    "properties": {
+        "zenithClient": {
+            "type": "object",
+            "properties": {
+                "serviceName": {
+                  "form": true,
+                  "title": "JupyterHub identifier",
+                  "type": "string",
+                  "description": "A name for this JupyterHub cluster to identify it in the Cluster Details dialog. Defaults to Name if unset."
+                }
+            }
+        },
+        "daskhub": {
+            "type": "object",
+            "properties": {
+                "dask-gateway": {
+                    "type": "object",
+                    "properties": {
+                        "gateway": {
+                            "type": "object",
+                            "properties": {
+                                "auth": {
+                                    "type": "object",
+                                    "properties": {
+                                        "jupyterhub": {
+                                            "type": "object",
+                                            "properties": {
+                                                "apiToken": {
+                                                    "type": "string",
+                                                    "title": "Jupyterhub API Token",
+                                                    "form": true,
+                                                    "description": "32 character random string"
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "extraConfig": {
+                                    "type": "object",
+                                    "properties": {
+                                        "optionHandler": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "jupyterhub": {
+                    "type": "object",
+                    "properties": {
+                        "hub": {
+                            "type": "object",
+                            "properties": {
+                                "extraConfig": {
+                                    "type": "object",
+                                    "properties": {
+                                        "remoteuser.py": {
+                                            "type": "string"
+                                        }
+                                    }
+                                },
+                                "networkPolicy": {
+                                    "type": "object",
+                                    "properties": {
+                                        "enabled": {
+                                            "type": "boolean"
+                                        }
+                                    }
+                                },
+                                "services": {
+                                    "type": "object",
+                                    "properties": {
+                                        "dask-gateway": {
+                                            "type": "object",
+                                            "properties": {
+                                                "apiToken": {
+                                                    "type": "string",
+                                                    "title": "Jupyterhub API Token Confirm",
+                                                    "form": true,
+                                                    "description": "32 character random string, must be identical to 'Jupyterhub API Token'"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "prePuller": {
+                            "type": "object",
+                            "properties": {
+                                "hook": {
+                                    "type": "object",
+                                    "properties": {
+                                        "enabled": {
+                                            "type": "boolean"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "proxy": {
+                            "type": "object",
+                            "properties": {
+                                "chp": {
+                                    "type": "object",
+                                    "properties": {
+                                        "networkPolicy": {
+                                            "type": "object",
+                                            "properties": {
+                                                "enabled": {
+                                                    "type": "boolean"
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "service": {
+                                    "type": "object",
+                                    "properties": {
+                                        "type": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "singleuser": {
+                            "type": "object",
+                            "properties": {
+                                "cpu": {
+                                    "type": "object",
+                                    "properties": {
+                                        "guarantee": {
+                                            "type": "number",
+                                            "title": "CPU guarantee",
+                                            "form": true,
+                                            "render": "slider",
+                                            "sliderMin": ".5",
+                                            "sliderMax": "24",
+                                            "sliderStep": "0.5",
+                                            "description": "CPU request for each single-user notebook"
+                                        },
+                                        "limit": {
+                                            "type": "number",
+                                            "title": "CPU limit",
+                                            "form": true,
+                                            "render": "slider",
+                                            "sliderMin": ".5",
+                                            "sliderMax": "24",
+                                            "sliderStep": "0.5",
+                                            "description": "CPU limit for each single-user notebook"
+                                        }
+                                    }
+                                },
+                                "defaultUrl": {
+                                    "type": "string"
+                                },
+                                "extraEnv": {
+                                    "type": "object",
+                                    "properties": {
+                                        "DASK_GATEWAY__CLUSTER__OPTIONS__IMAGE": {
+                                            "type": "string"
+                                        },
+                                        "JUPYTERHUB_SINGLEUSER_APP": {
+                                            "type": "string"
+                                        }
+                                    }
+                                },
+                                "memory": {
+                                    "type": "object",
+                                    "properties": {
+                                        "guarantee": {
+                                            "type": "string"
+                                        },
+                                        "limit": {
+                                            "type": "string"
+                                        }
+                                    }
+                                },
+                                "networkPolicy": {
+                                    "type": "object",
+                                    "properties": {
+                                        "enabled": {
+                                            "type": "boolean"
+                                        }
+                                    }
+                                },
+                                "profileList": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "default": {
+                                                "type": "boolean"
+                                            },
+                                            "description": {
+                                                "type": "string"
+                                            },
+                                            "display_name": {
+                                                "type": "string"
+                                            },
+                                            "kubespawner_override": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "image": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "storage": {
+                                    "type": "object",
+                                    "properties": {
+                                        "capacity": {
+                                            "type": "string",
+                                            "title": "Local storage capacity for each user notebook",
+                                            "form": true,
+                                            "render": "slider",
+                                            "sliderMin": "10",
+                                            "sliderMax": "300",
+                                            "sliderStep": 5,
+                                            "sliderUnit": "Gi"
+                                        },
+                                        "extraVolumeMounts": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "mountPath": {
+                                                        "type": "string"
+                                                    },
+                                                    "name": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "extraVolumes": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "name": {
+                                                        "type": "string"
+                                                    },
+                                                    "nfs": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "path": {
+                                                                "type": "string"
+                                                            },
+                                                            "server": {
+                                                                "type": "string"
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

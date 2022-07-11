@@ -1,0 +1,11 @@
+apiVersion: v2
+name: daskhub-azimuth
+description: Multi-user JupyterHub and Dask deployment
+type: application
+version: 0.1.0
+icon: https://docs.dask.org/en/stable/_images/dask_stacked.svg
+keywords: [dask, daskhub]
+dependencies:
+  - name: daskhub
+    version: 2022.6.0
+    repository: https://helm.dask.org/

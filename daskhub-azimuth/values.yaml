@@ -1,0 +1,101 @@
+zenithClient:
+  iconUrl: https://docs.dask.org/en/stable/_images/dask_icon.svg
+  description:
+  serviceName: ""
+
+daskhub:
+  dask-gateway:
+    gateway:
+      extraConfig:
+        optionHandler: |
+          from dask_gateway_server.options import Options, Integer, Float, String
+          def option_handler(options):
+              if ":" not in options.image:
+                  raise ValueError("When specifying an image you must also provide a tag")
+              return {
+                  "image": options.image,
+              }
+          c.Backend.cluster_options = Options(
+              String("image", default="pangeo/base-notebook:2022.05.10", label="Image"),
+              handler=option_handler,
+          )
+      auth:
+        jupyterhub:
+          apiToken: ""
+          apiUrl: http://proxy-http:8000/jupyter/hub/api
+
+
+  jupyterhub:
+    # Specify to ensure that deployed resources don't conflict with other vanilla
+    # Jupyterhub services
+    fullnameOverride: "dask-jupyterhub"
+    prePuller:
+      hook:
+        enabled: false
+    # For the proxy, we only need a ClusterIP service as Zenith will punch it out
+    proxy:
+      service:
+        type: ClusterIP
+      chp:
+        networkPolicy:
+          enabled: false
+    hub:
+      services:
+        dask-gateway:
+          apiToken: ""
+      networkPolicy:
+        enabled: false
+    # Configure the authentication to respect the X-Remote-User header sent by Zenith from Azimuth
+      extraConfig:
+        remoteuser.py: |
+          from jupyterhub.auth import Authenticator
+          from jupyterhub.handlers import BaseHandler
+
+          from tornado import web
+
+          class RemoteUserLoginHandler(BaseHandler):
+              def get(self):
+                  remote_user = self.request.headers.get("X-Remote-User")
+                  if not remote_user:
+                      raise web.HTTPError(401)
+                  user = self.user_from_username(remote_user)
+                  self.set_login_cookie(user)
+                  next_url = self.get_next_url(user)
+                  self.redirect(next_url)
+
+          class RemoteUserAuthenticator(Authenticator):
+              def get_handlers(self, app):
+                  return [(r'/login', RemoteUserLoginHandler)]
+
+              async def authenticate(self, *args, **kwargs):
+                  raise NotImplementedError()
+
+          c.JupyterHub.authenticator_class = RemoteUserAuthenticator
+
+    singleuser:
+      podNameTemplate: 'dask-{username}--{servername}'
+      networkPolicy:
+        enabled: false
+      extraEnv:
+        DASK_GATEWAY__CLUSTER__OPTIONS__IMAGE: '{JUPYTER_IMAGE_SPEC}'
+        JUPYTERHUB_SINGLEUSER_APP: "jupyter_server.serverapp.ServerApp"
+      profileList:
+        - display_name: "Pangeo base notebook"
+          description: "Environment with Dask packages installed"
+          kubespawner_override:
+            image: pangeo/base-notebook:2022.06.13
+        - display_name: "Pangeo ML notebook"
+          description: "Environment with Dask packages and GPU-enabled tensorflow2"
+          kubespawner_override:
+            image: pangeo/ml-notebook:2022.06.13
+            node_selector: {'nvidia.com/gpu.present': 'true'}
+
+      defaultUrl: /lab
+      memory:
+        limit: "2G"
+        guarantee: "2G"
+      cpu:
+        limit: 1
+        guarantee: 1
+      storage:
+        capacity: "10Gi"
