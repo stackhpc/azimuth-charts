@@ -3,7 +3,7 @@ name: daskhub-azimuth
 description: Multi-user JupyterHub and Dask deployment
 type: application
 version: 0.1.0
-icon: https://docs.dask.org/en/stable/_images/dask_stacked.svg
+icon: https://docs.dask.org/en/stable/_images/dask_icon.svg
 keywords: [dask, daskhub]
 dependencies:
   - name: daskhub
