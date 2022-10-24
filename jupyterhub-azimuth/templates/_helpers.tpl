@@ -42,17 +42,3 @@ app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
 {{- end }}
 {{ include "jupyterhub-azimuth.selectorLabels" . }}
 {{- end }}
-
-{{/* 
-Service labels for Azimuth UI
-*/}}
-{{- define "jupyterhub-azimuth.serviceLabel" }}
-{{- if .Values.zenithClient.serviceName }}
-azimuth.stackhpc.com/service-label: {{ printf "JupyterHub (Name: %s)" .Values.zenithClient.serviceName | quote }}
-{{- else }}
-azimuth.stackhpc.com/service-label: {{ 
-     regexReplaceAll "[^a-z0-9]+" .Release.Name " " |
-      printf "JupyterHub (Name: %s)" | quote
-  }}
-{{- end }}
-{{- end }}

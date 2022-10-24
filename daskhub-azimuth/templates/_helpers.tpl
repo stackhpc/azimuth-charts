@@ -42,18 +42,3 @@ app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
 {{- end }}
 {{ include "daskhub-azimuth.selectorLabels" . }}
 {{- end }}
-
-{{/* 
-Service labels for Azimuth UI
-*/}}
-{{- define "daskhub-azimuth.serviceLabel" }}
-{{- if .Values.zenithClient.serviceName }}
-azimuth.stackhpc.com/service-label: {{ printf "DaskHub (Name: %s)" .Values.zenithClient.serviceName | quote }}
-{{- else }}
-azimuth.stackhpc.com/service-label: {{ 
-     regexReplaceAll "[^a-z0-9]+" .Release.Name " " |
-      printf "DaskHub (Name: %s)" | quote
-  }}
-{{- end }}
-{{- end }}
-

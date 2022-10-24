@@ -1,7 +1,7 @@
 zenithClient:
   iconUrl: https://docs.dask.org/en/stable/_images/dask_icon.svg
   description:
-  serviceName: ""
+  label: "Jupyter Notebook"
 
 daskhub:
   dask-gateway:
@@ -31,6 +31,8 @@ daskhub:
     fullnameOverride: "dask-jupyterhub"
     prePuller:
       hook:
+        enabled: false
+      continuous:
         enabled: false
     # For the proxy, we only need a ClusterIP service as Zenith will punch it out
     proxy:
