@@ -2,8 +2,26 @@ apiVersion: v1
 entries:
   daskhub-azimuth:
   - apiVersion: v2
+    appVersion: ceb448e
+    created: "2022-10-25T11:27:15.877282987Z"
+    dependencies:
+    - name: daskhub
+      repository: https://helm.dask.org/
+      version: 2022.8.2
+    description: Multi-user JupyterHub and Dask deployment
+    digest: ecf8fcf54dde055a25aa9cedd95a20c8d464b98985583efe0ab5ea53e4fd4cec
+    icon: https://docs.dask.org/en/stable/_images/dask_icon.svg
+    keywords:
+    - dask
+    - daskhub
+    name: daskhub-azimuth
+    type: application
+    urls:
+    - daskhub-azimuth-0.1.0-dev.0.main.14.tgz
+    version: 0.1.0-dev.0.main.14
+  - apiVersion: v2
     appVersion: 1e30334
-    created: "2022-10-24T07:33:02.279222295Z"
+    created: "2022-10-25T11:27:15.868191727Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
@@ -21,7 +39,7 @@ entries:
     version: 0.1.0-dev.0.main.13
   - apiVersion: v2
     appVersion: b056bb0
-    created: "2022-10-24T07:33:02.271749646Z"
+    created: "2022-10-25T11:27:15.858605365Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
@@ -39,7 +57,7 @@ entries:
     version: 0.1.0-dev.0.main.12
   - apiVersion: v2
     appVersion: a299e54
-    created: "2022-10-24T07:33:02.263135806Z"
+    created: "2022-10-25T11:27:15.850958815Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
@@ -57,7 +75,7 @@ entries:
     version: 0.1.0-dev.0.main.11
   - apiVersion: v2
     appVersion: 3c995e6
-    created: "2022-10-24T07:33:02.255189861Z"
+    created: "2022-10-25T11:27:15.839118338Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
@@ -75,7 +93,7 @@ entries:
     version: 0.1.0-dev.0.main.10
   - apiVersion: v2
     appVersion: a661645
-    created: "2022-10-24T07:33:02.287393138Z"
+    created: "2022-10-25T11:27:15.885647941Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
@@ -93,8 +111,26 @@ entries:
     version: 0.1.0-dev.0.main.9
   jupyterhub-azimuth:
   - apiVersion: v2
+    appVersion: ceb448e
+    created: "2022-10-25T11:27:15.916860645Z"
+    dependencies:
+    - name: jupyterhub
+      repository: https://jupyterhub.github.io/helm-chart/
+      version: 2.0.0
+    description: Multi-user Jupyter installation
+    digest: cf85e1713660067ddb39a7c83c474a5a455363fb556287ad8c1565d9d1418e7e
+    icon: https://raw.githubusercontent.com/jupyterhub/helm-chart/gh-pages/images/hublogo.svg
+    keywords:
+    - jupyter
+    - jupyterhub
+    name: jupyterhub-azimuth
+    type: application
+    urls:
+    - jupyterhub-azimuth-0.1.0-dev.0.main.14.tgz
+    version: 0.1.0-dev.0.main.14
+  - apiVersion: v2
     appVersion: 1e30334
-    created: "2022-10-24T07:33:02.309131198Z"
+    created: "2022-10-25T11:27:15.909866799Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -112,7 +148,7 @@ entries:
     version: 0.1.0-dev.0.main.13
   - apiVersion: v2
     appVersion: b056bb0
-    created: "2022-10-24T07:33:02.302906536Z"
+    created: "2022-10-25T11:27:15.90391016Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -130,7 +166,7 @@ entries:
     version: 0.1.0-dev.0.main.12
   - apiVersion: v2
     appVersion: a299e54
-    created: "2022-10-24T07:33:02.298067665Z"
+    created: "2022-10-25T11:27:15.896440612Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -148,7 +184,7 @@ entries:
     version: 0.1.0-dev.0.main.11
   - apiVersion: v2
     appVersion: 3c995e6
-    created: "2022-10-24T07:33:02.292203305Z"
+    created: "2022-10-25T11:27:15.890996476Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -166,7 +202,7 @@ entries:
     version: 0.1.0-dev.0.main.10
   - apiVersion: v2
     appVersion: a661645
-    created: "2022-10-24T07:33:02.334496245Z"
+    created: "2022-10-25T11:27:15.943408518Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -184,7 +220,7 @@ entries:
     version: 0.1.0-dev.0.main.9
   - apiVersion: v2
     appVersion: fda1e8f
-    created: "2022-10-24T07:33:02.32867458Z"
+    created: "2022-10-25T11:27:15.937786581Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -202,7 +238,7 @@ entries:
     version: 0.1.0-dev.0.main.8
   - apiVersion: v2
     appVersion: 6beca33
-    created: "2022-10-24T07:33:02.324053408Z"
+    created: "2022-10-25T11:27:15.932664448Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -220,7 +256,7 @@ entries:
     version: 0.1.0-dev.0.main.7
   - apiVersion: v2
     appVersion: 4dfdc66
-    created: "2022-10-24T07:33:02.318519641Z"
+    created: "2022-10-25T11:27:15.927064311Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -238,7 +274,7 @@ entries:
     version: 0.1.0-dev.0.main.5
   - apiVersion: v2
     appVersion: d34ffa8
-    created: "2022-10-24T07:33:02.31388297Z"
+    created: "2022-10-25T11:27:15.921937578Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -254,4 +290,4 @@ entries:
     urls:
     - jupyterhub-azimuth-0.1.0-dev.0.main.4.tgz
     version: 0.1.0-dev.0.main.4
-generated: "2022-10-24T07:33:02.247256116Z"
+generated: "2022-10-25T11:27:15.829393675Z"
