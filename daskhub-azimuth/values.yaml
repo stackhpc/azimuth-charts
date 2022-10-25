@@ -1,5 +1,5 @@
 zenithClient:
-  iconUrl: https://raw.githubusercontent.com/jupyter/design/master/logos/Square%20Logo/squarelogo-greytext-orangebody-greymoons/squarelogo-greytext-orangebody-greymoons.png
+  iconUrl: https://github.com/jupyter/design/blob/master/logos/Logo%20Mark/logomark-orangebody-greyplanets/logomark-orangebody-greyplanets.png
   description:
   label: "Jupyter Notebook"
 
@@ -19,16 +19,8 @@ daskhub:
               String("image", default="pangeo/base-notebook:2022.05.10", label="Image"),
               handler=option_handler,
           )
-      auth:
-        jupyterhub:
-          apiToken: ""
-          apiUrl: http://proxy-http:8000/jupyter/hub/api
-
 
   jupyterhub:
-    # Specify to ensure that deployed resources don't conflict with other vanilla
-    # Jupyterhub services
-    fullnameOverride: "dask-jupyterhub"
     prePuller:
       hook:
         enabled: false
@@ -42,9 +34,6 @@ daskhub:
         networkPolicy:
           enabled: false
     hub:
-      services:
-        dask-gateway:
-          apiToken: ""
       networkPolicy:
         enabled: false
     # Configure the authentication to respect the X-Remote-User header sent by Zenith from Azimuth
@@ -75,29 +64,8 @@ daskhub:
           c.JupyterHub.authenticator_class = RemoteUserAuthenticator
 
     singleuser:
-      podNameTemplate: 'dask-{username}--{servername}'
       networkPolicy:
         enabled: false
       extraEnv:
         DASK_GATEWAY__CLUSTER__OPTIONS__IMAGE: '{JUPYTER_IMAGE_SPEC}'
         JUPYTERHUB_SINGLEUSER_APP: "jupyter_server.serverapp.ServerApp"
-      profileList:
-        - display_name: "Pangeo base notebook"
-          description: "Environment with Dask packages installed"
-          kubespawner_override:
-            image: pangeo/base-notebook:2022.06.13
-        - display_name: "Pangeo ML notebook"
-          description: "Environment with Dask packages and GPU-enabled tensorflow2"
-          kubespawner_override:
-            image: pangeo/ml-notebook:2022.06.13
-            node_selector: {'nvidia.com/gpu.present': 'true'}
-
-      defaultUrl: /lab
-      memory:
-        limit: "2G"
-        guarantee: "2G"
-      cpu:
-        limit: 1
-        guarantee: 1
-      storage:
-        capacity: "10Gi"
