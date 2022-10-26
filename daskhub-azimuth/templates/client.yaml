@@ -6,4 +6,4 @@ metadata:
 spec:
   reservationName: {{ include "daskhub-azimuth.fullname" . }}
   upstream:
-    serviceName: "dask-jupyterhub-proxy-public"
+    serviceName: {{ include "jupyterhub.proxy-public.fullname" . }}

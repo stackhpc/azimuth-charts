@@ -1,5 +1,5 @@
 zenithClient:
-  iconUrl: https://github.com/jupyter/design/blob/master/logos/Logo%20Mark/logomark-orangebody-greyplanets/logomark-orangebody-greyplanets.png
+  iconUrl: https://raw.githubusercontent.com/jupyter/design/master/logos/Logo%20Mark/logomark-orangebody-greyplanets/logomark-orangebody-greyplanets.png
   description:
   label: "Jupyter Notebook"
 
