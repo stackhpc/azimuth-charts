@@ -2,24 +2,8 @@
     "$schema": "http://json-schema.org/schema#",
     "type": "object",
     "properties": {
-        "global": {
-            "type": "object"
-        },
-        "zenithClient": {
-            "type": "object",
-            "properties": {
-                "serviceName": {
-                  "form": true,
-                  "title": "JupyterHub identifier",
-                  "type": "string",
-                  "description": "A name for this JupyterHub cluster to identify it in the Cluster Details dialog. Defaults to Name if unset."
-                }
-            }
-        },
         "jupyterhub": {
-            "form": true,
             "type": "object",
-            "title": "JupyterHub Singleuser pod configuration",
             "properties": {
                 "singleuser": {
                     "type": "object",
@@ -27,69 +11,48 @@
                         "cpu": {
                             "type": "object",
                             "properties": {
-                                "guarantee": {
-                                    "type": "number",
-                                    "title": "CPU guarantee for each single user notebook",
-                                    "form": true,
-                                    "render": "slider",
-                                    "sliderMin": "1",
-                                    "sliderMax": "40",
-                                    "sliderStep": "1"
-                                },
                                 "limit": {
-                                    "type": "number",
-                                    "title": "CPU limit for each single user notebook",
-                                    "form": true,
-                                    "render": "slider",
-                                    "sliderMin": "1",
-                                    "sliderMax": "40",
-                                    "sliderStep": "1"
+                                    "type": "integer",
+                                    "title": "Notebook CPUs",
+                                    "description": "The number of CPUs to allocate to each user notebook.",
+                                    "minimum": 1,
+                                    "default": 1
                                 }
-                            }
+                            },
+                            "required": ["limit"]
                         },
                         "memory": {
                             "type": "object",
                             "properties": {
-                                "guarantee": {
-                                    "type": "string",
-                                    "title": "Memory guarantee for each single user notebook",
-                                    "form": true,
-                                    "render": "slider",
-                                    "sliderMin": "1",
-                                    "sliderMax": "512",
-                                    "sliderStep": 1,
-                                    "sliderUnit": "G"
-                                },
                                 "limit": {
                                     "type": "string",
-                                    "title": "Memory limit for each single user notebook",
-                                    "form": true,
-                                    "render": "slider",
-                                    "sliderMin": "1",
-                                    "sliderMax": "512",
-                                    "sliderStep": 1,
-                                    "sliderUnit": "G"
+                                    "title": "Notebook RAM",
+                                    "description": "The amount of RAM to allocate to each user notebook.",
+                                    "pattern": "^[1-9][0-9]*G$",
+                                    "default": "2G"
                                 }
-                            }
+                            },
+                            "required": ["limit"]
                         },
                         "storage": {
                             "type": "object",
                             "properties": {
                                 "capacity": {
                                     "type": "string",
-                                    "title": "Local storage capacity for each user notebook",
-                                    "form": true,
-                                    "render": "slider",
-                                    "sliderMin": "10",
-                                    "sliderMax": "300",
-                                    "sliderStep": 5,
-                                    "sliderUnit": "Gi"
+                                    "title": "Notebook storage",
+                                    "description": "The amount of storage to allocate to each user notebook.  \nThis is dynamically allocated from the tenancy quota.",
+                                    "pattern": "^[1-9][0-9]*Gi$",
+                                    "default": "10Gi"
                                 }
-                            }
+                            },
+                            "required": ["capacity"]
                         }
-                    }
+                    },
+                    "required": ["cpu", "memory", "storage"]
                 }
-            }
+            },
+            "required": ["singleuser"]
         }
-    }
+    },
+    "required": ["jupyterhub"]
 }

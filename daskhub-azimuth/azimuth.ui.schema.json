@@ -1,0 +1,32 @@
+{
+    "controls": {
+        "/daskhub/dask-gateway/gateway/auth/jupyterhub/apiToken": {
+            "visuallyHidden": true
+        },
+        "/daskhub/jupyterhub/hub/services/dask-gateway/apiToken": {
+            "type": "MirrorControl",
+            "path": "/daskhub/dask-gateway/gateway/auth/jupyterhub/apiToken",
+            "visuallyHidden": true
+        },
+        "/daskhub/jupyterhub/singleuser/memory/limit": {
+            "type": "NumberWithUnitsControl",
+            "units": "G",
+            "minimum": 1,
+            "step": 1,
+            "displayUnits": "GB"
+        },
+        "/daskhub/jupyterhub/singleuser/storage/capacity": {
+            "type": "NumberWithUnitsControl",
+            "units": "Gi",
+            "minimum": 1,
+            "step": 1,
+            "displayUnits": "GB"
+        }
+    },
+    "defaultGenerators": {
+        "/daskhub/dask-gateway/gateway/auth/jupyterhub/apiToken": {
+            "type": "random",
+            "length": 64
+        }
+    }
+}

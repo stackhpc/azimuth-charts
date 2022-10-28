@@ -2,17 +2,6 @@
     "$schema": "http://json-schema.org/schema#",
     "type": "object",
     "properties": {
-        "zenithClient": {
-            "type": "object",
-            "properties": {
-                "serviceName": {
-                  "form": true,
-                  "title": "JupyterHub identifier",
-                  "type": "string",
-                  "description": "A name for this JupyterHub cluster to identify it in the Cluster Details dialog. Defaults to Name if unset."
-                }
-            }
-        },
         "daskhub": {
             "type": "object",
             "properties": {
@@ -30,19 +19,12 @@
                                             "properties": {
                                                 "apiToken": {
                                                     "type": "string",
-                                                    "title": "Jupyterhub API Token",
-                                                    "form": true,
-                                                    "description": "32 character random string"
+                                                    "title": "Dask Gateway JupyterHub API Token",
+                                                    "description": "Required for Dask Gateway to authenticate with JupyterHub.  \nShould be set to a long random value, e.g. `openssl rand -hex 32`.",
+                                                    "minLength": 32
                                                 }
-                                            }
-                                        }
-                                    }
-                                },
-                                "extraConfig": {
-                                    "type": "object",
-                                    "properties": {
-                                        "optionHandler": {
-                                            "type": "string"
+                                            },
+                                            "required": ["apiToken"]
                                         }
                                     }
                                 }
@@ -56,22 +38,6 @@
                         "hub": {
                             "type": "object",
                             "properties": {
-                                "extraConfig": {
-                                    "type": "object",
-                                    "properties": {
-                                        "remoteuser.py": {
-                                            "type": "string"
-                                        }
-                                    }
-                                },
-                                "networkPolicy": {
-                                    "type": "object",
-                                    "properties": {
-                                        "enabled": {
-                                            "type": "boolean"
-                                        }
-                                    }
-                                },
                                 "services": {
                                     "type": "object",
                                     "properties": {
@@ -80,50 +46,12 @@
                                             "properties": {
                                                 "apiToken": {
                                                     "type": "string",
-                                                    "title": "Jupyterhub API Token Confirm",
-                                                    "form": true,
-                                                    "description": "32 character random string, must be identical to 'Jupyterhub API Token'"
+                                                    "title": "Dask Gateway JupyterHub API Token",
+                                                    "description": "Should match the token above.",
+                                                    "minLength": 32
                                                 }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        },
-                        "prePuller": {
-                            "type": "object",
-                            "properties": {
-                                "hook": {
-                                    "type": "object",
-                                    "properties": {
-                                        "enabled": {
-                                            "type": "boolean"
-                                        }
-                                    }
-                                }
-                            }
-                        },
-                        "proxy": {
-                            "type": "object",
-                            "properties": {
-                                "chp": {
-                                    "type": "object",
-                                    "properties": {
-                                        "networkPolicy": {
-                                            "type": "object",
-                                            "properties": {
-                                                "enabled": {
-                                                    "type": "boolean"
-                                                }
-                                            }
-                                        }
-                                    }
-                                },
-                                "service": {
-                                    "type": "object",
-                                    "properties": {
-                                        "type": {
-                                            "type": "string"
+                                            },
+                                            "required": ["apiToken"]
                                         }
                                     }
                                 }
@@ -135,142 +63,51 @@
                                 "cpu": {
                                     "type": "object",
                                     "properties": {
-                                        "guarantee": {
-                                            "type": "number",
-                                            "title": "CPU guarantee",
-                                            "form": true,
-                                            "render": "slider",
-                                            "sliderMin": ".5",
-                                            "sliderMax": "24",
-                                            "sliderStep": "0.5",
-                                            "description": "CPU request for each single-user notebook"
-                                        },
                                         "limit": {
-                                            "type": "number",
-                                            "title": "CPU limit",
-                                            "form": true,
-                                            "render": "slider",
-                                            "sliderMin": ".5",
-                                            "sliderMax": "24",
-                                            "sliderStep": "0.5",
-                                            "description": "CPU limit for each single-user notebook"
+                                            "type": "integer",
+                                            "title": "Notebook CPUs",
+                                            "description": "The number of CPUs to allocate to each user notebook.",
+                                            "minimum": 1,
+                                            "default": 1
                                         }
-                                    }
-                                },
-                                "defaultUrl": {
-                                    "type": "string"
-                                },
-                                "extraEnv": {
-                                    "type": "object",
-                                    "properties": {
-                                        "DASK_GATEWAY__CLUSTER__OPTIONS__IMAGE": {
-                                            "type": "string"
-                                        },
-                                        "JUPYTERHUB_SINGLEUSER_APP": {
-                                            "type": "string"
-                                        }
-                                    }
+                                    },
+                                    "required": ["limit"]
                                 },
                                 "memory": {
                                     "type": "object",
                                     "properties": {
-                                        "guarantee": {
-                                            "type": "string"
-                                        },
                                         "limit": {
-                                            "type": "string"
+                                            "type": "string",
+                                            "title": "Notebook RAM",
+                                            "description": "The amount of RAM to allocate to each user notebook.",
+                                            "pattern": "^[1-9][0-9]*G$",
+                                            "default": "2G"
                                         }
-                                    }
-                                },
-                                "networkPolicy": {
-                                    "type": "object",
-                                    "properties": {
-                                        "enabled": {
-                                            "type": "boolean"
-                                        }
-                                    }
-                                },
-                                "profileList": {
-                                    "type": "array",
-                                    "items": {
-                                        "type": "object",
-                                        "properties": {
-                                            "default": {
-                                                "type": "boolean"
-                                            },
-                                            "description": {
-                                                "type": "string"
-                                            },
-                                            "display_name": {
-                                                "type": "string"
-                                            },
-                                            "kubespawner_override": {
-                                                "type": "object",
-                                                "properties": {
-                                                    "image": {
-                                                        "type": "string"
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
+                                    },
+                                    "required": ["limit"]
                                 },
                                 "storage": {
                                     "type": "object",
                                     "properties": {
                                         "capacity": {
                                             "type": "string",
-                                            "title": "Local storage capacity for each user notebook",
-                                            "form": true,
-                                            "render": "slider",
-                                            "sliderMin": "10",
-                                            "sliderMax": "300",
-                                            "sliderStep": 5,
-                                            "sliderUnit": "Gi"
-                                        },
-                                        "extraVolumeMounts": {
-                                            "type": "array",
-                                            "items": {
-                                                "type": "object",
-                                                "properties": {
-                                                    "mountPath": {
-                                                        "type": "string"
-                                                    },
-                                                    "name": {
-                                                        "type": "string"
-                                                    }
-                                                }
-                                            }
-                                        },
-                                        "extraVolumes": {
-                                            "type": "array",
-                                            "items": {
-                                                "type": "object",
-                                                "properties": {
-                                                    "name": {
-                                                        "type": "string"
-                                                    },
-                                                    "nfs": {
-                                                        "type": "object",
-                                                        "properties": {
-                                                            "path": {
-                                                                "type": "string"
-                                                            },
-                                                            "server": {
-                                                                "type": "string"
-                                                            }
-                                                        }
-                                                    }
-                                                }
-                                            }
+                                            "title": "Notebook storage",
+                                            "description": "The amount of storage to allocate to each user notebook.  \nThis is dynamically allocated from the tenancy quota.",
+                                            "pattern": "^[1-9][0-9]*Gi$",
+                                            "default": "10Gi"
                                         }
-                                    }
+                                    },
+                                    "required": ["capacity"]
                                 }
-                            }
+                            },
+                            "required": ["cpu", "memory", "storage"]
                         }
-                    }
+                    },
+                    "required": ["singleuser"]
                 }
-            }
+            },
+            "required": ["jupyterhub"]
         }
-    }
+    },
+    "required": ["daskhub"]
 }
