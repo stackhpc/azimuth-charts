@@ -1,0 +1,29 @@
+controls:
+  # The API token fields should be visually hidden
+  /daskhub/dask-gateway/gateway/auth/jupyterhub/apiToken:
+    visuallyHidden: true
+  # Make sure that the two API token fields are kept in sync using a mirror control
+  /daskhub/jupyterhub/hub/services/dask-gateway/apiToken:
+    type: MirrorControl
+    path: /daskhub/dask-gateway/gateway/auth/jupyterhub/apiToken
+    visuallyHidden: true
+  # Render the memory and storage controls as number fields with a unit
+  /daskhub/jupyterhub/singleuser/memory/limit:
+    type: NumberWithUnitsControl
+    units: G
+    minimum: 1
+    step: 1
+    displayUnits: GB
+  /daskhub/jupyterhub/singleuser/storage/capacity:
+    type: NumberWithUnitsControl
+    units: Gi
+    minimum: 1
+    step: 1
+    displayUnits: GB
+
+defaultGenerators:
+  # For new DaskHub instances, the API token should be generated as a long, random value
+  # The mirror control ensures that the two places it is needed are kept in sync
+  /daskhub/dask-gateway/gateway/auth/jupyterhub/apiToken:
+    type: random
+    length: 64
