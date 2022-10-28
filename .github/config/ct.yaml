@@ -1,4 +1,0 @@
-chart-dirs:
-  - .
-validate-maintainers: false
-validate-yaml: true
