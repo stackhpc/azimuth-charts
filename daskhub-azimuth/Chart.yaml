@@ -3,7 +3,7 @@ name: daskhub-azimuth
 description: Multi-user Jupyter notebook environment with Dask integration.
 type: application
 version: 0.1.0
-icon: https://docs.dask.org/en/stable/_images/dask_icon.svg
+icon: https://docs.dask.org/en/stable/_images/dask_horizontal.svg
 keywords: [dask, daskhub]
 dependencies:
   - name: daskhub
