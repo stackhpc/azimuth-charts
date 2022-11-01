@@ -1,0 +1,24 @@
+DaskHub provides a multi-user [Jupyter Notebook](https://jupyter.org/) environment
+with integrated support for [Dask](https://www.dask.org/), a library for scaling
+Python code on a cluster, using [Dask Gateway](https://gateway.dask.org/).
+
+## Using Dask Gateway
+
+Dask Gateway is configured to integrate with the JupyterHub environment, so creating
+a Dask cluster requires very little configuration.
+
+For example, the following creates a Dask cluster that scales between 0 and 10 workers
+on the underlying Kubernetes cluster depending on the workload:
+
+```
+from dask_gateway import Gateway
+
+gateway = Gateway()
+cluster = gateway.new_cluster()
+cluster.adapt(minimum=0, maximum=10)
+cluster
+```
+
+If your Kubernetes cluster has autoscaling of nodes configured, this may cause the
+cluster itself to grow in size to accomodate your Dask cluster. Once you have finished
+with the Dask cluster, the Kubernetes nodes will scale back down again when possible.

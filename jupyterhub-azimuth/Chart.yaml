@@ -1,9 +1,9 @@
 apiVersion: v2
 name: jupyterhub-azimuth
-description: Multi-user Jupyter installation
+description: Multi-user Jupyter notebook environment.
 type: application
 version: 0.1.0
-appVersion: 1.5.0
+appVersion: 2.0.0
 icon: https://raw.githubusercontent.com/jupyterhub/helm-chart/gh-pages/images/hublogo.svg
 keywords: [jupyter, jupyterhub]
 
@@ -11,3 +11,6 @@ dependencies:
   - name: jupyterhub
     version: 2.0.0
     repository: https://jupyterhub.github.io/helm-chart/
+
+annotations:
+  azimuth.stackhpc.com/label: JupyterHub

@@ -26,6 +26,7 @@ daskhub:
         enabled: false
       continuous:
         enabled: false
+
     # For the proxy, we only need a ClusterIP service as Zenith will punch it out
     proxy:
       service:
@@ -33,10 +34,11 @@ daskhub:
       chp:
         networkPolicy:
           enabled: false
+
     hub:
       networkPolicy:
         enabled: false
-    # Configure the authentication to respect the X-Remote-User header sent by Zenith from Azimuth
+      # Configure the authentication to respect the X-Remote-User header sent by Zenith from Azimuth
       extraConfig:
         remoteuser.py: |
           from jupyterhub.auth import Authenticator
@@ -66,6 +68,7 @@ daskhub:
     singleuser:
       networkPolicy:
         enabled: false
+      defaultUrl: /lab
       extraEnv:
         DASK_GATEWAY__CLUSTER__OPTIONS__IMAGE: '{JUPYTER_IMAGE_SPEC}'
         JUPYTERHUB_SINGLEUSER_APP: "jupyter_server.serverapp.ServerApp"

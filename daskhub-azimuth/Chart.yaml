@@ -1,11 +1,14 @@
 apiVersion: v2
 name: daskhub-azimuth
-description: Multi-user JupyterHub and Dask deployment
+description: Multi-user Jupyter notebook environment with Dask integration.
 type: application
 version: 0.1.0
 icon: https://docs.dask.org/en/stable/_images/dask_icon.svg
 keywords: [dask, daskhub]
 dependencies:
   - name: daskhub
-    version: 2022.8.2
+    version: 2022.11.0
     repository: https://helm.dask.org/
+
+annotations:
+  azimuth.stackhpc.com/label: DaskHub
