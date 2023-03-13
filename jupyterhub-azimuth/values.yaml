@@ -28,10 +28,13 @@ jupyterhub:
         from jupyterhub.handlers import BaseHandler
 
         from tornado import web
+        import re
 
         class RemoteUserLoginHandler(BaseHandler):
             def get(self):
                 remote_user = self.request.headers.get("X-Remote-User")
+                # Sanitise input
+                remote_user = re.sub(r'[^a-zA-Z0-9._\-]', '-', remote_user).lower().strip('-')
                 if not remote_user:
                     raise web.HTTPError(401)
                 user = self.user_from_username(remote_user)
