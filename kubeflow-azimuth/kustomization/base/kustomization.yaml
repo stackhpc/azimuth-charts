@@ -1,3 +1,4 @@
 resources:
+  # - "https://github.com/kubeflow/manifests/example/?ref=master"
   - "https://github.com/kubeflow/manifests/example/?ref=v1.7.0"
   
