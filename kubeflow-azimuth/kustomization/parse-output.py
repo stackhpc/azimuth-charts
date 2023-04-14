@@ -1,35 +1,65 @@
-import yaml
+import yaml, re
 from pathlib import Path
 
-# Create Helm chart directory structure
-chart_path = Path("../kubeflow-azimuth-chart")
-print('Creating Helm chart at', chart_path.absolute())
-chart_path.mkdir(exist_ok=True)
-(chart_path / 'templates').mkdir(exist_ok=True)
-(chart_path / 'crds').mkdir(exist_ok=True)
-(chart_path / 'values.yaml').touch(exist_ok=True)
+def make_helm_chart_template(chart_path, chart_yml):
+    """Creates a template directory structure for a helm chart"""
+    print('Creating Helm chart at', chart_path.absolute())
+    # Create Helm chart directory structure
+    chart_path.mkdir(exist_ok=True)
+    (chart_path / 'templates').mkdir(exist_ok=True)
+    (chart_path / 'crds').mkdir(exist_ok=True)
+    (chart_path / 'values.yaml').touch(exist_ok=True)
+    # Write Chart.yaml
+    with open(chart_path / 'Chart.yaml', 'w') as file:
+        file.write(chart_yml)
 
-# Write chart.yaml
+
+main_chart_path = Path("../kubeflow-azimuth-chart")
 chart_yml = """---
 apiVersion: v1
 name: kubeflow-azimuth
 version: 0.0.1
+dependencies:
+  - name: kubeflow-crds
+    version: ">=0-0"
+    repository: file://../kubeflow-crds
 """
-with open(chart_path / 'Chart.yaml', 'w') as file:
-    file.write(chart_yml)
+make_helm_chart_template(main_chart_path, chart_yml)
+
+crd_chart_path = Path("../kubeflow-crds")
+crd_chart_yml = """---
+apiVersion: v1
+name: kubeflow-crds
+version: 0.0.1
+"""
+make_helm_chart_template(crd_chart_path, crd_chart_yml)
+
 
 # Write manifest files
 with open('build-output.yml', 'r') as input_file:
-    all_manifests = yaml.safe_load_all(input_file)
-    for i, manifest in enumerate(all_manifests):
-        manifest_name = manifest['metadata']['name'].replace('.', '-') + '.yml'
-        manifest_path = chart_path / ('crds' if manifest['kind'] == 'CustomResourceDefinition' else 'templates') / manifest_name
+    # all_manifests = yaml.load_all(input_file)
+    all_manifests = input_file.read().split("\n---\n")
+    for i, manifest_str in enumerate(all_manifests):
+        manifest = yaml.load(manifest_str)
+        manifest_name = manifest['metadata']['name'].replace('.', '-') + f'-{i+1}.yml'
+        if manifest['kind'] == 'CustomResourceDefinition':
+            manifest_path = crd_chart_path / 'crds' / manifest_name
+        elif manifest['kind'] == 'Namespace':
+            manifest_path = crd_chart_path / 'templates' / manifest_name
+        else:
+            manifest_path = main_chart_path / 'templates' / manifest_name
         print(f'{i+1}.\t Writing {manifest_path}')
-        # with open(manifest_path, 'w') as output_file:
-        #     yaml.dump(manifest, output_file)
-        # Check written manifest file for any '{{' and '}}' instances which are left in comments
+        # Some manifest files have '{{' and '}}' instances in comments
         # These need to be escaped so that helm doesn't try to template them
-        yaml_str = yaml.dump(manifest)
-        yaml_str = yaml_str.replace('{{', '{{ "{{" }}').replace('}}', '{{ "}}" }}')
+        # Note - Regex should match everying within a curly bracket that isn't a curly bracket itself
+        # manifest_str = re.sub(r"{{([a-zA-Z\-\(\)\.\ \`]+)}}", r'{{ "{{" }}\1{{ "}}" }}', manifest_str)
+        manifest_str = re.sub(r"{{([^\{\}]*)}}", r'{{ "{{" }}\1{{ "}}" }}', manifest_str)
+        # Write manifest to file
         with open(manifest_path, 'w') as output_file:
-            output_file.write(yaml_str)
+            output_file.write(manifest_str)
+        # Alternative version with yaml.dumps doesn't preserve yaml blocks (e.g. key: | ...) properly
+        # yaml_str = yaml.dump(manifest, indent=2)
+        # yaml_str = re.sub(r"{{ (.*) }}", r'{{ "{{" }} \1 {{ "}}" }}', yaml_str)
+        # # Write manifest to file
+        # with open(manifest_path, 'w') as output_file:
+        #     output_file.write(yaml_str)
