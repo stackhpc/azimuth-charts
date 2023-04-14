@@ -22,7 +22,7 @@ data:
     : \"istio-ingressgateway.istio-system.svc.cluster.local\",\n  \"localGateway\"\
     : \"knative-serving/knative-local-gateway\",\n  \"localGatewayService\": \"knative-local-gateway.istio-system.svc.cluster.local\"\
     ,\n  \"ingressDomain\": \"example.com\",\n  \"ingressClassName\": \"istio\",\n\
-    \  \"domainTemplate\": \"{{ .Name }}-{{ .Namespace }}.{{ .IngressDomain }}\",\n\
+    \  \"domainTemplate\": \"{{ '{{' {{ '}}' }} .Name {{ '}}' }}-{{ '{{' {{ '}}' }} .Namespace {{ '}}' }}.{{ '{{' {{ '}}' }} .IngressDomain {{ '}}' }}\",\n\
     \  \"urlScheme\": \"http\",\n  \"disableIstioVirtualHost\": false\n}"
   logger: "{\n    \"image\" : \"kserve/agent:v0.10.0\",\n    \"memoryRequest\": \"\
     100Mi\",\n    \"memoryLimit\": \"1Gi\",\n    \"cpuRequest\": \"100m\",\n    \"\

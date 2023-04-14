@@ -115,7 +115,7 @@ data:
 
     # when constructing the Knative service''s DNS name. The default
 
-    # value is "{{.Name}}.{{.Namespace}}.{{.Domain}}".
+    # value is "{{ '{{' {{ '}}' }}.Name{{ '}}' }}.{{ '{{' {{ '}}' }}.Namespace{{ '}}' }}.{{ '{{' {{ '}}' }}.Domain{{ '}}' }}".
 
     #
 
@@ -135,7 +135,7 @@ data:
 
     # certificate''s domain. In those cases you might consider using a value
 
-    # of "{{.Name}}-{{.Namespace}}.{{.Domain}}", or removing the Namespace
+    # of "{{ '{{' {{ '}}' }}.Name{{ '}}' }}-{{ '{{' {{ '}}' }}.Namespace{{ '}}' }}.{{ '{{' {{ '}}' }}.Domain{{ '}}' }}", or removing the Namespace
 
     # entirely from the template. When choosing a new value be thoughtful
 
@@ -143,7 +143,7 @@ data:
 
     # characters such as `-` in their service, or namespace, names.
 
-    # {{.Annotations}} or {{.Labels}} can be used for any customization in the
+    # {{ '{{' {{ '}}' }}.Annotations{{ '}}' }} or {{ '{{' {{ '}}' }}.Labels{{ '}}' }} can be used for any customization in the
 
     # go template if needed.
 
@@ -151,13 +151,13 @@ data:
 
     # domain name clashes:
 
-    # eg. ''{{.Name}}-{{.Namespace}}.{{ index .Annotations "sub"}}.{{.Domain}}''
+    # eg. ''{{ '{{' {{ '}}' }}.Name{{ '}}' }}-{{ '{{' {{ '}}' }}.Namespace{{ '}}' }}.{{ '{{' {{ '}}' }} index .Annotations "sub"{{ '}}' }}.{{ '{{' {{ '}}' }}.Domain{{ '}}' }}''
 
     # and you have an annotation {"sub":"foo"}, then the generated template
 
     # would be {Name}-{Namespace}.foo.{Domain}
 
-    domain-template: "{{.Name}}.{{.Namespace}}.{{.Domain}}"
+    domain-template: "{{ '{{' {{ '}}' }}.Name{{ '}}' }}.{{ '{{' {{ '}}' }}.Namespace{{ '}}' }}.{{ '{{' {{ '}}' }}.Domain{{ '}}' }}"
 
 
     # tagTemplate specifies the golang text template string to use
@@ -168,7 +168,7 @@ data:
 
     # domainTemplate above to determine the full URL for the tag.
 
-    tag-template: "{{.Tag}}-{{.Name}}"
+    tag-template: "{{ '{{' {{ '}}' }}.Tag{{ '}}' }}-{{ '{{' {{ '}}' }}.Name{{ '}}' }}"
 
 
     # Controls whether TLS certificates are automatically provisioned and

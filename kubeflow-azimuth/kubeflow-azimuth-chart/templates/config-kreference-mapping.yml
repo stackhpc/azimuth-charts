@@ -36,8 +36,8 @@ data:
 
     #
 
-    # Pod.v1: https://addressable-pod.{{ .SystemNamespace }}.svc.cluster.local/{{
-    .Name }}
+    # Pod.v1: https://addressable-pod.{{ '{{' {{ '}}' }} .SystemNamespace {{ '}}' }}.svc.cluster.local/{{ '{{' {{ '}}' }}
+    .Name {{ '}}' }}
 
     '
 kind: ConfigMap

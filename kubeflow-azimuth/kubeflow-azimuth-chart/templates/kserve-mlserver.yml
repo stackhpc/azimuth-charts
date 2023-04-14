@@ -9,7 +9,7 @@ spec:
   containers:
   - env:
     - name: MLSERVER_MODEL_IMPLEMENTATION
-      value: '{{.Labels.modelClass}}'
+      value: '{{ '{{' {{ '}}' }}.Labels.modelClass{{ '}}' }}'
     - name: MLSERVER_HTTP_PORT
       value: '8080'
     - name: MLSERVER_GRPC_PORT

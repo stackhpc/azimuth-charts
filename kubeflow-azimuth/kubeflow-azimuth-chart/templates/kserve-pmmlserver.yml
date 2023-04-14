@@ -8,7 +8,7 @@ spec:
     prometheus.kserve.io/port: '8080'
   containers:
   - args:
-    - --model_name={{.Name}}
+    - --model_name={{ '{{' {{ '}}' }}.Name{{ '}}' }}
     - --model_dir=/mnt/models
     - --http_port=8080
     image: kserve/pmmlserver:v0.10.0

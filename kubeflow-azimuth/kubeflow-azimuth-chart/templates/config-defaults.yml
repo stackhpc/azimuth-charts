@@ -154,7 +154,7 @@ data:
 
     # enclosing Service or Configuration, so values such as
 
-    # {{.Name}} are also valid.
+    # {{ '{{' {{ '}}' }}.Name{{ '}}' }} are also valid.
 
     container-name-template: "user-container"
 
@@ -167,7 +167,7 @@ data:
 
     # enclosing Service or Configuration, so values such as
 
-    # {{.Name}} are also valid.
+    # {{ '{{' {{ '}}' }}.Name{{ '}}' }} are also valid.
 
     init-container-name-template: "init-container"
 
