@@ -1,0 +1,12 @@
+apiVersion: zenith.stackhpc.com/v1alpha1
+kind: Client
+metadata:
+  name: kubeflow-azimuth
+  namespace: istio-system
+spec:
+  auth:
+    skip: true
+  reservationName: kubeflow-azimuth
+  upstream:
+    port: 80
+    serviceName: istio-ingressgateway
