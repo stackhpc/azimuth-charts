@@ -2,7 +2,12 @@
 apiVersion: v1
 name: kubeflow-azimuth
 version: 0.0.1
+appVersion: 0.0.1
+icon: https://www.kubeflow.org/images/logo.svg
+description: A KubeFlow machine learning environment
 dependencies:
   - name: kubeflow-crds
     version: ">=0-0"
     repository: file://../kubeflow-crds
+annotations:
+  azimuth.stackhpc.com/label: KubeFlow

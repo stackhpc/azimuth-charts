@@ -19,18 +19,36 @@ chart_yml = """---
 apiVersion: v1
 name: kubeflow-azimuth
 version: 0.0.1
+appVersion: 0.0.1
+icon: https://www.kubeflow.org/images/logo.svg
+description: A KubeFlow machine learning environment
 dependencies:
   - name: kubeflow-crds
     version: ">=0-0"
     repository: file://../kubeflow-crds
+annotations:
+  azimuth.stackhpc.com/label: KubeFlow
 """
 make_helm_chart_template(main_chart_path, chart_yml)
+
+# Write values schema
+json_schema = """
+{
+    "$schema": "http://json-schema.org/schema#",
+    "type": "object",
+    "properties": {},
+    "required": []
+}
+"""
+with open(main_chart_path / 'values.schema.json', 'w') as schema_file:
+    schema_file.write(json_schema)
+
 
 crd_chart_path = Path("../kubeflow-crds")
 crd_chart_yml = """---
 apiVersion: v1
 name: kubeflow-crds
-version: 0.0.1
+appVersion: 0.0.1
 """
 make_helm_chart_template(crd_chart_path, crd_chart_yml)
 
