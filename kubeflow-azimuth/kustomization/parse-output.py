@@ -18,8 +18,7 @@ main_chart_path = Path("../kubeflow-azimuth-chart")
 chart_yml = """---
 apiVersion: v1
 name: kubeflow-azimuth
-version: 0.0.1
-appVersion: 0.0.1
+version: 0.0.2
 icon: https://www.kubeflow.org/images/logo.svg
 description: A KubeFlow machine learning environment
 dependencies:
@@ -48,7 +47,7 @@ crd_chart_path = Path("../kubeflow-crds")
 crd_chart_yml = """---
 apiVersion: v1
 name: kubeflow-crds
-appVersion: 0.0.1
+version: 0.0.1
 """
 make_helm_chart_template(crd_chart_path, crd_chart_yml)
 
