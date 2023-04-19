@@ -1,0 +1,7 @@
+apiVersion: zenith.stackhpc.com/v1alpha1
+kind: Reservation
+metadata:
+  name: kubeflow-azimuth
+  namespace: istio-system
+spec:
+  credentialSecretName: kubeflow-azimuth-credential
