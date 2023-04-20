@@ -2,11 +2,10 @@ apiVersion: batch/v1
 kind: Job
 metadata:
   annotations:
-    helm.sh/hook: pre-delete
+    helm.sh/hook: post-delete
     helm.sh/hook-delete-policy: hook-succeeded
     helm.sh/hook-weight: "0"
-    sidecar.istio.io/inject: "true"
-  name: profile-cleanup
+  name: profile-namespace-cleanup
   namespace: kube-system
 spec:
   template:
@@ -15,9 +14,9 @@ spec:
       - command:
         - kubectl
         - delete
-        - --all
-        - profiles.kubeflow.org
+        - ns
+        - -l app.kubernetes.io/part-of=kubeflow-profile
         image: gcr.io/google_containers/hyperkube:v1.18.0
-        name: profile-deleter
+        name: profile-namespace-deleter
       restartPolicy: Never
       serviceAccountName: namespace-controller
