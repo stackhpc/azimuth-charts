@@ -6,22 +6,6 @@ from pathlib import Path
 #       https://github.com/kubeflow/manifests/blob/master/example/kustomization.yaml
 #       (I can't find any Helm docs stating whether dependency resources are 
 #       actually installed first or not.)
-DEPENDENCY_RESOURCES = [
-    "Namespace",
-    "ResourceQuota",
-    "StorageClass",
-    "MutatingWebhookConfiguration",
-    "ServiceAccount",
-    "PodSecurityPolicy",
-    "Role",
-    "ClusterRole",
-    "RoleBinding",
-    "ClusterRoleBinding",
-    "ConfigMap",
-    "Secret",
-    "Endpoints",
-    "Service",
-]
 
 def make_helm_chart_template(chart_path, chart_yml):
     """Creates a template directory structure for a helm chart"""
@@ -79,14 +63,14 @@ make_helm_chart_template(crd_chart_path, crd_chart_yml)
 
 # Write manifest files
 with open('kustomize-build-output.yml', 'r') as input_file:
-    # all_manifests = yaml.load_all(input_file)
+    # all_manifests = yaml.load_all(input_file) 
     all_manifests = input_file.read().split("\n---\n")
     for i, manifest_str in enumerate(all_manifests):
         manifest = yaml.load(manifest_str)
         manifest_name = manifest['metadata']['name'].replace('.', '-') + f'-{i+1}.yml'
         if manifest['kind'] == 'CustomResourceDefinition':
             manifest_path = crd_chart_path / 'crds' / manifest_name
-        elif manifest['kind'] in DEPENDENCY_RESOURCES:
+        elif manifest['kind'] == 'Namespace':
             manifest_path = crd_chart_path / 'templates' / manifest_name
         else:
             manifest_path = main_chart_path / 'templates' / manifest_name
