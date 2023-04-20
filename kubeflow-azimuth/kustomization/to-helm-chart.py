@@ -1,6 +1,28 @@
 import yaml, re, shutil
 from pathlib import Path
 
+# A list of resource to include in the sub-chart
+# NOTE: This is an attempt to mimic the `sortOptions` kustomization field used in
+#       https://github.com/kubeflow/manifests/blob/master/example/kustomization.yaml
+#       (I can't find any Helm docs stating whether dependency resources are 
+#       actually installed first or not.)
+DEPENDENCY_RESOURCES = [
+    "Namespace",
+    "ResourceQuota",
+    "StorageClass",
+    "MutatingWebhookConfiguration",
+    "ServiceAccount",
+    "PodSecurityPolicy",
+    "Role",
+    "ClusterRole",
+    "RoleBinding",
+    "ClusterRoleBinding",
+    "ConfigMap",
+    "Secret",
+    "Endpoints",
+    "Service",
+]
+
 def make_helm_chart_template(chart_path, chart_yml):
     """Creates a template directory structure for a helm chart"""
     print('Creating Helm chart at', chart_path.absolute())
@@ -64,7 +86,7 @@ with open('kustomize-build-output.yml', 'r') as input_file:
         manifest_name = manifest['metadata']['name'].replace('.', '-') + f'-{i+1}.yml'
         if manifest['kind'] == 'CustomResourceDefinition':
             manifest_path = crd_chart_path / 'crds' / manifest_name
-        elif manifest['kind'] == 'Namespace':
+        elif manifest['kind'] in DEPENDENCY_RESOURCES:
             manifest_path = crd_chart_path / 'templates' / manifest_name
         else:
             manifest_path = main_chart_path / 'templates' / manifest_name

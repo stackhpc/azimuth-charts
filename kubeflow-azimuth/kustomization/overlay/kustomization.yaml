@@ -2,6 +2,6 @@ resources:
   - ../base/
   - zenith-client.yml
   - zenith-reservation.yml
-  - profile-cleanup-job.yml
+  - profile-cleanup.yml
 
 # patches:
