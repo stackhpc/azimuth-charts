@@ -1,17 +1,13 @@
 resources:
-  # - "https://github.com/kubeflow/manifests/example/?ref=master"
   - "https://github.com/kubeflow/manifests/example/?ref=v1.7.0"
 
+# TODO: Can these patches to disable secure cookies be removed once https/dex/zenith config is added?
 patches:
-  # TODO: Remove these patches to re-enable secure cookies once https/dex/zenith config is added
-
   - patch: |-
       - op: replace
         path: /data/JWA_APP_SECURE_COOKIES
         value: "false"
     target:
-      # # TODO: Can we avoid referring to this (presumably randomly tagged) name field
-      # name: jupyter-web-app-parameters-42k97gcbmb
       name: jupyter-web-app-parameters
       kind: ConfigMap
       namespace: kubeflow

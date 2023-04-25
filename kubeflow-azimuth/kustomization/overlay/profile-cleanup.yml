@@ -6,11 +6,10 @@ metadata:
   name: profile-cleanup
   namespace: kube-system
   annotations:
-    # Note: Needs to be post-delete otherwise kubeflow profile controller re-creates namespace automatically
+    # Note: Needs to be pre-delete otherwise kubeflow profile controller doesn't exist to do deletion
     helm.sh/hook: pre-delete
     helm.sh/hook-weight: "0"
     helm.sh/hook-delete-policy: hook-succeeded
-    sidecar.istio.io/inject: "true"
 spec:
   template:
     spec:
