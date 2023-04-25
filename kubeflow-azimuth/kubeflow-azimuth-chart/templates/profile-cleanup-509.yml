@@ -5,7 +5,6 @@ metadata:
     helm.sh/hook: pre-delete
     helm.sh/hook-delete-policy: hook-succeeded
     helm.sh/hook-weight: "0"
-    sidecar.istio.io/inject: "true"
   name: profile-cleanup
   namespace: kube-system
 spec:
