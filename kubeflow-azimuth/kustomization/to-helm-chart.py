@@ -63,7 +63,7 @@ with open('kustomize-build-output.yml', 'r') as input_file:
     for i, manifest_str in enumerate(all_manifests):
         
         # Convert to yaml for field queries
-        manifest = yaml.load(manifest_str)
+        manifest = yaml.safe_load(manifest_str)
         
         # NOTE: CRDs and namespaces are placed in separate sub-chart since trying to
         # bundle all manifests into a single helm chart creates a helm release secret
