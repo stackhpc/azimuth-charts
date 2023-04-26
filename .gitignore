@@ -2,3 +2,5 @@
 */Chart.lock
 # Ignore `helm dependency build` output
 **.tar.gz
+**.tgz
+kubeflow-azimuth/kubeflow-azimuth-chart/requirements.lock
