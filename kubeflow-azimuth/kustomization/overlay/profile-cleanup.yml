@@ -9,7 +9,7 @@ metadata:
     # Note: Needs to be pre-delete otherwise kubeflow profile controller doesn't exist to do deletion
     helm.sh/hook: pre-delete
     helm.sh/hook-weight: "0"
-    helm.sh/hook-delete-policy: hook-succeeded
+    # helm.sh/hook-delete-policy: hook-succeeded
 spec:
   template:
     spec:
@@ -37,7 +37,7 @@ metadata:
     # Note: Needs to be post-delete otherwise kubeflow profile controller re-creates namespace automatically
     "helm.sh/hook": post-delete
     "helm.sh/hook-weight": "0"
-    "helm.sh/hook-delete-policy": hook-succeeded
+    # "helm.sh/hook-delete-policy": hook-succeeded
 spec:
   template:
     spec:

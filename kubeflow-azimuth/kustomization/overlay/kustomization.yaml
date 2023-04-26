@@ -3,5 +3,27 @@ resources:
   - zenith-client.yml
   - zenith-reservation.yml
   - profile-cleanup.yml
+  - mutating-webhook-cleanup.yml
 
-# patches:
+commonLabels:
+  managed-by: kubeflow-azimuth-app
+
+# Convert any MutatingWebhookConfiguration resources to pre-install
+# helm hooks to ensure they are ready to mutate other resources and
+# add a custom label to allow us to clean them up in a separate 
+# pre-delete hook
+# NOTE: The '~1' in 'helm.sh~1hook' represents a '/' in the path name
+patches:
+  - patch: |-
+      - op: add
+        path: /metadata/annotations/helm.sh~1hook
+        value: "pre-install"
+      - op: add
+        path: /metadata/annotations/helm.sh~1hook-delete-policy
+        value: "before-hook-creation"
+      - op: add
+        path: /metadata/labels
+        value: {kubeflow-helm-delete-cleanup: true}
+    target:
+      kind: MutatingWebhookConfiguration
+
