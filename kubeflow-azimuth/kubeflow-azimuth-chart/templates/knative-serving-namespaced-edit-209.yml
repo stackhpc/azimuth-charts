@@ -4,6 +4,7 @@ metadata:
   labels:
     app.kubernetes.io/name: knative-serving
     app.kubernetes.io/version: 1.8.0
+    managed-by: kubeflow-azimuth-app
     rbac.authorization.k8s.io/aggregate-to-edit: "true"
     rbac.authorization.kubeflow.org/aggregate-to-kubeflow-edit: "true"
   name: knative-serving-namespaced-edit

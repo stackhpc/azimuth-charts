@@ -15,6 +15,7 @@ metadata:
     eventing.knative.dev/source: "true"
     knative.dev/crd-install: "true"
     kustomize.component: knative
+    managed-by: kubeflow-azimuth-app
   name: pingsources.sources.knative.dev
 spec:
   conversion:

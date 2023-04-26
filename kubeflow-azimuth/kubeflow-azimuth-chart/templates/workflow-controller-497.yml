@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   labels:
     application-crd-id: kubeflow-pipelines
+    managed-by: kubeflow-azimuth-app
   name: workflow-controller
   namespace: kubeflow
 spec:
@@ -10,11 +11,13 @@ spec:
     matchLabels:
       app: workflow-controller
       application-crd-id: kubeflow-pipelines
+      managed-by: kubeflow-azimuth-app
   template:
     metadata:
       labels:
         app: workflow-controller
         application-crd-id: kubeflow-pipelines
+        managed-by: kubeflow-azimuth-app
     spec:
       containers:
       - args:

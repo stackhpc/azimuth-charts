@@ -4,4 +4,6 @@ data:
   user: user@example.com
 kind: ConfigMap
 metadata:
+  labels:
+    managed-by: kubeflow-azimuth-app
   name: default-install-config-9h2h2b6hbk

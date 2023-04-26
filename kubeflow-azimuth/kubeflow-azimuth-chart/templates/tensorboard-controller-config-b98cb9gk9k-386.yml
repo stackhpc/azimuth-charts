@@ -5,5 +5,7 @@ data:
   TENSORBOARD_IMAGE: tensorflow/tensorflow:2.5.1
 kind: ConfigMap
 metadata:
+  labels:
+    managed-by: kubeflow-azimuth-app
   name: tensorboard-controller-config-b98cb9gk9k
   namespace: kubeflow

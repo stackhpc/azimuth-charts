@@ -4,6 +4,7 @@ metadata:
   labels:
     app: tensorboard-controller
     kustomize.component: tensorboard-controller
+    managed-by: kubeflow-azimuth-app
   name: tensorboard-controller-proxy-rolebinding
 roleRef:
   apiGroup: rbac.authorization.k8s.io

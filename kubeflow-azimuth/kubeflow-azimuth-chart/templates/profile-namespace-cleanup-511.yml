@@ -1,0 +1,26 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  annotations:
+    helm.sh/hook: post-delete
+    helm.sh/hook-weight: "0"
+  labels:
+    managed-by: kubeflow-azimuth-app
+  name: profile-namespace-cleanup
+  namespace: kube-system
+spec:
+  template:
+    metadata:
+      labels:
+        managed-by: kubeflow-azimuth-app
+    spec:
+      containers:
+      - command:
+        - kubectl
+        - delete
+        - ns
+        - -l app.kubernetes.io/part-of=kubeflow-profile
+        image: gcr.io/google_containers/hyperkube:v1.18.0
+        name: profile-namespace-deleter
+      restartPolicy: Never
+      serviceAccountName: namespace-controller

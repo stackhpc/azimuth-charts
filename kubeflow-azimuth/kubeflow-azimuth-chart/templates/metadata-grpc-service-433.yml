@@ -4,6 +4,7 @@ metadata:
   labels:
     app: metadata
     application-crd-id: kubeflow-pipelines
+    managed-by: kubeflow-azimuth-app
   name: metadata-grpc-service
   namespace: kubeflow
 spec:
@@ -14,4 +15,5 @@ spec:
   selector:
     application-crd-id: kubeflow-pipelines
     component: metadata-grpc-server
+    managed-by: kubeflow-azimuth-app
   type: ClusterIP

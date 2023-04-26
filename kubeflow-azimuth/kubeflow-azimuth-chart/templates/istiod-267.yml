@@ -3,6 +3,7 @@ kind: RoleBinding
 metadata:
   labels:
     app: istiod
+    managed-by: kubeflow-azimuth-app
     release: istio
   name: istiod
   namespace: istio-system

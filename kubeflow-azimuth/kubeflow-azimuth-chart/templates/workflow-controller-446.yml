@@ -3,5 +3,6 @@ kind: PriorityClass
 metadata:
   labels:
     application-crd-id: kubeflow-pipelines
+    managed-by: kubeflow-azimuth-app
   name: workflow-controller
 value: 1000000

@@ -6,6 +6,7 @@ metadata:
     app.kubernetes.io/component: centraldashboard
     app.kubernetes.io/name: centraldashboard
     kustomize.component: centraldashboard
+    managed-by: kubeflow-azimuth-app
   name: centraldashboard
   namespace: kubeflow
 spec:
@@ -18,5 +19,6 @@ spec:
     app.kubernetes.io/component: centraldashboard
     app.kubernetes.io/name: centraldashboard
     kustomize.component: centraldashboard
+    managed-by: kubeflow-azimuth-app
   sessionAffinity: None
   type: ClusterIP

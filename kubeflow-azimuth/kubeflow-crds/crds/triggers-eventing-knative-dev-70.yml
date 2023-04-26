@@ -8,6 +8,7 @@ metadata:
     eventing.knative.dev/release: v1.8.1
     knative.dev/crd-install: "true"
     kustomize.component: knative
+    managed-by: kubeflow-azimuth-app
   name: triggers.eventing.knative.dev
 spec:
   group: eventing.knative.dev

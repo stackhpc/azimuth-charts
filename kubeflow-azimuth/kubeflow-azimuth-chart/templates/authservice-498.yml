@@ -1,6 +1,8 @@
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
+  labels:
+    managed-by: kubeflow-azimuth-app
   name: authservice
   namespace: istio-system
 spec:
@@ -8,6 +10,7 @@ spec:
   selector:
     matchLabels:
       app: authservice
+      managed-by: kubeflow-azimuth-app
   serviceName: authservice
   template:
     metadata:
@@ -15,6 +18,7 @@ spec:
         sidecar.istio.io/inject: "false"
       labels:
         app: authservice
+        managed-by: kubeflow-azimuth-app
     spec:
       containers:
       - envFrom:

@@ -3,6 +3,7 @@ kind: ClusterRoleBinding
 metadata:
   labels:
     app: istiod
+    managed-by: kubeflow-azimuth-app
     release: istio
   name: istiod-clusterrole-istio-system
 roleRef:

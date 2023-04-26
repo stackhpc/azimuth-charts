@@ -3,5 +3,6 @@ kind: ServiceAccount
 metadata:
   labels:
     application-crd-id: kubeflow-pipelines
+    managed-by: kubeflow-azimuth-app
   name: mysql
   namespace: kubeflow

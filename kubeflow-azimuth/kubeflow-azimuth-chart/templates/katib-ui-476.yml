@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   labels:
     katib.kubeflow.org/component: ui
+    managed-by: kubeflow-azimuth-app
   name: katib-ui
   namespace: kubeflow
 spec:
@@ -10,12 +11,14 @@ spec:
   selector:
     matchLabels:
       katib.kubeflow.org/component: ui
+      managed-by: kubeflow-azimuth-app
   template:
     metadata:
       annotations:
         sidecar.istio.io/inject: "true"
       labels:
         katib.kubeflow.org/component: ui
+        managed-by: kubeflow-azimuth-app
     spec:
       containers:
       - args:

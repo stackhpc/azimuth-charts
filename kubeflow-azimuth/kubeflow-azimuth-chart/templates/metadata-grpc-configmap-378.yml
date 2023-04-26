@@ -7,5 +7,6 @@ metadata:
   labels:
     application-crd-id: kubeflow-pipelines
     component: metadata-grpc-server
+    managed-by: kubeflow-azimuth-app
   name: metadata-grpc-configmap
   namespace: kubeflow

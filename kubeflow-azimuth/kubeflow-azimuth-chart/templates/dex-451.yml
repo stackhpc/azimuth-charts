@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   labels:
     app: dex
+    managed-by: kubeflow-azimuth-app
   name: dex
   namespace: auth
 spec:
@@ -10,10 +11,12 @@ spec:
   selector:
     matchLabels:
       app: dex
+      managed-by: kubeflow-azimuth-app
   template:
     metadata:
       labels:
         app: dex
+        managed-by: kubeflow-azimuth-app
     spec:
       containers:
       - command:

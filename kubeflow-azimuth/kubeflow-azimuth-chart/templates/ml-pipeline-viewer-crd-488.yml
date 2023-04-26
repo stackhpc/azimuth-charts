@@ -6,6 +6,7 @@ metadata:
     app.kubernetes.io/component: ml-pipeline
     app.kubernetes.io/name: kubeflow-pipelines
     application-crd-id: kubeflow-pipelines
+    managed-by: kubeflow-azimuth-app
   name: ml-pipeline-viewer-crd
   namespace: kubeflow
 spec:
@@ -15,6 +16,7 @@ spec:
       app.kubernetes.io/component: ml-pipeline
       app.kubernetes.io/name: kubeflow-pipelines
       application-crd-id: kubeflow-pipelines
+      managed-by: kubeflow-azimuth-app
   template:
     metadata:
       annotations:
@@ -24,6 +26,7 @@ spec:
         app.kubernetes.io/component: ml-pipeline
         app.kubernetes.io/name: kubeflow-pipelines
         application-crd-id: kubeflow-pipelines
+        managed-by: kubeflow-azimuth-app
     spec:
       containers:
       - env:

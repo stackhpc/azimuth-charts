@@ -59,5 +59,6 @@ metadata:
     knative.dev/config-category: eventing
     knative.dev/config-propagation: original
     kustomize.component: knative
+    managed-by: kubeflow-azimuth-app
   name: config-observability
   namespace: knative-eventing

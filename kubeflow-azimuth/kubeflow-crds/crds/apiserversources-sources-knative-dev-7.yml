@@ -21,6 +21,7 @@ metadata:
     eventing.knative.dev/source: "true"
     knative.dev/crd-install: "true"
     kustomize.component: knative
+    managed-by: kubeflow-azimuth-app
   name: apiserversources.sources.knative.dev
 spec:
   group: sources.knative.dev

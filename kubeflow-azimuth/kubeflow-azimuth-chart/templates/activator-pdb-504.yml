@@ -5,6 +5,7 @@ metadata:
     app.kubernetes.io/component: activator
     app.kubernetes.io/name: knative-serving
     app.kubernetes.io/version: 1.8.0
+    managed-by: kubeflow-azimuth-app
   name: activator-pdb
   namespace: knative-serving
 spec:
@@ -12,3 +13,4 @@ spec:
   selector:
     matchLabels:
       app: activator
+      managed-by: kubeflow-azimuth-app

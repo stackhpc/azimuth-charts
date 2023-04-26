@@ -5,6 +5,7 @@ metadata:
     app: istio-pilot
     chart: istio
     heritage: Tiller
+    managed-by: kubeflow-azimuth-app
     release: istio
   name: workloadgroups.networking.istio.io
 spec:

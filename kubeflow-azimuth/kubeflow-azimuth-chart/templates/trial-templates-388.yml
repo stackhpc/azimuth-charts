@@ -71,5 +71,6 @@ kind: ConfigMap
 metadata:
   labels:
     katib.kubeflow.org/component: trial-templates
+    managed-by: kubeflow-azimuth-app
   name: trial-templates
   namespace: kubeflow

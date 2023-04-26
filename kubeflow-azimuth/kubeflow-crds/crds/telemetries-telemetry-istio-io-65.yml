@@ -8,6 +8,7 @@ metadata:
     chart: istio
     heritage: Tiller
     istio: telemetry
+    managed-by: kubeflow-azimuth-app
     release: istio
   name: telemetries.telemetry.istio.io
 spec:

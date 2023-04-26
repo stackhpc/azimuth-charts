@@ -1,0 +1,36 @@
+apiVersion: admissionregistration.k8s.io/v1
+kind: MutatingWebhookConfiguration
+metadata:
+  annotations:
+    cert-manager.io/inject-ca-from: kubeflow/admission-webhook-cert
+    helm.sh/hook: pre-install
+    helm.sh/hook-delete-policy: before-hook-creation
+  labels:
+    kubeflow-helm-delete-cleanup: true
+    managed-by: kubeflow-azimuth-app
+  name: admission-webhook-mutating-webhook-configuration
+webhooks:
+- admissionReviewVersions:
+  - v1beta1
+  - v1
+  clientConfig:
+    caBundle: ""
+    service:
+      name: admission-webhook-service
+      namespace: kubeflow
+      path: /apply-poddefault
+  failurePolicy: Fail
+  name: admission-webhook-deployment.kubeflow.org
+  namespaceSelector:
+    matchLabels:
+      app.kubernetes.io/part-of: kubeflow-profile
+  rules:
+  - apiGroups:
+    - ""
+    apiVersions:
+    - v1
+    operations:
+    - CREATE
+    resources:
+    - pods
+  sideEffects: None

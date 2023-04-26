@@ -8,6 +8,7 @@ metadata:
     duck.knative.dev/podspecable: "true"
     eventing.knative.dev/release: v1.8.1
     kustomize.component: knative
+    managed-by: kubeflow-azimuth-app
   name: builtin-podspecable-binding
 rules:
 - apiGroups:

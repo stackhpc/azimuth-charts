@@ -5,5 +5,7 @@ aggregationRule:
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
+  labels:
+    managed-by: kubeflow-azimuth-app
   name: kubeflow-admin
 rules: []

@@ -9,6 +9,7 @@ metadata:
   labels:
     app: workflow-controller
     application-crd-id: kubeflow-pipelines
+    managed-by: kubeflow-azimuth-app
   name: workflow-controller-metrics
   namespace: kubeflow
 spec:
@@ -20,3 +21,4 @@ spec:
   selector:
     app: workflow-controller
     application-crd-id: kubeflow-pipelines
+    managed-by: kubeflow-azimuth-app

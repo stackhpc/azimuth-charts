@@ -12,5 +12,7 @@ data:
   USERID_PREFIX: ""
 kind: ConfigMap
 metadata:
+  labels:
+    managed-by: kubeflow-azimuth-app
   name: oidc-authservice-parameters
   namespace: istio-system

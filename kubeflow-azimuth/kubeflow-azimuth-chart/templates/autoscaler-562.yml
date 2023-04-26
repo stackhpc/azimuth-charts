@@ -1,0 +1,15 @@
+apiVersion: security.istio.io/v1beta1
+kind: AuthorizationPolicy
+metadata:
+  labels:
+    managed-by: kubeflow-azimuth-app
+  name: autoscaler
+  namespace: knative-serving
+spec:
+  action: ALLOW
+  rules:
+  - {}
+  selector:
+    matchLabels:
+      app: autoscaler
+      managed-by: kubeflow-azimuth-app

@@ -4,6 +4,7 @@ metadata:
   labels:
     app.kubernetes.io/name: knative-serving
     app.kubernetes.io/version: 1.8.0
+    managed-by: kubeflow-azimuth-app
     serving.knative.dev/controller: "true"
   name: knative-serving-core
 rules:

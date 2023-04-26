@@ -10,6 +10,7 @@ metadata:
     app.kubernetes.io/component: poddefaults
     app.kubernetes.io/name: poddefaults
     kustomize.component: poddefaults
+    managed-by: kubeflow-azimuth-app
     rbac.authorization.kubeflow.org/aggregate-to-kubeflow-admin: "true"
   name: admission-webhook-kubeflow-poddefaults-admin
 rules: []

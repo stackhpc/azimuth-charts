@@ -6,6 +6,7 @@ metadata:
   creationTimestamp: null
   labels:
     kustomize.component: profiles
+    managed-by: kubeflow-azimuth-app
   name: profiles.kubeflow.org
 spec:
   conversion:

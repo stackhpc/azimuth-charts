@@ -4,6 +4,7 @@ metadata:
   labels:
     app: volumes-web-app
     kustomize.component: volumes-web-app
+    managed-by: kubeflow-azimuth-app
     rbac.authorization.kubeflow.org/aggregate-to-kubeflow-view: "true"
   name: volumes-web-app-kubeflow-volume-ui-view
 rules:

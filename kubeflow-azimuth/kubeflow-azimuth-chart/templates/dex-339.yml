@@ -29,5 +29,7 @@ data:
       secretEnv: OIDC_CLIENT_SECRET
 kind: ConfigMap
 metadata:
+  labels:
+    managed-by: kubeflow-azimuth-app
   name: dex
   namespace: auth

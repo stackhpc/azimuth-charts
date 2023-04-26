@@ -6,6 +6,7 @@ metadata:
     app.kubernetes.io/component: poddefaults
     app.kubernetes.io/name: poddefaults
     kustomize.component: poddefaults
+    managed-by: kubeflow-azimuth-app
   name: admission-webhook-deployment
   namespace: kubeflow
 spec:
@@ -15,6 +16,7 @@ spec:
       app.kubernetes.io/component: poddefaults
       app.kubernetes.io/name: poddefaults
       kustomize.component: poddefaults
+      managed-by: kubeflow-azimuth-app
   template:
     metadata:
       annotations:
@@ -24,6 +26,7 @@ spec:
         app.kubernetes.io/component: poddefaults
         app.kubernetes.io/name: poddefaults
         kustomize.component: poddefaults
+        managed-by: kubeflow-azimuth-app
     spec:
       containers:
       - args:

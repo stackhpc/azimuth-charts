@@ -4,6 +4,7 @@ metadata:
   labels:
     app: jupyter-web-app
     kustomize.component: jupyter-web-app
+    managed-by: kubeflow-azimuth-app
   name: jupyter-web-app-jupyter-notebook-role
   namespace: kubeflow
 rules:

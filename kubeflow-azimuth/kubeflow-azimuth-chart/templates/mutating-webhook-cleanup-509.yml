@@ -1,0 +1,27 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  annotations:
+    helm.sh/hook: post-delete
+    helm.sh/hook-weight: "0"
+  labels:
+    managed-by: kubeflow-azimuth-app
+  name: mutating-webhook-cleanup
+  namespace: kube-system
+spec:
+  template:
+    metadata:
+      labels:
+        managed-by: kubeflow-azimuth-app
+    spec:
+      containers:
+      - command:
+        - kubectl
+        - delete
+        - mutatingwebhookconfigurations.admissionregistration.k8s.io
+        - -l
+        - kubeflow-helm-delete-cleanup=true
+        image: gcr.io/google_containers/hyperkube:v1.18.0
+        name: profile-deleter
+      restartPolicy: Never
+      serviceAccountName: namespace-controller

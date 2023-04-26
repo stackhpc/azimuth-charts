@@ -5,6 +5,7 @@ metadata:
     app: tensorboard-controller
     control-plane: controller-manager
     kustomize.component: tensorboard-controller
+    managed-by: kubeflow-azimuth-app
   name: tensorboard-controller-deployment
   namespace: kubeflow
 spec:
@@ -14,6 +15,7 @@ spec:
       app: tensorboard-controller
       control-plane: controller-manager
       kustomize.component: tensorboard-controller
+      managed-by: kubeflow-azimuth-app
   template:
     metadata:
       annotations:
@@ -22,6 +24,7 @@ spec:
         app: tensorboard-controller
         control-plane: controller-manager
         kustomize.component: tensorboard-controller
+        managed-by: kubeflow-azimuth-app
     spec:
       containers:
       - args:

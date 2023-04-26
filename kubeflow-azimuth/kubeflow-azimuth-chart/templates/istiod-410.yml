@@ -6,6 +6,7 @@ metadata:
     install.operator.istio.io/owning-resource: unknown
     istio: pilot
     istio.io/rev: default
+    managed-by: kubeflow-azimuth-app
     operator.istio.io/component: Pilot
     release: istio
   name: istiod
@@ -28,3 +29,4 @@ spec:
   selector:
     app: istiod
     istio: pilot
+    managed-by: kubeflow-azimuth-app

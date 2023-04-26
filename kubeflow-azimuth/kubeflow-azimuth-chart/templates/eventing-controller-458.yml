@@ -8,6 +8,7 @@ metadata:
     eventing.knative.dev/release: v1.8.1
     knative.dev/high-availability: "true"
     kustomize.component: knative
+    managed-by: kubeflow-azimuth-app
   name: eventing-controller
   namespace: knative-eventing
 spec:
@@ -17,6 +18,7 @@ spec:
       app.kubernetes.io/component: knative-eventing
       app.kubernetes.io/name: knative-eventing
       kustomize.component: knative
+      managed-by: kubeflow-azimuth-app
   template:
     metadata:
       labels:
@@ -26,6 +28,7 @@ spec:
         app.kubernetes.io/version: 1.8.1
         eventing.knative.dev/release: v1.8.1
         kustomize.component: knative
+        managed-by: kubeflow-azimuth-app
     spec:
       affinity:
         podAntiAffinity:
@@ -37,6 +40,7 @@ spec:
                   app.kubernetes.io/component: knative-eventing
                   app.kubernetes.io/name: knative-eventing
                   kustomize.component: knative
+                  managed-by: kubeflow-azimuth-app
               topologyKey: kubernetes.io/hostname
             weight: 100
       containers:

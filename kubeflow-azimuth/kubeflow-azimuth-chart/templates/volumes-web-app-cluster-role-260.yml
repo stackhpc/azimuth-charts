@@ -4,6 +4,7 @@ metadata:
   labels:
     app: volumes-web-app
     kustomize.component: volumes-web-app
+    managed-by: kubeflow-azimuth-app
   name: volumes-web-app-cluster-role
 rules:
 - apiGroups:

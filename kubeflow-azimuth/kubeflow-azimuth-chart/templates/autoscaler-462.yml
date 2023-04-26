@@ -5,6 +5,7 @@ metadata:
     app.kubernetes.io/component: autoscaler
     app.kubernetes.io/name: knative-serving
     app.kubernetes.io/version: 1.8.0
+    managed-by: kubeflow-azimuth-app
   name: autoscaler
   namespace: knative-serving
 spec:
@@ -12,6 +13,7 @@ spec:
   selector:
     matchLabels:
       app: autoscaler
+      managed-by: kubeflow-azimuth-app
   strategy:
     rollingUpdate:
       maxUnavailable: 0
@@ -26,6 +28,7 @@ spec:
         app.kubernetes.io/component: autoscaler
         app.kubernetes.io/name: knative-serving
         app.kubernetes.io/version: 1.8.0
+        managed-by: kubeflow-azimuth-app
     spec:
       affinity:
         podAntiAffinity:
@@ -34,6 +37,7 @@ spec:
               labelSelector:
                 matchLabels:
                   app: autoscaler
+                  managed-by: kubeflow-azimuth-app
               topologyKey: kubernetes.io/hostname
             weight: 100
       containers:

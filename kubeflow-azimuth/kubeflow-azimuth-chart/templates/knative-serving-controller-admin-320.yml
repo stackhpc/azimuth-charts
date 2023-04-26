@@ -5,6 +5,7 @@ metadata:
     app.kubernetes.io/component: controller
     app.kubernetes.io/name: knative-serving
     app.kubernetes.io/version: 1.8.0
+    managed-by: kubeflow-azimuth-app
   name: knative-serving-controller-admin
 roleRef:
   apiGroup: rbac.authorization.k8s.io

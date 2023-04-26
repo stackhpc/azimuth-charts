@@ -6,6 +6,7 @@ metadata:
     install.operator.istio.io/owning-resource: unknown
     istio: pilot
     istio.io/rev: default
+    managed-by: kubeflow-azimuth-app
     operator.istio.io/component: Pilot
     release: istio
   name: istiod
@@ -15,6 +16,7 @@ spec:
   selector:
     matchLabels:
       istio: pilot
+      managed-by: kubeflow-azimuth-app
   strategy:
     rollingUpdate:
       maxSurge: 100%
@@ -30,6 +32,7 @@ spec:
         install.operator.istio.io/owning-resource: unknown
         istio: pilot
         istio.io/rev: default
+        managed-by: kubeflow-azimuth-app
         operator.istio.io/component: Pilot
         sidecar.istio.io/inject: "false"
     spec:

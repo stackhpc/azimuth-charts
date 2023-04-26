@@ -6,6 +6,7 @@ metadata:
     install.operator.istio.io/owning-resource: unknown
     istio: cluster-local-gateway
     istio.io/rev: default
+    managed-by: kubeflow-azimuth-app
     operator.istio.io/component: IngressGateways
     release: istio
   name: cluster-local-gateway
@@ -15,6 +16,7 @@ spec:
     matchLabels:
       app: cluster-local-gateway
       istio: cluster-local-gateway
+      managed-by: kubeflow-azimuth-app
   strategy:
     rollingUpdate:
       maxSurge: 100%
@@ -33,6 +35,7 @@ spec:
         install.operator.istio.io/owning-resource: unknown
         istio: cluster-local-gateway
         istio.io/rev: default
+        managed-by: kubeflow-azimuth-app
         operator.istio.io/component: IngressGateways
         release: istio
         service.istio.io/canonical-name: cluster-local-gateway

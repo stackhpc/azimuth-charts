@@ -42,5 +42,6 @@ metadata:
     app.kubernetes.io/component: controller
     app.kubernetes.io/name: knative-serving
     app.kubernetes.io/version: 1.8.0
+    managed-by: kubeflow-azimuth-app
   name: config-leader-election
   namespace: knative-serving

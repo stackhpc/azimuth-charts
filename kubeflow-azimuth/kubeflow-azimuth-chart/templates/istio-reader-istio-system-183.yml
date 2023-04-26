@@ -3,6 +3,7 @@ kind: ClusterRole
 metadata:
   labels:
     app: istio-reader
+    managed-by: kubeflow-azimuth-app
     release: istio
   name: istio-reader-istio-system
 rules:

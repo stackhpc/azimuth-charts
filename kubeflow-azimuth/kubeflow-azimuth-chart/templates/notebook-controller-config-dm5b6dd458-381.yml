@@ -11,5 +11,6 @@ metadata:
   labels:
     app: notebook-controller
     kustomize.component: notebook-controller
+    managed-by: kubeflow-azimuth-app
   name: notebook-controller-config-dm5b6dd458
   namespace: kubeflow

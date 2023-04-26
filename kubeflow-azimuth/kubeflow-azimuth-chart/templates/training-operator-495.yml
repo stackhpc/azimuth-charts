@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   labels:
     control-plane: kubeflow-training-operator
+    managed-by: kubeflow-azimuth-app
   name: training-operator
   namespace: kubeflow
 spec:
@@ -10,12 +11,14 @@ spec:
   selector:
     matchLabels:
       control-plane: kubeflow-training-operator
+      managed-by: kubeflow-azimuth-app
   template:
     metadata:
       annotations:
         sidecar.istio.io/inject: "false"
       labels:
         control-plane: kubeflow-training-operator
+        managed-by: kubeflow-azimuth-app
     spec:
       containers:
       - command:

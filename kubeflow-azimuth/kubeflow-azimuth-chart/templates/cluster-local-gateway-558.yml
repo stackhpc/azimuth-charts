@@ -1,0 +1,16 @@
+apiVersion: security.istio.io/v1beta1
+kind: AuthorizationPolicy
+metadata:
+  labels:
+    managed-by: kubeflow-azimuth-app
+  name: cluster-local-gateway
+  namespace: istio-system
+spec:
+  action: ALLOW
+  rules:
+  - {}
+  selector:
+    matchLabels:
+      app: cluster-local-gateway
+      istio: cluster-local-gateway
+      managed-by: kubeflow-azimuth-app

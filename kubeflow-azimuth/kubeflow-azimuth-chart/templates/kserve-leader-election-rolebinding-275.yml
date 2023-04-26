@@ -4,6 +4,7 @@ metadata:
   labels:
     app: kserve
     app.kubernetes.io/name: kserve
+    managed-by: kubeflow-azimuth-app
   name: kserve-leader-election-rolebinding
   namespace: kubeflow
 roleRef:

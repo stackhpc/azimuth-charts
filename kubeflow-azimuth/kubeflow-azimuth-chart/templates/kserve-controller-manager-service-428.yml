@@ -6,6 +6,7 @@ metadata:
     app.kubernetes.io/name: kserve
     control-plane: kserve-controller-manager
     controller-tools.k8s.io: "1.0"
+    managed-by: kubeflow-azimuth-app
   name: kserve-controller-manager-service
   namespace: kubeflow
 spec:
@@ -18,3 +19,4 @@ spec:
     app.kubernetes.io/name: kserve
     control-plane: kserve-controller-manager
     controller-tools.k8s.io: "1.0"
+    managed-by: kubeflow-azimuth-app

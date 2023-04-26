@@ -4,6 +4,7 @@ metadata:
   labels:
     app: jupyter-web-app
     kustomize.component: jupyter-web-app
+    managed-by: kubeflow-azimuth-app
   name: jupyter-web-app-deployment
   namespace: kubeflow
 spec:
@@ -12,11 +13,13 @@ spec:
     matchLabels:
       app: jupyter-web-app
       kustomize.component: jupyter-web-app
+      managed-by: kubeflow-azimuth-app
   template:
     metadata:
       labels:
         app: jupyter-web-app
         kustomize.component: jupyter-web-app
+        managed-by: kubeflow-azimuth-app
     spec:
       containers:
       - env:

@@ -6,6 +6,7 @@ metadata:
     app.kubernetes.io/component: activator
     app.kubernetes.io/name: knative-serving
     app.kubernetes.io/version: 1.8.0
+    managed-by: kubeflow-azimuth-app
   name: activator-service
   namespace: knative-serving
 spec:
@@ -27,4 +28,5 @@ spec:
     targetPort: 8112
   selector:
     app: activator
+    managed-by: kubeflow-azimuth-app
   type: ClusterIP

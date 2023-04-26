@@ -6,6 +6,7 @@ metadata:
     app.kubernetes.io/component: autoscaler
     app.kubernetes.io/name: knative-serving
     app.kubernetes.io/version: 1.8.0
+    managed-by: kubeflow-azimuth-app
   name: autoscaler
   namespace: knative-serving
 spec:
@@ -21,3 +22,4 @@ spec:
     targetPort: 8080
   selector:
     app: autoscaler
+    managed-by: kubeflow-azimuth-app

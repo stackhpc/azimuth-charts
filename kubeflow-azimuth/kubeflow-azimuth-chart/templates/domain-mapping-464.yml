@@ -5,12 +5,14 @@ metadata:
     app.kubernetes.io/component: domain-mapping
     app.kubernetes.io/name: knative-serving
     app.kubernetes.io/version: 1.8.0
+    managed-by: kubeflow-azimuth-app
   name: domain-mapping
   namespace: knative-serving
 spec:
   selector:
     matchLabels:
       app: domain-mapping
+      managed-by: kubeflow-azimuth-app
   template:
     metadata:
       annotations:
@@ -21,6 +23,7 @@ spec:
         app.kubernetes.io/component: domain-mapping
         app.kubernetes.io/name: knative-serving
         app.kubernetes.io/version: 1.8.0
+        managed-by: kubeflow-azimuth-app
     spec:
       affinity:
         podAntiAffinity:
@@ -29,6 +32,7 @@ spec:
               labelSelector:
                 matchLabels:
                   app: domain-mapping
+                  managed-by: kubeflow-azimuth-app
               topologyKey: kubernetes.io/hostname
             weight: 100
       containers:

@@ -3,6 +3,7 @@ kind: RoleBinding
 metadata:
   labels:
     application-crd-id: kubeflow-pipelines
+    managed-by: kubeflow-azimuth-app
   name: argo-binding
   namespace: kubeflow
 roleRef:
