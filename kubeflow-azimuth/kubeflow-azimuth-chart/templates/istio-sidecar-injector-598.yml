@@ -3,10 +3,15 @@ kind: MutatingWebhookConfiguration
 metadata:
   annotations:
     helm.sh/hook: pre-install
-    helm.sh/hook-delete-policy: before-hook-creation
+    helm.sh/hook-delete-policy: hook-failed
+    helm.sh/hook-weight: "0"
   labels:
-    kubeflow-helm-delete-cleanup: true
+    app: sidecar-injector
+    install.operator.istio.io/owning-resource: unknown
+    istio.io/rev: default
     managed-by: kubeflow-azimuth-app
+    operator.istio.io/component: Pilot
+    release: istio
   name: istio-sidecar-injector
 webhooks:
 - admissionReviewVersions:

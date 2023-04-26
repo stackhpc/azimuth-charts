@@ -3,10 +3,11 @@ kind: MutatingWebhookConfiguration
 metadata:
   annotations:
     cert-manager.io/inject-ca-from: kubeflow/admission-webhook-cert
-    helm.sh/hook: pre-install
-    helm.sh/hook-delete-policy: before-hook-creation
   labels:
-    kubeflow-helm-delete-cleanup: true
+    app: poddefaults
+    app.kubernetes.io/component: poddefaults
+    app.kubernetes.io/name: poddefaults
+    kustomize.component: poddefaults
     managed-by: kubeflow-azimuth-app
   name: admission-webhook-mutating-webhook-configuration
 webhooks:

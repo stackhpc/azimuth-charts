@@ -3,4 +3,4 @@ dependencies:
   repository: file://../kubeflow-crds
   version: 0.0.1
 digest: sha256:3dbd7346190f1fde3bdaf371fa5f05e0eb60983323a4e15459629167f9aeb4c9
-generated: "2023-04-26T13:20:08.661171468Z"
+generated: "2023-04-26T15:53:14.907753772Z"

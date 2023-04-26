@@ -3,10 +3,9 @@ kind: MutatingWebhookConfiguration
 metadata:
   annotations:
     cert-manager.io/inject-ca-from: kubeflow/serving-cert
-    helm.sh/hook: pre-install
-    helm.sh/hook-delete-policy: before-hook-creation
   labels:
-    kubeflow-helm-delete-cleanup: true
+    app: kserve
+    app.kubernetes.io/name: kserve
     managed-by: kubeflow-azimuth-app
   name: inferenceservice.serving.kserve.io
 webhooks:

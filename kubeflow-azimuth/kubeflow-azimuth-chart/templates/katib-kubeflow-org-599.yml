@@ -3,10 +3,7 @@ kind: MutatingWebhookConfiguration
 metadata:
   annotations:
     cert-manager.io/inject-ca-from: kubeflow/katib-webhook-cert
-    helm.sh/hook: pre-install
-    helm.sh/hook-delete-policy: before-hook-creation
   labels:
-    kubeflow-helm-delete-cleanup: true
     managed-by: kubeflow-azimuth-app
   name: katib.kubeflow.org
 webhooks:

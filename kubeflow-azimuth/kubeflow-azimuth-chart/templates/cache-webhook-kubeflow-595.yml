@@ -3,10 +3,8 @@ kind: MutatingWebhookConfiguration
 metadata:
   annotations:
     cert-manager.io/inject-ca-from: kubeflow/kfp-cache-cert
-    helm.sh/hook: pre-install
-    helm.sh/hook-delete-policy: before-hook-creation
   labels:
-    kubeflow-helm-delete-cleanup: true
+    app: cache-server-cert-manager
     managed-by: kubeflow-azimuth-app
   name: cache-webhook-kubeflow
 webhooks:
