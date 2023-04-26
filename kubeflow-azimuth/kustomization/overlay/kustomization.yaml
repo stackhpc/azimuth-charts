@@ -3,15 +3,12 @@ resources:
   - zenith-client.yml
   - zenith-reservation.yml
   - profile-cleanup.yml
-  - mutating-webhook-cleanup.yml
+  - istio-webhook-cleanup.yml
 
-commonLabels:
-  managed-by: kubeflow-azimuth-app
-
-# Convert any MutatingWebhookConfiguration resources to pre-install
-# helm hooks to ensure they are ready to mutate other resources and
-# add a custom label to allow us to clean them up in a separate 
-# pre-delete hook
+# Convert istio's sidecar injector webhook resource to a pre-install
+# helm hooks to ensure that all other pods get the sidecar injected as
+# needed. Also add a custom label to allow us to clean them up in a
+# separate pre-delete hook.
 # NOTE: The '~1' in 'helm.sh~1hook' represents a '/' in the path name
 patches:
   - patch: |-
@@ -19,11 +16,11 @@ patches:
         path: /metadata/annotations/helm.sh~1hook
         value: "pre-install"
       - op: add
-        path: /metadata/annotations/helm.sh~1hook-delete-policy
-        value: "before-hook-creation"
+        path: /metadata/annotations/helm.sh~1hook-weight
+        value: "0"
       - op: add
-        path: /metadata/labels
-        value: {kubeflow-helm-delete-cleanup: true}
+        path: /metadata/annotations/helm.sh~1hook-delete-policy
+        value: "hook-failed"
     target:
       kind: MutatingWebhookConfiguration
-
+      name: istio-sidecar-injector
