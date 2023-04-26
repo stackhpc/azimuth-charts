@@ -1,5 +1,5 @@
 #!/bin/bash
-# set -e
+set -e
 if [[ ! $(kustomize version) == *v5.* ]]; then
     echo "Kustomize version 5 or later required for chart build."
     echo "Please install a valid version then try again."
