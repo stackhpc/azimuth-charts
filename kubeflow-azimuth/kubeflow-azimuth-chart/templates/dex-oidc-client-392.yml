@@ -4,6 +4,8 @@ data:
   OIDC_CLIENT_SECRET: cFVCbkJPWTgwU25YZ2ppYlRZTTlaV056WTJ4cmVOR1Fvaw==
 kind: Secret
 metadata:
+  labels:
+    managed-by: kubeflow-azimuth-app
   name: dex-oidc-client
   namespace: auth
 type: Opaque

@@ -3,5 +3,24 @@ resources:
   - zenith-client.yml
   - zenith-reservation.yml
   - profile-cleanup.yml
+  - istio-webhook-cleanup.yml
 
-# patches:
+# Convert istio's sidecar injector webhook resource to a pre-install
+# helm hooks to ensure that all other pods get the sidecar injected as
+# needed. Also add a custom label to allow us to clean them up in a
+# separate pre-delete hook.
+# NOTE: The '~1' in 'helm.sh~1hook' represents a '/' in the path name
+patches:
+  - patch: |-
+      - op: add
+        path: /metadata/annotations/helm.sh~1hook
+        value: "pre-install"
+      - op: add
+        path: /metadata/annotations/helm.sh~1hook-weight
+        value: "0"
+      - op: add
+        path: /metadata/annotations/helm.sh~1hook-delete-policy
+        value: "hook-failed"
+    target:
+      kind: MutatingWebhookConfiguration
+      name: istio-sidecar-injector

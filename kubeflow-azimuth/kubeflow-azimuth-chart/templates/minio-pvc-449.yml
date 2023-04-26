@@ -3,6 +3,7 @@ kind: PersistentVolumeClaim
 metadata:
   labels:
     application-crd-id: kubeflow-pipelines
+    managed-by: kubeflow-azimuth-app
   name: minio-pvc
   namespace: kubeflow
 spec:

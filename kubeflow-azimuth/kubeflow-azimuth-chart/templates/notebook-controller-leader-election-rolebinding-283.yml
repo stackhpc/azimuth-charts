@@ -4,6 +4,7 @@ metadata:
   labels:
     app: notebook-controller
     kustomize.component: notebook-controller
+    managed-by: kubeflow-azimuth-app
   name: notebook-controller-leader-election-rolebinding
   namespace: kubeflow
 roleRef:

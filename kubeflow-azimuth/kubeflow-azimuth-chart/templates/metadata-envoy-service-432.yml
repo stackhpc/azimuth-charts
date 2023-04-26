@@ -4,6 +4,7 @@ metadata:
   labels:
     app: metadata-envoy
     application-crd-id: kubeflow-pipelines
+    managed-by: kubeflow-azimuth-app
   name: metadata-envoy-service
   namespace: kubeflow
 spec:
@@ -14,4 +15,5 @@ spec:
   selector:
     application-crd-id: kubeflow-pipelines
     component: metadata-envoy
+    managed-by: kubeflow-azimuth-app
   type: ClusterIP

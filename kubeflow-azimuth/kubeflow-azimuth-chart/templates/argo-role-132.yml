@@ -3,6 +3,7 @@ kind: Role
 metadata:
   labels:
     application-crd-id: kubeflow-pipelines
+    managed-by: kubeflow-azimuth-app
   name: argo-role
   namespace: kubeflow
 rules:

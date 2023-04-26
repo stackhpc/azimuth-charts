@@ -11,5 +11,6 @@ metadata:
     app.kubernetes.io/component: centraldashboard
     app.kubernetes.io/name: centraldashboard
     kustomize.component: centraldashboard
+    managed-by: kubeflow-azimuth-app
   name: centraldashboard-parameters
   namespace: kubeflow

@@ -81,6 +81,14 @@ with open('kustomize-build-output.yml', 'r') as input_file:
         # These need to be escaped so that helm doesn't try to template them
         # Regex should match everying within a curly bracket that isn't a curly bracket itself
         manifest_str = re.sub(r"{{([^\{\}]*)}}", r'{{ "{{" }}\1{{ "}}" }}', manifest_str)
+
+        # Test hacky workaround for istio issue
+        # manifest_str = re.sub(
+        #     r'"holdApplicationUntilProxyStarts": false,',
+        #     r'"holdApplicationUntilProxyStarts": true,',
+        #     manifest_str,
+        # )
+
         # Write manifest to file
         with open(manifest_path, 'w') as output_file:
             output_file.write(manifest_str)

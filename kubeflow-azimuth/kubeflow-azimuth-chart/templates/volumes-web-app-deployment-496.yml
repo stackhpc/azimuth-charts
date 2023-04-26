@@ -4,6 +4,7 @@ metadata:
   labels:
     app: volumes-web-app
     kustomize.component: volumes-web-app
+    managed-by: kubeflow-azimuth-app
   name: volumes-web-app-deployment
   namespace: kubeflow
 spec:
@@ -12,11 +13,13 @@ spec:
     matchLabels:
       app: volumes-web-app
       kustomize.component: volumes-web-app
+      managed-by: kubeflow-azimuth-app
   template:
     metadata:
       labels:
         app: volumes-web-app
         kustomize.component: volumes-web-app
+        managed-by: kubeflow-azimuth-app
     spec:
       containers:
       - env:

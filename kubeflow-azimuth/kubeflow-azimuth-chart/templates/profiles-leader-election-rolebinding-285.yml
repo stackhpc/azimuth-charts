@@ -3,6 +3,7 @@ kind: RoleBinding
 metadata:
   labels:
     kustomize.component: profiles
+    managed-by: kubeflow-azimuth-app
   name: profiles-leader-election-rolebinding
   namespace: kubeflow
 roleRef:

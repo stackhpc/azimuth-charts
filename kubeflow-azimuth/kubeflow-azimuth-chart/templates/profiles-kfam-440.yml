@@ -3,6 +3,7 @@ kind: Service
 metadata:
   labels:
     kustomize.component: profiles
+    managed-by: kubeflow-azimuth-app
   name: profiles-kfam
   namespace: kubeflow
 spec:
@@ -10,3 +11,4 @@ spec:
   - port: 8081
   selector:
     kustomize.component: profiles
+    managed-by: kubeflow-azimuth-app

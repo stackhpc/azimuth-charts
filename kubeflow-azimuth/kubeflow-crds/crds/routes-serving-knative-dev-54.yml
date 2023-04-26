@@ -6,6 +6,7 @@ metadata:
     app.kubernetes.io/version: 1.8.0
     duck.knative.dev/addressable: "true"
     knative.dev/crd-install: "true"
+    managed-by: kubeflow-azimuth-app
   name: routes.serving.knative.dev
 spec:
   group: serving.knative.dev

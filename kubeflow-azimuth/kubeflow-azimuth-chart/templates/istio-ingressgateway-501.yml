@@ -6,6 +6,7 @@ metadata:
     install.operator.istio.io/owning-resource: unknown
     istio: ingressgateway
     istio.io/rev: default
+    managed-by: kubeflow-azimuth-app
     operator.istio.io/component: IngressGateways
     release: istio
   name: istio-ingressgateway
@@ -16,3 +17,4 @@ spec:
     matchLabels:
       app: istio-ingressgateway
       istio: ingressgateway
+      managed-by: kubeflow-azimuth-app

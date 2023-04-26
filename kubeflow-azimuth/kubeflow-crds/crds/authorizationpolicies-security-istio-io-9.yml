@@ -8,6 +8,7 @@ metadata:
     chart: istio
     heritage: Tiller
     istio: security
+    managed-by: kubeflow-azimuth-app
     release: istio
   name: authorizationpolicies.security.istio.io
 spec:

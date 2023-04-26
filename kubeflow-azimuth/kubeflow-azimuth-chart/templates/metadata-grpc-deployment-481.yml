@@ -4,6 +4,7 @@ metadata:
   labels:
     application-crd-id: kubeflow-pipelines
     component: metadata-grpc-server
+    managed-by: kubeflow-azimuth-app
   name: metadata-grpc-deployment
   namespace: kubeflow
 spec:
@@ -12,11 +13,13 @@ spec:
     matchLabels:
       application-crd-id: kubeflow-pipelines
       component: metadata-grpc-server
+      managed-by: kubeflow-azimuth-app
   template:
     metadata:
       labels:
         application-crd-id: kubeflow-pipelines
         component: metadata-grpc-server
+        managed-by: kubeflow-azimuth-app
     spec:
       containers:
       - args:

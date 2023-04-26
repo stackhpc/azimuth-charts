@@ -3,6 +3,7 @@ kind: ClusterRole
 metadata:
   labels:
     application-crd-id: kubeflow-pipelines
+    managed-by: kubeflow-azimuth-app
     rbac.authorization.k8s.io/aggregate-to-view: "true"
   name: argo-aggregate-to-view
 rules:

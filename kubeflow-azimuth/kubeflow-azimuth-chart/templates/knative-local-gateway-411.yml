@@ -6,6 +6,7 @@ metadata:
     app.kubernetes.io/name: knative-serving
     app.kubernetes.io/version: 1.8.0
     experimental.istio.io/disable-gateway-port-translation: "true"
+    managed-by: kubeflow-azimuth-app
     networking.knative.dev/ingress-provider: istio
   name: knative-local-gateway
   namespace: istio-system
@@ -17,4 +18,5 @@ spec:
   selector:
     app: cluster-local-gateway
     istio: cluster-local-gateway
+    managed-by: kubeflow-azimuth-app
   type: ClusterIP

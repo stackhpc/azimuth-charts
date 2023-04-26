@@ -5,6 +5,7 @@ metadata:
     app.kubernetes.io/component: webhook
     app.kubernetes.io/name: knative-serving
     app.kubernetes.io/version: 1.8.0
+    managed-by: kubeflow-azimuth-app
   name: webhook-pdb
   namespace: knative-serving
 spec:
@@ -12,3 +13,4 @@ spec:
   selector:
     matchLabels:
       app: webhook
+      managed-by: kubeflow-azimuth-app

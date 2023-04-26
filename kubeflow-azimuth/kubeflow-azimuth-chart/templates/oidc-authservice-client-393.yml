@@ -4,6 +4,8 @@ data:
   CLIENT_SECRET: cFVCbkJPWTgwU25YZ2ppYlRZTTlaV056WTJ4cmVOR1Fvaw==
 kind: Secret
 metadata:
+  labels:
+    managed-by: kubeflow-azimuth-app
   name: oidc-authservice-client
   namespace: istio-system
 type: Opaque

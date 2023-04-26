@@ -7,6 +7,7 @@ metadata:
     duck.knative.dev/addressable: "true"
     duck.knative.dev/podspecable: "true"
     knative.dev/crd-install: "true"
+    managed-by: kubeflow-azimuth-app
   name: services.serving.knative.dev
 spec:
   group: serving.knative.dev

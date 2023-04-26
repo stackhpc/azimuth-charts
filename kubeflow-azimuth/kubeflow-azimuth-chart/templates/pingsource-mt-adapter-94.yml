@@ -7,5 +7,6 @@ metadata:
     app.kubernetes.io/version: 1.8.1
     eventing.knative.dev/release: v1.8.1
     kustomize.component: knative
+    managed-by: kubeflow-azimuth-app
   name: pingsource-mt-adapter
   namespace: knative-eventing

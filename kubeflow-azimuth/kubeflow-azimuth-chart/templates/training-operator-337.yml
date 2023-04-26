@@ -3,6 +3,7 @@ kind: ClusterRoleBinding
 metadata:
   labels:
     app: training-operator
+    managed-by: kubeflow-azimuth-app
   name: training-operator
 roleRef:
   apiGroup: rbac.authorization.k8s.io

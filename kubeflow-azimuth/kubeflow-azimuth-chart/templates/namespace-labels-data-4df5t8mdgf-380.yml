@@ -23,5 +23,6 @@ kind: ConfigMap
 metadata:
   labels:
     kustomize.component: profiles
+    managed-by: kubeflow-azimuth-app
   name: namespace-labels-data-4df5t8mdgf
   namespace: kubeflow

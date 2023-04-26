@@ -4,6 +4,7 @@ metadata:
   labels:
     app: volumes-web-app
     kustomize.component: volumes-web-app
+    managed-by: kubeflow-azimuth-app
     run: volumes-web-app
   name: volumes-web-app-service
   namespace: kubeflow
@@ -16,4 +17,5 @@ spec:
   selector:
     app: volumes-web-app
     kustomize.component: volumes-web-app
+    managed-by: kubeflow-azimuth-app
   type: ClusterIP

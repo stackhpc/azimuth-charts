@@ -1,0 +1,15 @@
+apiVersion: security.istio.io/v1beta1
+kind: AuthorizationPolicy
+metadata:
+  labels:
+    managed-by: kubeflow-azimuth-app
+  name: istio-webhook
+  namespace: knative-serving
+spec:
+  action: ALLOW
+  rules:
+  - {}
+  selector:
+    matchLabels:
+      app: net-istio-webhook
+      managed-by: kubeflow-azimuth-app

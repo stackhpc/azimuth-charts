@@ -5,6 +5,7 @@ metadata:
   labels:
     app: notebook-controller
     kustomize.component: notebook-controller
+    managed-by: kubeflow-azimuth-app
   name: notebook-controller-role
 rules:
 - apiGroups:

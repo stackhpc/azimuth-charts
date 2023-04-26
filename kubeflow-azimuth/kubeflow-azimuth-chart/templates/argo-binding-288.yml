@@ -3,6 +3,7 @@ kind: ClusterRoleBinding
 metadata:
   labels:
     application-crd-id: kubeflow-pipelines
+    managed-by: kubeflow-azimuth-app
   name: argo-binding
 roleRef:
   apiGroup: rbac.authorization.k8s.io

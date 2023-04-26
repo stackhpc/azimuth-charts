@@ -100,5 +100,6 @@ metadata:
   labels:
     app: kserve
     app.kubernetes.io/name: kserve
+    managed-by: kubeflow-azimuth-app
   name: inferenceservice-config
   namespace: kubeflow

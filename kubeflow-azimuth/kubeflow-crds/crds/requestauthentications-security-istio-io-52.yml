@@ -8,6 +8,7 @@ metadata:
     chart: istio
     heritage: Tiller
     istio: security
+    managed-by: kubeflow-azimuth-app
     release: istio
   name: requestauthentications.security.istio.io
 spec:

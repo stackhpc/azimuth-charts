@@ -191,5 +191,6 @@ metadata:
     app.kubernetes.io/component: autoscaler
     app.kubernetes.io/name: knative-serving
     app.kubernetes.io/version: 1.8.0
+    managed-by: kubeflow-azimuth-app
   name: config-autoscaler
   namespace: knative-serving

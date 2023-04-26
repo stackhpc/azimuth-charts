@@ -5,6 +5,7 @@ metadata:
     app.kubernetes.io/component: net-istio
     app.kubernetes.io/name: knative-serving
     app.kubernetes.io/version: 1.8.0
+    managed-by: kubeflow-azimuth-app
     networking.knative.dev/ingress-provider: istio
     role: net-istio-webhook
   name: net-istio-webhook
@@ -22,3 +23,4 @@ spec:
     targetPort: 8443
   selector:
     app: net-istio-webhook
+    managed-by: kubeflow-azimuth-app

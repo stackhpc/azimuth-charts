@@ -4,6 +4,7 @@ metadata:
   labels:
     app: tensorboards-web-app
     kustomize.component: tensorboards-web-app
+    managed-by: kubeflow-azimuth-app
     rbac.authorization.kubeflow.org/aggregate-to-kubeflow-edit: "true"
   name: tensorboards-web-app-kubeflow-tensorboard-ui-edit
 rules:

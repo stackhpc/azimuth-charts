@@ -8,6 +8,7 @@ metadata:
     duck.knative.dev/addressable: "true"
     eventing.knative.dev/release: v1.8.1
     kustomize.component: knative
+    managed-by: kubeflow-azimuth-app
   name: serving-addressable-resolver
 rules:
 - apiGroups:

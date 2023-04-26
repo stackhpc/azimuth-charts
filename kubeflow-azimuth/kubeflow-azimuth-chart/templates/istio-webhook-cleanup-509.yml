@@ -1,0 +1,22 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  annotations:
+    helm.sh/hook: post-delete
+    helm.sh/hook-delete-policy: hook-succeeded
+    helm.sh/hook-weight: "0"
+  name: istio-webhook-cleanup
+  namespace: kube-system
+spec:
+  template:
+    spec:
+      containers:
+      - command:
+        - kubectl
+        - delete
+        - mutatingwebhookconfigurations.admissionregistration.k8s.io
+        - istio-sidecar-injector
+        image: gcr.io/google_containers/hyperkube:v1.18.0
+        name: istio-webhook-deleter
+      restartPolicy: Never
+      serviceAccountName: namespace-controller

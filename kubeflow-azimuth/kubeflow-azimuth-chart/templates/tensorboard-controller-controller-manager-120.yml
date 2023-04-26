@@ -4,5 +4,6 @@ metadata:
   labels:
     app: tensorboard-controller
     kustomize.component: tensorboard-controller
+    managed-by: kubeflow-azimuth-app
   name: tensorboard-controller-controller-manager
   namespace: kubeflow

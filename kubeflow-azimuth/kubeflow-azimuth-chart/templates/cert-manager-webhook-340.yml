@@ -7,5 +7,6 @@ metadata:
     app.kubernetes.io/component: webhook
     app.kubernetes.io/instance: cert-manager
     app.kubernetes.io/name: webhook
+    managed-by: kubeflow-azimuth-app
   name: cert-manager-webhook
   namespace: cert-manager

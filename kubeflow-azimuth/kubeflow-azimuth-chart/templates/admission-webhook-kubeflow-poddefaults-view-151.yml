@@ -6,6 +6,7 @@ metadata:
     app.kubernetes.io/component: poddefaults
     app.kubernetes.io/name: poddefaults
     kustomize.component: poddefaults
+    managed-by: kubeflow-azimuth-app
     rbac.authorization.kubeflow.org/aggregate-to-kubeflow-poddefaults-admin: "true"
     rbac.authorization.kubeflow.org/aggregate-to-kubeflow-poddefaults-edit: "true"
     rbac.authorization.kubeflow.org/aggregate-to-kubeflow-view: "true"

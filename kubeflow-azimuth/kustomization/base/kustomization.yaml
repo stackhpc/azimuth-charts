@@ -1,6 +1,10 @@
 resources:
   - "https://github.com/kubeflow/manifests/example/?ref=v1.7.0"
 
+# Add some labels to make it easier to identify relevant resources
+commonLabels:
+  managed-by: kubeflow-azimuth-app
+
 # TODO: Can these patches to disable secure cookies be removed once https/dex/zenith config is added?
 patches:
   - patch: |-

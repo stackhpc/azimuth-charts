@@ -4,6 +4,7 @@ metadata:
   labels:
     app: mysql
     application-crd-id: kubeflow-pipelines
+    managed-by: kubeflow-azimuth-app
   name: mysql
   namespace: kubeflow
 spec:
@@ -11,6 +12,7 @@ spec:
     matchLabels:
       app: mysql
       application-crd-id: kubeflow-pipelines
+      managed-by: kubeflow-azimuth-app
   strategy:
     type: Recreate
   template:
@@ -18,6 +20,7 @@ spec:
       labels:
         app: mysql
         application-crd-id: kubeflow-pipelines
+        managed-by: kubeflow-azimuth-app
     spec:
       containers:
       - args:

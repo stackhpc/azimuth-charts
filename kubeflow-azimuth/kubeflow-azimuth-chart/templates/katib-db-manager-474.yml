@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   labels:
     katib.kubeflow.org/component: db-manager
+    managed-by: kubeflow-azimuth-app
   name: katib-db-manager
   namespace: kubeflow
 spec:
@@ -10,12 +11,14 @@ spec:
   selector:
     matchLabels:
       katib.kubeflow.org/component: db-manager
+      managed-by: kubeflow-azimuth-app
   template:
     metadata:
       annotations:
         sidecar.istio.io/inject: "false"
       labels:
         katib.kubeflow.org/component: db-manager
+        managed-by: kubeflow-azimuth-app
     spec:
       containers:
       - command:

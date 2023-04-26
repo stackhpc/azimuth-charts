@@ -10,5 +10,6 @@ metadata:
   labels:
     app: tensorboards-web-app
     kustomize.component: tensorboards-web-app
+    managed-by: kubeflow-azimuth-app
   name: tensorboards-web-app-parameters-9cdtm8m796
   namespace: kubeflow

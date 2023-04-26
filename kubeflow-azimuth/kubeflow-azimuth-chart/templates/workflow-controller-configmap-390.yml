@@ -39,5 +39,6 @@ kind: ConfigMap
 metadata:
   labels:
     application-crd-id: kubeflow-pipelines
+    managed-by: kubeflow-azimuth-app
   name: workflow-controller-configmap
   namespace: kubeflow

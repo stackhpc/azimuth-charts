@@ -9,6 +9,7 @@ metadata:
     app.kubernetes.io/component: poddefaults
     app.kubernetes.io/name: poddefaults
     kustomize.component: poddefaults
+    managed-by: kubeflow-azimuth-app
   name: poddefaults.kubeflow.org
 spec:
   group: kubeflow.org

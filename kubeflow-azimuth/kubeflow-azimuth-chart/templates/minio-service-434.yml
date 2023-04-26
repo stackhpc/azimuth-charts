@@ -3,6 +3,7 @@ kind: Service
 metadata:
   labels:
     application-crd-id: kubeflow-pipelines
+    managed-by: kubeflow-azimuth-app
   name: minio-service
   namespace: kubeflow
 spec:
@@ -14,3 +15,4 @@ spec:
   selector:
     app: minio
     application-crd-id: kubeflow-pipelines
+    managed-by: kubeflow-azimuth-app

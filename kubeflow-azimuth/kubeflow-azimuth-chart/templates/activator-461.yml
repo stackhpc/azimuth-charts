@@ -5,12 +5,14 @@ metadata:
     app.kubernetes.io/component: activator
     app.kubernetes.io/name: knative-serving
     app.kubernetes.io/version: 1.8.0
+    managed-by: kubeflow-azimuth-app
   name: activator
   namespace: knative-serving
 spec:
   selector:
     matchLabels:
       app: activator
+      managed-by: kubeflow-azimuth-app
       role: activator
   template:
     metadata:
@@ -22,6 +24,7 @@ spec:
         app.kubernetes.io/component: activator
         app.kubernetes.io/name: knative-serving
         app.kubernetes.io/version: 1.8.0
+        managed-by: kubeflow-azimuth-app
         role: activator
     spec:
       containers:

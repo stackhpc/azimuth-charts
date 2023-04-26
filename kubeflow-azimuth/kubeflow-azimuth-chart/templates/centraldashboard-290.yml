@@ -6,6 +6,7 @@ metadata:
     app.kubernetes.io/component: centraldashboard
     app.kubernetes.io/name: centraldashboard
     kustomize.component: centraldashboard
+    managed-by: kubeflow-azimuth-app
   name: centraldashboard
 roleRef:
   apiGroup: rbac.authorization.k8s.io

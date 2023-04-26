@@ -5,6 +5,7 @@ metadata:
     app.kubernetes.io/component: net-istio
     app.kubernetes.io/name: knative-serving
     app.kubernetes.io/version: 1.8.0
+    managed-by: kubeflow-azimuth-app
     networking.knative.dev/ingress-provider: istio
   name: net-istio-webhook
   namespace: knative-serving
@@ -12,6 +13,7 @@ spec:
   selector:
     matchLabels:
       app: net-istio-webhook
+      managed-by: kubeflow-azimuth-app
       role: net-istio-webhook
   template:
     metadata:
@@ -23,6 +25,7 @@ spec:
         app.kubernetes.io/component: net-istio
         app.kubernetes.io/name: knative-serving
         app.kubernetes.io/version: 1.8.0
+        managed-by: kubeflow-azimuth-app
         role: net-istio-webhook
     spec:
       containers:

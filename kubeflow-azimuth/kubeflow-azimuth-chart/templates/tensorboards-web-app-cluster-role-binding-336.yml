@@ -4,6 +4,7 @@ metadata:
   labels:
     app: tensorboards-web-app
     kustomize.component: tensorboards-web-app
+    managed-by: kubeflow-azimuth-app
   name: tensorboards-web-app-cluster-role-binding
 roleRef:
   apiGroup: rbac.authorization.k8s.io

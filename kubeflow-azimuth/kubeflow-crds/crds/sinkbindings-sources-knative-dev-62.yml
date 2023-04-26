@@ -11,6 +11,7 @@ metadata:
     eventing.knative.dev/source: "true"
     knative.dev/crd-install: "true"
     kustomize.component: knative
+    managed-by: kubeflow-azimuth-app
   name: sinkbindings.sources.knative.dev
 spec:
   group: sources.knative.dev

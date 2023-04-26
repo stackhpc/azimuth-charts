@@ -7,6 +7,7 @@ metadata:
     app.kubernetes.io/version: 1.8.1
     eventing.knative.dev/release: v1.8.1
     kustomize.component: knative
+    managed-by: kubeflow-azimuth-app
   name: pingsource-mt-adapter
   namespace: knative-eventing
 spec:
@@ -17,6 +18,7 @@ spec:
       app.kubernetes.io/name: knative-eventing
       eventing.knative.dev/source: ping-source-controller
       kustomize.component: knative
+      managed-by: kubeflow-azimuth-app
       sources.knative.dev/role: adapter
   template:
     metadata:
@@ -27,6 +29,7 @@ spec:
         eventing.knative.dev/release: v1.8.1
         eventing.knative.dev/source: ping-source-controller
         kustomize.component: knative
+        managed-by: kubeflow-azimuth-app
         sources.knative.dev/role: adapter
     spec:
       affinity:
@@ -39,6 +42,7 @@ spec:
                   app.kubernetes.io/name: knative-eventing
                   eventing.knative.dev/source: ping-source-controller
                   kustomize.component: knative
+                  managed-by: kubeflow-azimuth-app
                   sources.knative.dev/role: adapter
               topologyKey: kubernetes.io/hostname
             weight: 100

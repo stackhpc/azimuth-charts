@@ -6,6 +6,7 @@ metadata:
   labels:
     application-crd-id: kubeflow-pipelines
     kustomize.component: metacontroller
+    managed-by: kubeflow-azimuth-app
   name: compositecontrollers.metacontroller.k8s.io
 spec:
   group: metacontroller.k8s.io

@@ -1264,6 +1264,7 @@ metadata:
   labels:
     install.operator.istio.io/owning-resource: unknown
     istio.io/rev: default
+    managed-by: kubeflow-azimuth-app
     operator.istio.io/component: Pilot
     release: istio
   name: istio-sidecar-injector

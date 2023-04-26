@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   labels:
     kustomize.component: profiles
+    managed-by: kubeflow-azimuth-app
   name: profiles-deployment
   namespace: kubeflow
 spec:
@@ -10,12 +11,14 @@ spec:
   selector:
     matchLabels:
       kustomize.component: profiles
+      managed-by: kubeflow-azimuth-app
   template:
     metadata:
       annotations:
         sidecar.istio.io/inject: "true"
       labels:
         kustomize.component: profiles
+        managed-by: kubeflow-azimuth-app
     spec:
       containers:
       - command:

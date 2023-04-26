@@ -3,6 +3,7 @@ kind: ClusterRole
 metadata:
   labels:
     app: training-operator
+    managed-by: kubeflow-azimuth-app
   name: training-operator
 rules:
 - apiGroups:

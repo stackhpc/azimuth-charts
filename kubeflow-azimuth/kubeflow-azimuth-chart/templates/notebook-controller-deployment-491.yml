@@ -4,6 +4,7 @@ metadata:
   labels:
     app: notebook-controller
     kustomize.component: notebook-controller
+    managed-by: kubeflow-azimuth-app
   name: notebook-controller-deployment
   namespace: kubeflow
 spec:
@@ -11,11 +12,13 @@ spec:
     matchLabels:
       app: notebook-controller
       kustomize.component: notebook-controller
+      managed-by: kubeflow-azimuth-app
   template:
     metadata:
       labels:
         app: notebook-controller
         kustomize.component: notebook-controller
+        managed-by: kubeflow-azimuth-app
     spec:
       containers:
       - command:

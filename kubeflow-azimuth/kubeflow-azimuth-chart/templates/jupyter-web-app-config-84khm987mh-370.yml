@@ -188,5 +188,6 @@ metadata:
   labels:
     app: jupyter-web-app
     kustomize.component: jupyter-web-app
+    managed-by: kubeflow-azimuth-app
   name: jupyter-web-app-config-84khm987mh
   namespace: kubeflow

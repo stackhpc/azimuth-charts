@@ -6,6 +6,7 @@ metadata:
     app.kubernetes.io/component: kserve-models-web-app
     app.kubernetes.io/name: kserve
     kustomize.component: kserve-models-web-app
+    managed-by: kubeflow-azimuth-app
   name: kserve-models-web-app
   namespace: kubeflow
 spec:
@@ -19,4 +20,5 @@ spec:
     app.kubernetes.io/component: kserve-models-web-app
     app.kubernetes.io/name: kserve
     kustomize.component: kserve-models-web-app
+    managed-by: kubeflow-azimuth-app
   type: ClusterIP

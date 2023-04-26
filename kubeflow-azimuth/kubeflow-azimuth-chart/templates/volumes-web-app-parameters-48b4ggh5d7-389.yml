@@ -10,5 +10,6 @@ metadata:
   labels:
     app: volumes-web-app
     kustomize.component: volumes-web-app
+    managed-by: kubeflow-azimuth-app
   name: volumes-web-app-parameters-48b4ggh5d7
   namespace: kubeflow

@@ -3,6 +3,7 @@ kind: CustomResourceDefinition
 metadata:
   labels:
     application-crd-id: kubeflow-pipelines
+    managed-by: kubeflow-azimuth-app
   name: workflowtemplates.argoproj.io
 spec:
   group: argoproj.io

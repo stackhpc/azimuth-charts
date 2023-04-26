@@ -5,6 +5,7 @@ metadata:
     app.kubernetes.io/component: ml-pipeline
     app.kubernetes.io/name: kubeflow-pipelines
     application-crd-id: kubeflow-pipelines
+    managed-by: kubeflow-azimuth-app
   name: pipeline-runner-binding
   namespace: kubeflow
 roleRef:
