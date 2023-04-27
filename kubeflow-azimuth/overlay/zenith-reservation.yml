@@ -3,11 +3,8 @@ kind: Reservation
 metadata:
   name: kubeflow-azimuth
   namespace: istio-system
-  # annotations:
-  #   azimuth.stackhpc.com/service-label: {{ quote .Values.zenithClient.label }}
-  #   azimuth.stackhpc.com/service-icon-url: {{ .Values.zenithClient.iconUrl }}
-  #   {{- with .Values.zenithClient.description }}
-  #   azimuth.stackhpc.com/service-description: {{ quote . }}
-  #   {{- end }}
+  annotations:
+    azimuth.stackhpc.com/service-label: "KubeFlow UI"
+    azimuth.stackhpc.com/service-icon-url: https://www.kubeflow.org/images/logo.svg
 spec:
   credentialSecretName: kubeflow-azimuth-credential
