@@ -8,5 +8,6 @@ spec:
   upstream:
     serviceName: istio-ingressgateway
     port: 80
-  auth:
-    skip: true
+  # TODO: Re-visit this once keycloak integration is added
+  # auth:
+  #   skip: true
