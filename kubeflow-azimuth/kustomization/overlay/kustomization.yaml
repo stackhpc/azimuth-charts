@@ -24,3 +24,13 @@ patches:
     target:
       kind: MutatingWebhookConfiguration
       name: istio-sidecar-injector
+
+# Convert all HorizontalPodAutoscaler resources to API v2
+# since v2beta2 was removed in Kubernetes 1.26
+  - patch: |-
+      - op: replace
+        path: /apiVersion
+        value: autoscaling/v2
+    target:
+      kind: HorizontalPodAutoscaler
+      version: v2beta2
