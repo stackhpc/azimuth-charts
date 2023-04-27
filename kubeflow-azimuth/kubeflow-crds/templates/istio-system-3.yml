@@ -1,8 +1,0 @@
-apiVersion: v1
-kind: Namespace
-metadata:
-  labels:
-    istio-injection: disabled
-    istio-operator-managed: Reconcile
-    managed-by: kubeflow-azimuth-app
-  name: istio-system
