@@ -6,7 +6,10 @@ def make_helm_chart_template(chart_path, chart_yml, values_yml):
     print('Creating Helm chart at', chart_path.absolute())
     # Remove any existing content at chart path 
     # TODO: Add user confirmation and/or --force cmd line arg for deletion?
-    shutil.rmtree(chart_path)
+    try:
+        shutil.rmtree(chart_path)
+    except FileNotFoundError:
+        pass
     # Create Helm chart directory structure
     chart_path.mkdir()
     (chart_path / 'templates').mkdir()
@@ -19,8 +22,17 @@ def make_helm_chart_template(chart_path, chart_yml, values_yml):
         file.write(values_yml)
 
 
-main_chart_path = Path("../kubeflow-azimuth-chart")
-chart_yml = """---
+crd_chart_path = Path("./kubeflow-crds")
+crd_chart_yml = """---
+apiVersion: v1
+name: kubeflow-crds
+version: 0.0.1
+"""
+crd_values_yml = ""
+make_helm_chart_template(crd_chart_path, crd_chart_yml, crd_values_yml)
+
+main_chart_path = Path("./kubeflow-azimuth-chart")
+chart_yml = f"""---
 apiVersion: v1
 name: kubeflow-azimuth
 version: 0.0.2
@@ -29,11 +41,16 @@ description: A KubeFlow machine learning environment
 dependencies:
   - name: kubeflow-crds
     version: ">=0-0"
-    repository: file://../kubeflow-crds
+    repository: file://{crd_chart_path}
 annotations:
   azimuth.stackhpc.com/label: KubeFlow
 """
-values_yml = ""
+values_yml = """
+zenithClient:
+  iconUrl: https://www.kubeflow.org/images/logo.svg
+  description:
+  label: "KubeFlow UI"
+"""
 make_helm_chart_template(main_chart_path, chart_yml, values_yml)
 
 # Write values schema to be consumed by Azimuth UI
@@ -47,16 +64,6 @@ json_schema = """
 """
 with open(main_chart_path / 'values.schema.json', 'w') as schema_file:
     schema_file.write(json_schema)
-
-
-crd_chart_path = Path("../kubeflow-crds")
-crd_chart_yml = """---
-apiVersion: v1
-name: kubeflow-crds
-version: 0.0.1
-"""
-crd_values_yml = ""
-make_helm_chart_template(crd_chart_path, crd_chart_yml, crd_values_yml)
 
 # Write manifest files
 with open('kustomize-build-output.yml', 'r') as input_file:

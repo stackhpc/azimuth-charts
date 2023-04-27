@@ -3,4 +3,4 @@
 # Ignore `helm dependency build` output
 kubeflow-azimuth/kubeflow-azimuth-chart/**
 kubeflow-azimuth/kubeflow-crds/**
-kubeflow-azimuth/kustomization/kustomize-build-output.yml
+kubeflow-azimuth/kustomize-build-output.yml
