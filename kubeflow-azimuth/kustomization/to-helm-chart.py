@@ -86,14 +86,9 @@ with open('kustomize-build-output.yml', 'r') as input_file:
         manifest_str = re.sub(r"{{([^\{\}]*)}}", r'{{ "{{" }}\1{{ "}}" }}', manifest_str)
 
         # Write manifest to file
+        # NOTE: Avoid using yaml.dumps here as it doesn't properly preserve multi-line
+        # yaml blocks (e.g. key: | \n ...) and instead replaces all newlines with '\n' 
+        # inside blocks, making final manifests less readable.
         with open(manifest_path, 'w') as output_file:
             output_file.write(manifest_str)
         
-        # NOTE: Alternative version below using yaml.dumps doesn't preserve yaml blocks (e.g. key: | ...)
-        # properly replaces all newlines with \n inside blocks, making final manifests less readable
-        
-        # yaml_str = yaml.dump(manifest, indent=2)
-        # yaml_str = re.sub(r"{{ (.*) }}", r'{{ "{{" }} \1 {{ "}}" }}', yaml_str)
-        # # Write manifest to file
-        # with open(manifest_path, 'w') as output_file:
-        #     output_file.write(yaml_str)
