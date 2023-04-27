@@ -41,7 +41,7 @@ description: A KubeFlow machine learning environment
 dependencies:
   - name: kubeflow-crds
     version: ">=0-0"
-    repository: file://{crd_chart_path}
+    repository: file://../{crd_chart_path}
 annotations:
   azimuth.stackhpc.com/label: KubeFlow
 """
