@@ -45,12 +45,7 @@ dependencies:
 annotations:
   azimuth.stackhpc.com/label: KubeFlow
 """
-values_yml = """
-zenithClient:
-  iconUrl: https://www.kubeflow.org/images/logo.svg
-  description:
-  label: "KubeFlow UI"
-"""
+values_yml = ""
 make_helm_chart_template(main_chart_path, chart_yml, values_yml)
 
 # Write values schema to be consumed by Azimuth UI
