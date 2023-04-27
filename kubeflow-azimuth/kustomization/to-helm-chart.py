@@ -1,7 +1,7 @@
 import yaml, re, shutil
 from pathlib import Path
 
-def make_helm_chart_template(chart_path, chart_yml):
+def make_helm_chart_template(chart_path, chart_yml, values_yml):
     """Creates a template directory structure for a helm chart"""
     print('Creating Helm chart at', chart_path.absolute())
     # Remove any existing content at chart path 
@@ -11,10 +11,12 @@ def make_helm_chart_template(chart_path, chart_yml):
     chart_path.mkdir()
     (chart_path / 'templates').mkdir()
     (chart_path / 'crds').mkdir()
-    (chart_path / 'values.yaml').touch()
     # Write Chart.yaml
     with open(chart_path / 'Chart.yaml', 'w') as file:
         file.write(chart_yml)
+    # Write values.yaml
+    with open(chart_path / 'values.yaml', 'w') as file:
+        file.write(values_yml)
 
 
 main_chart_path = Path("../kubeflow-azimuth-chart")
@@ -31,7 +33,8 @@ dependencies:
 annotations:
   azimuth.stackhpc.com/label: KubeFlow
 """
-make_helm_chart_template(main_chart_path, chart_yml)
+values_yml = ""
+make_helm_chart_template(main_chart_path, chart_yml, values_yml)
 
 # Write values schema to be consumed by Azimuth UI
 json_schema = """
@@ -52,8 +55,8 @@ apiVersion: v1
 name: kubeflow-crds
 version: 0.0.1
 """
-make_helm_chart_template(crd_chart_path, crd_chart_yml)
-
+crd_values_yml = ""
+make_helm_chart_template(crd_chart_path, crd_chart_yml, crd_values_yml)
 
 # Write manifest files
 with open('kustomize-build-output.yml', 'r') as input_file:
@@ -81,13 +84,6 @@ with open('kustomize-build-output.yml', 'r') as input_file:
         # These need to be escaped so that helm doesn't try to template them
         # Regex should match everying within a curly bracket that isn't a curly bracket itself
         manifest_str = re.sub(r"{{([^\{\}]*)}}", r'{{ "{{" }}\1{{ "}}" }}', manifest_str)
-
-        # Test hacky workaround for istio issue
-        # manifest_str = re.sub(
-        #     r'"holdApplicationUntilProxyStarts": false,',
-        #     r'"holdApplicationUntilProxyStarts": true,',
-        #     manifest_str,
-        # )
 
         # Write manifest to file
         with open(manifest_path, 'w') as output_file:

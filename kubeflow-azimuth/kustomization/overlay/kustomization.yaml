@@ -5,12 +5,16 @@ resources:
   - profile-cleanup.yml
   - istio-webhook-cleanup.yml
 
-# Convert istio's sidecar injector webhook resource to a pre-install
-# helm hooks to ensure that all other pods get the sidecar injected as
-# needed. Also add a custom label to allow us to clean them up in a
-# separate pre-delete hook.
-# NOTE: The '~1' in 'helm.sh~1hook' represents a '/' in the path name
+# Add some labels to make it easier to identify relevant resources
+commonLabels:
+  managed-by: kubeflow-azimuth-app
+
 patches:
+  # Convert istio's sidecar injector webhook resource to a pre-install
+  # helm hooks to ensure that all other pods get the sidecar injected as
+  # needed. Also add a custom label to allow us to clean them up in a
+  # separate pre-delete hook.
+  # NOTE: The '~1' in 'helm.sh~1hook' represents a '/' in the path name
   - patch: |-
       - op: add
         path: /metadata/annotations/helm.sh~1hook
@@ -25,8 +29,8 @@ patches:
       kind: MutatingWebhookConfiguration
       name: istio-sidecar-injector
 
-# Convert all HorizontalPodAutoscaler resources to API v2
-# since v2beta2 was removed in Kubernetes 1.26
+  # Convert all HorizontalPodAutoscaler resources to API v2
+  # since v2beta2 was removed in Kubernetes 1.26
   - patch: |-
       - op: replace
         path: /apiVersion
