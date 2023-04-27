@@ -5,10 +5,15 @@ metadata:
     helm.sh/hook: post-delete
     helm.sh/hook-delete-policy: hook-succeeded
     helm.sh/hook-weight: "0"
+  labels:
+    managed-by: kubeflow-azimuth-app
   name: profile-namespace-cleanup
   namespace: kube-system
 spec:
   template:
+    metadata:
+      labels:
+        managed-by: kubeflow-azimuth-app
     spec:
       containers:
       - command:
