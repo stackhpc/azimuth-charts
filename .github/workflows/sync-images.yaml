@@ -16,11 +16,11 @@ jobs:
       - name: Check out the repository
         uses: actions/checkout@v3
 
-      - name: Install skopeo
-        run: sudo apt-get -y update && sudo apt-get install -y skopeo
+      # - name: Install skopeo
+      #   run: sudo apt-get -y update && sudo apt-get install -y skopeo
 
       - name: Check skopeo version
-        run: skopeo -v
+        run: docker run quay.io/skopeo/stable:latest -v
 
       # - name: Check component manifest for changes
       #   uses: dorny/paths-filter@v2
