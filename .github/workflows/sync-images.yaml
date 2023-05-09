@@ -9,9 +9,9 @@ jobs:
     strategy:
       matrix:
         component:
-          - skopeo-manifests-daskhub.yml
-          - skopeo-manifests-jupyterhub.yml
-          - skopeo-manifests-kubeflow.yml
+          - skopeo-manifests-daskhub
+          - skopeo-manifests-jupyterhub
+          - skopeo-manifests-kubeflow
     steps:
       - name: Check out the repository
         uses: actions/checkout@v3
