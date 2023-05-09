@@ -15,6 +15,8 @@ jobs:
     steps:
       - name: Check out the repository
         uses: actions/checkout@v3
+        with:
+          ref: skopeo
 
       # - name: Install skopeo
       #   run: sudo apt-get -y update && sudo apt-get install -y skopeo
