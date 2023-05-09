@@ -1,6 +1,7 @@
 name: sync images
 on:
-  workflow_call:
+  # TODO: Decide on triggers
+  push:
 
 jobs:
   sync_images:
