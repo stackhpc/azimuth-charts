@@ -32,7 +32,7 @@ def split_image_url(url: str):
         #       source and destination are the same
         if registry == "ghcr.io":
             return {}
-        repo_plus_version = "".join(parts[1:]) if len(parts) > 1 else parts[0]
+        repo_plus_version = "/".join(parts[1:]) if len(parts) > 1 else parts[0]
         repo, version = repo_plus_version.split(":")
         return {registry: {'images': {repo: [version]}}}
     except Exception as e:

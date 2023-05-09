@@ -10,7 +10,7 @@ k8s.gcr.io:
     - v1.23.10
 registry.k8s.io:
   images:
-    corednscoredns:
+    coredns/coredns:
     - v1.9.3
     etcd:
     - 3.5.6-0
