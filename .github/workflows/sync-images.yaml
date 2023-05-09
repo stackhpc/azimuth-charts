@@ -22,6 +22,18 @@ jobs:
       # - name: Check skopeo version
       #   run: docker run quay.io/skopeo/stable:latest -v
 
+
+      # - name: test
+        # run: docker run --entrypoint /usr/local/env -v /home/ubuntu/azimuth-charts:/home/skopeo alpine:latest ls /test
+        # run: docker run --entrypoint /usr/bin/env -v /home/ubuntu/azimuth-charts:/home/skopeo/azimuth-charts quay.io/skopeo/stable:v1.11 /usr/bin/skopeo sync \
+        #     --src yaml \
+        #     --dest docker \
+        #     --dest-creds ${{ github.actor }}:${{ secrets.GITHUB_TOKEN }} \
+        #     --scoped \
+        #     --all \
+        #     skopeo-manifests/${{ matrix.component }}.yml \
+        #     ghcr.io/stackhpc/azimuth-charts
+
       - name: Check component manifest for changes
         uses: dorny/paths-filter@v2
         id: changes
@@ -30,12 +42,23 @@ jobs:
             manifest:
               - skopeo-manifests/${{ matrix.component }}.yml
 
-      # NOTE: Need skopeo > v1.09 to avoid this issue:
-      # https://github.com/containers/skopeo/issues/1874
+      # # NOTE: Need skopeo > v1.09 to avoid this issue:
+      # # https://github.com/containers/skopeo/issues/1874
+      # - name: Sync component images
+      #   if: ${{ steps.changes.outputs.manifest == 'true' }}
+      #   run: |-
+      #     docker run quay.io/skopeo/stable:v1.11 sync \
+      #       --src yaml \
+      #       --dest docker \
+      #       --dest-creds ${{ github.actor }}:${{ secrets.GITHUB_TOKEN }} \
+      #       --scoped \
+      #       --all \
+      #       skopeo-manifests/${{ matrix.component }}.yml \
+      #       ghcr.io/stackhpc/azimuth-charts
+
+
       - name: Sync component images
-        if: ${{ steps.changes.outputs.manifest == 'true' }}
-        run: |-
-          docker run quay.io/skopeo/stable:v1.11 sync \
+        run: docker run --entrypoint /usr/bin/env -v /home/ubuntu/azimuth-charts:/home/skopeo/azimuth-charts quay.io/skopeo/stable:v1.11 /usr/bin/skopeo sync \
             --src yaml \
             --dest docker \
             --dest-creds ${{ github.actor }}:${{ secrets.GITHUB_TOKEN }} \
