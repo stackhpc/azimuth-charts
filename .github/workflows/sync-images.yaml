@@ -58,11 +58,12 @@ jobs:
 
 
       - name: Sync component images
-        run: docker run --entrypoint /usr/bin/env -v /home/ubuntu/azimuth-charts:/home/skopeo/azimuth-charts quay.io/skopeo/stable:v1.11 /usr/bin/skopeo sync \
+        run: |-
+          docker run --entrypoint /usr/bin/env -v /home/ubuntu/azimuth-charts:/home/skopeo/azimuth-charts quay.io/skopeo/stable:v1.11 /usr/bin/skopeo sync \
             --src yaml \
             --dest docker \
             --dest-creds ${{ github.actor }}:${{ secrets.GITHUB_TOKEN }} \
             --scoped \
             --all \
-            skopeo-manifests/${{ matrix.component }}.yml \
+            /home/skopeo/azimuth-charts/skopeo-manifests/${{ matrix.component }}.yml \
             ghcr.io/stackhpc/azimuth-charts
