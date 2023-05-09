@@ -34,7 +34,7 @@ def split_image_url(url: str):
             return {}
         repo_plus_version = "".join(parts[1:]) if len(parts) > 1 else parts[0]
         repo, version = repo_plus_version.split(":")
-        return {registry: {repo: [version]}}
+        return {registry: {'images': {repo: [version]}}}
     except Exception as e:
         raise Exception(f"Failed to parse url: {url}\nException was:", e)
 

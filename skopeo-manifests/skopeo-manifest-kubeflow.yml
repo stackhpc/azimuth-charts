@@ -1,115 +1,121 @@
 docker.io:
-  istiopilot:
-  - 1.16.0
-  istioproxyv2:
-  - 1.16.0
-  kubeflowkatibkatib-controller:
-  - v0.15.0
-  kubeflowkatibkatib-db-manager:
-  - v0.15.0
-  kubeflowkatibkatib-ui:
-  - v0.15.0
-  kubeflownotebookswgcentraldashboard:
-  - v1.7.0
-  kubeflownotebookswgjupyter-web-app:
-  - v1.7.0
-  kubeflownotebookswgkfam:
-  - v1.7.0
-  kubeflownotebookswgnotebook-controller:
-  - v1.7.0
-  kubeflownotebookswgpoddefaults-webhook:
-  - v1.7.0
-  kubeflownotebookswgprofile-controller:
-  - v1.7.0
-  kubeflownotebookswgtensorboard-controller:
-  - v1.7.0
-  kubeflownotebookswgtensorboards-web-app:
-  - v1.7.0
-  kubeflownotebookswgvolumes-web-app:
-  - v1.7.0
-  metacontrolleriometacontroller:
-  - v2.0.4
-  mysql:
-  - 8.0.29
-  python:
-  - '3.7'
+  images:
+    istiopilot:
+    - 1.16.0
+    istioproxyv2:
+    - 1.16.0
+    kubeflowkatibkatib-controller:
+    - v0.15.0
+    kubeflowkatibkatib-db-manager:
+    - v0.15.0
+    kubeflowkatibkatib-ui:
+    - v0.15.0
+    kubeflownotebookswgcentraldashboard:
+    - v1.7.0
+    kubeflownotebookswgjupyter-web-app:
+    - v1.7.0
+    kubeflownotebookswgkfam:
+    - v1.7.0
+    kubeflownotebookswgnotebook-controller:
+    - v1.7.0
+    kubeflownotebookswgpoddefaults-webhook:
+    - v1.7.0
+    kubeflownotebookswgprofile-controller:
+    - v1.7.0
+    kubeflownotebookswgtensorboard-controller:
+    - v1.7.0
+    kubeflownotebookswgtensorboards-web-app:
+    - v1.7.0
+    kubeflownotebookswgvolumes-web-app:
+    - v1.7.0
+    metacontrolleriometacontroller:
+    - v2.0.4
+    mysql:
+    - 8.0.29
+    python:
+    - '3.7'
 gcr.io:
-  arriktokubeflowoidc-authservice:
-  - e236439
-  knative-releasesknative.deveventingcmdcontroller@sha256:
-  - 33d78536e9b38dbb2ec2952207b48ff8e05acb48e7d28c2305bd0a0f7156198f
-  knative-releasesknative.deveventingcmdwebhook@sha256:
-  - d217ab7e3452a87f8cbb3b45df65c98b18b8be39551e3e960cd49ea44bb415ba
-  knative-releasesknative.devnet-istiocmdcontroller@sha256:
-  - 2b484d982ef1a5d6ff93c46d3e45f51c2605c2e3ed766e20247d1727eb5ce918
-  knative-releasesknative.devnet-istiocmdwebhook@sha256:
-  - 59b6a46d3b55a03507c76a3afe8a4ee5f1a38f1130fd3d65c9fe57fff583fa8d
-  knative-releasesknative.devservingcmdactivator@sha256:
-  - c3bbf3a96920048869dcab8e133e00f59855670b8a0bbca3d72ced2f512eb5e1
-  knative-releasesknative.devservingcmdautoscaler@sha256:
-  - caae5e34b4cb311ed8551f2778cfca566a77a924a59b775bd516fa8b5e3c1d7f
-  knative-releasesknative.devservingcmdcontroller@sha256:
-  - 38f9557f4d61ec79cc2cdbe76da8df6c6ae5f978a50a2847c22cc61aa240da95
-  knative-releasesknative.devservingcmddomain-mapping-webhook@sha256:
-  - a4ba0076df2efaca2eed561339e21b3a4ca9d90167befd31de882bff69639470
-  knative-releasesknative.devservingcmddomain-mapping@sha256:
-  - 763d648bf1edee2b4471b0e211dbc53ba2d28f92e4dae28ccd39af7185ef2c96
-  knative-releasesknative.devservingcmdwebhook@sha256:
-  - bc13765ba4895c0fa318a065392d05d0adc0e20415c739e0aacb3f56140bf9ae
-  kubebuilderkube-rbac-proxy:
-  - v0.8.0
-  - v0.13.1
-  ml-pipelineapi-server:
-  - 2.0.0-alpha.7
-  ml-pipelinecache-server:
-  - 2.0.0-alpha.7
-  ml-pipelinefrontend:
-  - 2.0.0-alpha.7
-  ml-pipelinemetadata-envoy:
-  - 2.0.0-alpha.7
-  ml-pipelinemetadata-writer:
-  - 2.0.0-alpha.7
-  ml-pipelineminio:
-  - RELEASE.2019-08-14T20-37-41Z-license-compliance
-  ml-pipelinemysql:
-  - 8.0.26
-  ml-pipelinepersistenceagent:
-  - 2.0.0-alpha.7
-  ml-pipelinescheduledworkflow:
-  - 2.0.0-alpha.7
-  ml-pipelineviewer-crd-controller:
-  - 2.0.0-alpha.7
-  ml-pipelinevisualization-server:
-  - 2.0.0-alpha.7
-  ml-pipelineworkflow-controller:
-  - v3.3.8-license-compliance
-  tfx-oss-publicml_metadata_store_server:
-  - 1.5.0
+  images:
+    arriktokubeflowoidc-authservice:
+    - e236439
+    knative-releasesknative.deveventingcmdcontroller@sha256:
+    - 33d78536e9b38dbb2ec2952207b48ff8e05acb48e7d28c2305bd0a0f7156198f
+    knative-releasesknative.deveventingcmdwebhook@sha256:
+    - d217ab7e3452a87f8cbb3b45df65c98b18b8be39551e3e960cd49ea44bb415ba
+    knative-releasesknative.devnet-istiocmdcontroller@sha256:
+    - 2b484d982ef1a5d6ff93c46d3e45f51c2605c2e3ed766e20247d1727eb5ce918
+    knative-releasesknative.devnet-istiocmdwebhook@sha256:
+    - 59b6a46d3b55a03507c76a3afe8a4ee5f1a38f1130fd3d65c9fe57fff583fa8d
+    knative-releasesknative.devservingcmdactivator@sha256:
+    - c3bbf3a96920048869dcab8e133e00f59855670b8a0bbca3d72ced2f512eb5e1
+    knative-releasesknative.devservingcmdautoscaler@sha256:
+    - caae5e34b4cb311ed8551f2778cfca566a77a924a59b775bd516fa8b5e3c1d7f
+    knative-releasesknative.devservingcmdcontroller@sha256:
+    - 38f9557f4d61ec79cc2cdbe76da8df6c6ae5f978a50a2847c22cc61aa240da95
+    knative-releasesknative.devservingcmddomain-mapping-webhook@sha256:
+    - a4ba0076df2efaca2eed561339e21b3a4ca9d90167befd31de882bff69639470
+    knative-releasesknative.devservingcmddomain-mapping@sha256:
+    - 763d648bf1edee2b4471b0e211dbc53ba2d28f92e4dae28ccd39af7185ef2c96
+    knative-releasesknative.devservingcmdwebhook@sha256:
+    - bc13765ba4895c0fa318a065392d05d0adc0e20415c739e0aacb3f56140bf9ae
+    kubebuilderkube-rbac-proxy:
+    - v0.8.0
+    - v0.13.1
+    ml-pipelineapi-server:
+    - 2.0.0-alpha.7
+    ml-pipelinecache-server:
+    - 2.0.0-alpha.7
+    ml-pipelinefrontend:
+    - 2.0.0-alpha.7
+    ml-pipelinemetadata-envoy:
+    - 2.0.0-alpha.7
+    ml-pipelinemetadata-writer:
+    - 2.0.0-alpha.7
+    ml-pipelineminio:
+    - RELEASE.2019-08-14T20-37-41Z-license-compliance
+    ml-pipelinemysql:
+    - 8.0.26
+    ml-pipelinepersistenceagent:
+    - 2.0.0-alpha.7
+    ml-pipelinescheduledworkflow:
+    - 2.0.0-alpha.7
+    ml-pipelineviewer-crd-controller:
+    - 2.0.0-alpha.7
+    ml-pipelinevisualization-server:
+    - 2.0.0-alpha.7
+    ml-pipelineworkflow-controller:
+    - v3.3.8-license-compliance
+    tfx-oss-publicml_metadata_store_server:
+    - 1.5.0
 kserve:
-  kserve-controller:
-  - v0.10.0
-  models-web-app:
-  - v0.10.0
+  images:
+    kserve-controller:
+    - v0.10.0
+    models-web-app:
+    - v0.10.0
 kubeflow:
-  training-operator:
-  - v1-5a5f92d
+  images:
+    training-operator:
+    - v1-5a5f92d
 quay.io:
-  jetstackcert-manager-cainjector:
-  - v1.10.1
-  jetstackcert-manager-controller:
-  - v1.10.1
-  jetstackcert-manager-webhook:
-  - v1.10.1
+  images:
+    jetstackcert-manager-cainjector:
+    - v1.10.1
+    jetstackcert-manager-controller:
+    - v1.10.1
+    jetstackcert-manager-webhook:
+    - v1.10.1
 registry.k8s.io:
-  corednscoredns:
-  - v1.9.3
-  etcd:
-  - 3.5.6-0
-  kube-apiserver:
-  - v1.26.3
-  kube-controller-manager:
-  - v1.26.3
-  kube-proxy:
-  - v1.26.3
-  kube-scheduler:
-  - v1.26.3
+  images:
+    corednscoredns:
+    - v1.9.3
+    etcd:
+    - 3.5.6-0
+    kube-apiserver:
+    - v1.26.3
+    kube-controller-manager:
+    - v1.26.3
+    kube-proxy:
+    - v1.26.3
+    kube-scheduler:
+    - v1.26.3
