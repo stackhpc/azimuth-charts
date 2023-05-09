@@ -1,0 +1,39 @@
+name: sync images
+on:
+  workflow_call:
+
+jobs:
+  sync_images:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        component:
+          - skopeo-manifests-daskhub.yml
+          - skopeo-manifests-jupyterhub.yml
+          - skopeo-manifests-kubeflow.yml
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v3
+
+      - name: Install skopeo
+        run: sudo apt-get -y update && sudo apt-get install -y skopeo
+
+      - name: Check component manifest for changes
+        uses: dorny/paths-filter@v2
+        id: changes
+        with:
+          filters: |
+            manifest:
+              - skopeo-manifests/${{ matrix.component }}.yml
+
+      - name: Sync component images
+        if: ${{ steps.changes.outputs.manifest == 'true' }}
+        run: |-
+          skopeo sync \
+            --src yaml \
+            --dest docker \
+            --dest-creds ${{ github.actor }}:${{ secrets.GITHUB_TOKEN }} \
+            --scoped \
+            --all \
+            skopeo-manifests/${{ matrix.component }}.yml \
+            ghcr.io/stackhpc/azimuth-charts
