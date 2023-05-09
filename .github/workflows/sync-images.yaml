@@ -35,7 +35,7 @@ jobs:
       - name: Sync component images
         if: ${{ steps.changes.outputs.manifest == 'true' }}
         run: |-
-          docker run quay.io/skopeo/stable:1.11 sync \
+          docker run quay.io/skopeo/stable:v1.11 sync \
             --src yaml \
             --dest docker \
             --dest-creds ${{ github.actor }}:${{ secrets.GITHUB_TOKEN }} \
