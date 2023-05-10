@@ -37,6 +37,7 @@ jobs:
       # so use containerized version
 
       - name: Sync component images
+        if: ${{ steps.changes.outputs.manifest == 'true' }}
         run: |-
           docker run --entrypoint /usr/bin/env \
             -v /home/runner/work/azimuth-charts/azimuth-charts:/home/skopeo/azimuth-charts \
