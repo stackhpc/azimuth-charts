@@ -18,6 +18,11 @@ jobs:
         with:
           ref: skopeo
 
+      - uses: actions/checkout@v2
+      - name: Setup upterm session
+        uses: lhotari/action-upterm@v1
+
+
       # - name: Install skopeo
       #   run: sudo apt-get -y update && sudo apt-get install -y skopeo
 
@@ -63,15 +68,15 @@ jobs:
       #       ghcr.io/stackhpc/azimuth-charts
 
 
-      - name: Sync component images
-        run: |-
-          docker run --entrypoint /usr/bin/env -v /home/ubuntu/azimuth-charts:/home/skopeo/azimuth-charts quay.io/skopeo/stable:v1.11 \
-            ls /home/skopeo/azimuth-charts/
-            # /usr/bin/skopeo sync \
-            # --src yaml \
-            # --dest docker \
-            # --dest-creds ${{ github.actor }}:${{ secrets.GITHUB_TOKEN }} \
-            # --scoped \
-            # --all \
-            # /home/skopeo/azimuth-charts/skopeo-manifests/${{ matrix.component }}.yml \
-            # ghcr.io/stackhpc/azimuth-charts
+      # - name: Sync component images
+      #   run: |-
+      #     docker run --entrypoint /usr/bin/env -v /home/ubuntu/azimuth-charts:/home/skopeo/azimuth-charts quay.io/skopeo/stable:v1.11 \
+      #       ls /home/skopeo/azimuth-charts/
+      #       # /usr/bin/skopeo sync \
+      #       # --src yaml \
+      #       # --dest docker \
+      #       # --dest-creds ${{ github.actor }}:${{ secrets.GITHUB_TOKEN }} \
+      #       # --scoped \
+      #       # --all \
+      #       # /home/skopeo/azimuth-charts/skopeo-manifests/${{ matrix.component }}.yml \
+      #       # ghcr.io/stackhpc/azimuth-charts
