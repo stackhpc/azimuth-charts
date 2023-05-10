@@ -66,7 +66,7 @@ jobs:
       - name: Sync component images
         run: |-
           docker run --entrypoint /usr/bin/env -v /home/ubuntu/azimuth-charts:/home/skopeo/azimuth-charts quay.io/skopeo/stable:v1.11 \
-            pwd
+            ls /home/skopeo/azimuth-charts/
             # /usr/bin/skopeo sync \
             # --src yaml \
             # --dest docker \
