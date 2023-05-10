@@ -21,6 +21,9 @@ jobs:
       # - name: Install skopeo
       #   run: sudo apt-get -y update && sudo apt-get install -y skopeo
 
+      # - name: Install skopeo dependencies
+      #   run: sudo apt install libgpgme-dev libassuan-dev libbtrfs-dev libdevmapper-dev pkg-config
+
       # - name: Check skopeo version
       #   run: docker run quay.io/skopeo/stable:latest -v
 
@@ -36,16 +39,17 @@ jobs:
         #     skopeo-manifests/${{ matrix.component }}.yml \
         #     ghcr.io/stackhpc/azimuth-charts
 
-      - name: Check component manifest for changes
-        uses: dorny/paths-filter@v2
-        id: changes
-        with:
-          filters: |
-            manifest:
-              - skopeo-manifests/${{ matrix.component }}.yml
+      # - name: Check component manifest for changes
+      #   uses: dorny/paths-filter@v2
+      #   id: changes
+      #   with:
+      #     filters: |
+      #       manifest:
+      #         - skopeo-manifests/${{ matrix.component }}.yml
 
-      # # NOTE: Need skopeo > v1.09 to avoid this issue:
-      # # https://github.com/containers/skopeo/issues/1874
+      # NOTE: Need skopeo > v1.09 to avoid this issue:
+      # https://github.com/containers/skopeo/issues/1874
+
       # - name: Sync component images
       #   if: ${{ steps.changes.outputs.manifest == 'true' }}
       #   run: |-
@@ -61,11 +65,13 @@ jobs:
 
       - name: Sync component images
         run: |-
-          docker run --entrypoint /usr/bin/env -v /home/ubuntu/azimuth-charts:/home/skopeo/azimuth-charts quay.io/skopeo/stable:v1.11 /usr/bin/skopeo sync \
-            --src yaml \
-            --dest docker \
-            --dest-creds ${{ github.actor }}:${{ secrets.GITHUB_TOKEN }} \
-            --scoped \
-            --all \
-            /home/skopeo/azimuth-charts/skopeo-manifests/${{ matrix.component }}.yml \
-            ghcr.io/stackhpc/azimuth-charts
+          docker run --entrypoint /usr/bin/env -v /home/ubuntu/azimuth-charts:/home/skopeo/azimuth-charts quay.io/skopeo/stable:v1.11 \
+            pwd
+            # /usr/bin/skopeo sync \
+            # --src yaml \
+            # --dest docker \
+            # --dest-creds ${{ github.actor }}:${{ secrets.GITHUB_TOKEN }} \
+            # --scoped \
+            # --all \
+            # /home/skopeo/azimuth-charts/skopeo-manifests/${{ matrix.component }}.yml \
+            # ghcr.io/stackhpc/azimuth-charts
