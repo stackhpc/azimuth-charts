@@ -24,13 +24,13 @@ jobs:
       # - name: Setup upterm session
       #   uses: lhotari/action-upterm@v1
 
-      # - name: Check component manifest for changes
-      #   uses: dorny/paths-filter@v2
-      #   id: changes
-      #   with:
-      #     filters: |
-      #       manifest:
-      #         - skopeo-manifests/${{ matrix.component }}.yml
+      - name: Check component manifest for changes
+        uses: dorny/paths-filter@v2
+        id: changes
+        with:
+          filters: |
+            manifest:
+              - skopeo-manifests/${{ matrix.component }}.yml
 
       # NOTE: Need skopeo > v1.09 to avoid this issue:
       # https://github.com/containers/skopeo/issues/1874
