@@ -38,26 +38,26 @@ gcr.io:
   images:
     arrikto/kubeflow/oidc-authservice:
     - e236439
-    knative-releases/knative.dev/eventing/cmd/controller@sha256:
-    - 33d78536e9b38dbb2ec2952207b48ff8e05acb48e7d28c2305bd0a0f7156198f
-    knative-releases/knative.dev/eventing/cmd/webhook@sha256:
-    - d217ab7e3452a87f8cbb3b45df65c98b18b8be39551e3e960cd49ea44bb415ba
-    knative-releases/knative.dev/net-istio/cmd/controller@sha256:
-    - 2b484d982ef1a5d6ff93c46d3e45f51c2605c2e3ed766e20247d1727eb5ce918
-    knative-releases/knative.dev/net-istio/cmd/webhook@sha256:
-    - 59b6a46d3b55a03507c76a3afe8a4ee5f1a38f1130fd3d65c9fe57fff583fa8d
-    knative-releases/knative.dev/serving/cmd/activator@sha256:
-    - c3bbf3a96920048869dcab8e133e00f59855670b8a0bbca3d72ced2f512eb5e1
-    knative-releases/knative.dev/serving/cmd/autoscaler@sha256:
-    - caae5e34b4cb311ed8551f2778cfca566a77a924a59b775bd516fa8b5e3c1d7f
-    knative-releases/knative.dev/serving/cmd/controller@sha256:
-    - 38f9557f4d61ec79cc2cdbe76da8df6c6ae5f978a50a2847c22cc61aa240da95
-    knative-releases/knative.dev/serving/cmd/domain-mapping-webhook@sha256:
-    - a4ba0076df2efaca2eed561339e21b3a4ca9d90167befd31de882bff69639470
-    knative-releases/knative.dev/serving/cmd/domain-mapping@sha256:
-    - 763d648bf1edee2b4471b0e211dbc53ba2d28f92e4dae28ccd39af7185ef2c96
-    knative-releases/knative.dev/serving/cmd/webhook@sha256:
-    - bc13765ba4895c0fa318a065392d05d0adc0e20415c739e0aacb3f56140bf9ae
+    knative-releases/knative.dev/eventing/cmd/controller:
+    - sha256:33d78536e9b38dbb2ec2952207b48ff8e05acb48e7d28c2305bd0a0f7156198f
+    knative-releases/knative.dev/eventing/cmd/webhook:
+    - sha256:d217ab7e3452a87f8cbb3b45df65c98b18b8be39551e3e960cd49ea44bb415ba
+    knative-releases/knative.dev/net-istio/cmd/controller:
+    - sha256:2b484d982ef1a5d6ff93c46d3e45f51c2605c2e3ed766e20247d1727eb5ce918
+    knative-releases/knative.dev/net-istio/cmd/webhook:
+    - sha256:59b6a46d3b55a03507c76a3afe8a4ee5f1a38f1130fd3d65c9fe57fff583fa8d
+    knative-releases/knative.dev/serving/cmd/activator:
+    - sha256:c3bbf3a96920048869dcab8e133e00f59855670b8a0bbca3d72ced2f512eb5e1
+    knative-releases/knative.dev/serving/cmd/autoscaler:
+    - sha256:caae5e34b4cb311ed8551f2778cfca566a77a924a59b775bd516fa8b5e3c1d7f
+    knative-releases/knative.dev/serving/cmd/controller:
+    - sha256:38f9557f4d61ec79cc2cdbe76da8df6c6ae5f978a50a2847c22cc61aa240da95
+    knative-releases/knative.dev/serving/cmd/domain-mapping:
+    - sha256:763d648bf1edee2b4471b0e211dbc53ba2d28f92e4dae28ccd39af7185ef2c96
+    knative-releases/knative.dev/serving/cmd/domain-mapping-webhook:
+    - sha256:a4ba0076df2efaca2eed561339e21b3a4ca9d90167befd31de882bff69639470
+    knative-releases/knative.dev/serving/cmd/webhook:
+    - sha256:bc13765ba4895c0fa318a065392d05d0adc0e20415c739e0aacb3f56140bf9ae
     kubebuilder/kube-rbac-proxy:
     - v0.8.0
     - v0.13.1
