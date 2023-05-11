@@ -50,12 +50,10 @@ jobs:
               /home/skopeo/azimuth-charts/skopeo-manifests/${{ matrix.component }}.yml \
               ghcr.io/stackhpc/azimuth-charts &> sync-output.txt
 
-      - name: Test previous step output capture
-        run: cat sync-output.txt
-
-      # - name: Check output for any sync errors
-      #   run: |
-      #     if [[ $(grep "level=error" ${{ steps.image-sync.outputs }} | wc -l) -gt 0 ]]; then
-      #       echo "Error messages found in output of sync"
-      #       exit 1
-      #     fi
+      - name: Check output for any sync errors
+        run: |
+          ERR_COUNT=$(grep "level=error" sync-output.txt | wc -l)
+          if [[ $ERR_COUNT -gt 0 ]]; then
+            echo "Error messages found in output of image sync step"
+            exit 1
+          fi
