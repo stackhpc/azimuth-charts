@@ -48,7 +48,7 @@ jobs:
               --scoped \
               --all \
               /home/skopeo/azimuth-charts/skopeo-manifests/${{ matrix.component }}.yml \
-              ghcr.io/stackhpc/azimuth-charts &> sync-output.txt
+              ghcr.io/stackhpc/azimuth-charts | tee sync-output.txt
 
       - name: Check output for any sync errors
         run: |
