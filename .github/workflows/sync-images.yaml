@@ -36,7 +36,7 @@ jobs:
 
       - name: Sync component images
         id: image-sync
-        # if: ${{ steps.changes.outputs.manifest == 'true' }}
+        if: ${{ steps.changes.outputs.manifest == 'true' }}
         run: |-
           docker run --entrypoint /usr/bin/env \
             -v $GITHUB_WORKSPACE:/home/skopeo/azimuth-charts \
