@@ -48,12 +48,12 @@ jobs:
               --scoped \
               --all \
               /home/skopeo/azimuth-charts/skopeo-manifests/${{ matrix.component }}.yml \
-              ghcr.io/stackhpc/azimuth-charts | tee sync-output.txt
+              ghcr.io/stackhpc/azimuth-charts |& tee sync-output.txt
 
       - name: Check output for any sync errors
         run: |
           ERR_COUNT=$(grep "level=error" sync-output.txt | wc -l)
           if [[ $ERR_COUNT -gt 0 ]]; then
-            echo "Error messages found in output of image sync step"
+            echo "Found $ERR_COUNT logged error messages in output of image sync step"
             exit 1
           fi
