@@ -8,6 +8,10 @@ kubectl get pods --all-namespaces -o jsonpath="{.items[*].spec.containers[*].ima
 The script will then generate an output file named skopeo-manifest-{FILE_PATH}.yaml which 
 is formatted such that it can be fed into the sync-images.yml github workflow to copy any 
 required images into a dedicated container registry.
+
+NOTE: In order to capture the images used by the deployed platforms (e.g. the jupyter 
+notebook container) the relevant platform components should be deployed cluster before 
+running this script.
 """
 
 import sys, yaml
