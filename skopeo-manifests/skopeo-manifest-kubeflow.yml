@@ -97,6 +97,18 @@ kubeflow:
   images:
     training-operator:
     - v1-5a5f92d
+kubeflownotebookswg:
+  images:
+    jupyter-pytorch-cuda-full:
+    - v1.7.0
+    jupyter-pytorch-full:
+    - v1.7.0
+    jupyter-scipy:
+    - v1.7.0
+    jupyter-tensorflow-cuda-full:
+    - v1.7.0
+    jupyter-tensorflow-full:
+    - v1.7.0
 quay.io:
   images:
     jetstack/cert-manager-cainjector:
@@ -119,3 +131,7 @@ registry.k8s.io:
     - v1.26.3
     kube-scheduler:
     - v1.26.3
+tensorflow:
+  images:
+    tensorflow:
+    - 2.5.1
