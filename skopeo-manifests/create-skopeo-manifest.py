@@ -5,7 +5,7 @@ lists all container images currently in use on the target kubernetes cluster:
 kubectl get pods --all-namespaces -o jsonpath="{.items[*].spec.containers[*].image}" \ 
 | tr -s '[[:space:]]' '\n' | sort | uniq > FILE_PATH
 
-The script will then generate an output file named skopeo-manifest-{FILE_PATH}.yaml which 
+The script will then generate an output file named {FILE_PATH}.yml which 
 is formatted such that it can be fed into the sync-images.yml github workflow to copy any 
 required images into a dedicated container registry.
 
@@ -32,8 +32,7 @@ def split_image_url(url: str):
     try:
         parts = url.strip("\n").split("/")
         registry = parts[0] if len(parts) > 1 else default_registry
-        # TODO: Check if skopeo copy a no-op when
-        #       source and destination are the same
+        # Don't copy images that are already in ghcr
         if registry == "ghcr.io":
             return {}
         repo_plus_version = "/".join(parts[1:]) if len(parts) > 1 else parts[0]
@@ -47,7 +46,7 @@ def split_image_url(url: str):
 
 
 def dict_merge_recursive(d1, d2):
-    """update first dict with second recursively"""
+    """Update first dict with second recursively"""
     try:
         for k, v in d1.items():
             if k in d2:
