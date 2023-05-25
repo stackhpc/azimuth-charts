@@ -64,5 +64,5 @@ def dict_merge_recursive(d1, d2):
 # Loop through lines in file and convert to a nested dict
 with open(file_path, "r") as file:
     result_dict = reduce(dict_merge_recursive, map(split_image_url, file.readlines()))
-    with open(f"skopeo-manifest-{file_path.stem}.yml", "w") as out_file:
+    with open(f"{file_path.stem}.yml", "w") as out_file:
         yaml.safe_dump(result_dict, out_file)
