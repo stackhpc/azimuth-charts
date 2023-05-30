@@ -15,10 +15,18 @@ jupyterhub:
     service:
       type: ClusterIP
     chp:
+      # Use stackhpc's ghcr image copy
+      image:
+        name: ghcr.io/stackhpc/azimuth-charts/docker.io/jupyterhub/configurable-http-proxy
+        tag: 4.5.3
       networkPolicy:
         enabled: false
 
   hub:
+    # Use stackhpc's ghcr image copy
+    image:
+      name: ghcr.io/stackhpc/azimuth-charts/docker.io/jupyterhub/k8s-hub
+      tag: 2.0.0
     networkPolicy:
       enabled: false
     extraConfig:
@@ -63,6 +71,10 @@ jupyterhub:
         c.JupyterHub.authenticator_class = RemoteUserAuthenticator
 
   singleuser:
+    # Use stackhpc's ghcr image copy
+    image:
+      name: ghcr.io/stackhpc/azimuth-charts/docker.io/jupyterhub/k8s-singleuser-sample
+      tag: 2.0.0
     networkPolicy:
       enabled: false
     defaultUrl: /lab
