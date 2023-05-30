@@ -1,0 +1,26 @@
+---
+# Delete all MutatingWebhookConfiguration resources with the 
+# kubeflow-helm-delete-cleanup=true label
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: istio-webhook-cleanup
+  namespace: kube-system
+  annotations:
+    helm.sh/hook: post-delete
+    helm.sh/hook-weight: "0"
+    helm.sh/hook-delete-policy: hook-succeeded
+spec:
+  template:
+    spec:
+      containers:
+      - name: istio-webhook-deleter
+        image: gcr.io/google_containers/hyperkube:v1.18.0
+        command:
+        - kubectl
+        - delete
+        - mutatingwebhookconfigurations.admissionregistration.k8s.io
+        - istio-sidecar-injector
+      restartPolicy: Never
+      # TODO: Is there a better service account to use with the required permissions?
+      serviceAccountName: namespace-controller

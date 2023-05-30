@@ -1,0 +1,54 @@
+---
+# Delete kubeflow's custom profile resources
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: profile-cleanup
+  namespace: kube-system
+  annotations:
+    # Note: Needs to be pre-delete otherwise kubeflow profile controller doesn't exist to do deletion
+    helm.sh/hook: pre-delete
+    helm.sh/hook-weight: "0"
+    helm.sh/hook-delete-policy: hook-succeeded
+spec:
+  template:
+    spec:
+      containers:
+      - name: profile-deleter
+        image: gcr.io/google_containers/hyperkube:v1.18.0
+        command:
+        - kubectl
+        - delete
+        - --all 
+        - profiles.kubeflow.org
+      restartPolicy: Never
+      # TODO: Is there a better service account to use with profile delete permissions?
+      #       It seems that kubeflow-namespaced SAs can't reach the kube-api-server and
+      #       other SAs in default/kube-system NS can't delete profile resources
+      serviceAccountName: namespace-controller
+---
+# Delete namespaces with specific label kubeflow-profiles label
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: profile-namespace-cleanup
+  namespace: kube-system
+  annotations:
+    # Note: Needs to be post-delete otherwise kubeflow profile controller re-creates namespace automatically
+    "helm.sh/hook": post-delete
+    "helm.sh/hook-weight": "0"
+    "helm.sh/hook-delete-policy": hook-succeeded
+spec:
+  template:
+    spec:
+      containers:
+      - name: profile-namespace-deleter
+        image: gcr.io/google_containers/hyperkube:v1.18.0
+        command:
+        - kubectl
+        - delete
+        - ns
+        - -l app.kubernetes.io/part-of=kubeflow-profile
+      restartPolicy: Never
+      # TODO: Is there a better service account to use with namespace delete permissions?
+      serviceAccountName: namespace-controller
