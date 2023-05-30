@@ -4,6 +4,12 @@ docker.io:
     - 1.16.0
     istio/proxyv2:
     - 1.16.0
+    kserve/kserve-controller:
+    - v0.10.0
+    kserve/models-web-app:
+    - v0.10.0
+    kubeflow/training-operator:
+    - v1-5a5f92d
     kubeflowkatib/katib-controller:
     - v0.15.0
     kubeflowkatib/katib-db-manager:
@@ -11,6 +17,16 @@ docker.io:
     kubeflowkatib/katib-ui:
     - v0.15.0
     kubeflownotebookswg/centraldashboard:
+    - v1.7.0
+    kubeflownotebookswg/jupyter-pytorch-cuda-full:
+    - v1.7.0
+    kubeflownotebookswg/jupyter-pytorch-full:
+    - v1.7.0
+    kubeflownotebookswg/jupyter-scipy:
+    - v1.7.0
+    kubeflownotebookswg/jupyter-tensorflow-cuda-full:
+    - v1.7.0
+    kubeflownotebookswg/jupyter-tensorflow-full:
     - v1.7.0
     kubeflownotebookswg/jupyter-web-app:
     - v1.7.0
@@ -34,6 +50,8 @@ docker.io:
     - 8.0.29
     python:
     - '3.7'
+    tensorflow/tensorflow:
+    - 2.5.1
 gcr.io:
   images:
     arrikto/kubeflow/oidc-authservice:
@@ -87,28 +105,6 @@ gcr.io:
     - v3.3.8-license-compliance
     tfx-oss-public/ml_metadata_store_server:
     - 1.5.0
-kserve:
-  images:
-    kserve-controller:
-    - v0.10.0
-    models-web-app:
-    - v0.10.0
-kubeflow:
-  images:
-    training-operator:
-    - v1-5a5f92d
-kubeflownotebookswg:
-  images:
-    jupyter-pytorch-cuda-full:
-    - v1.7.0
-    jupyter-pytorch-full:
-    - v1.7.0
-    jupyter-scipy:
-    - v1.7.0
-    jupyter-tensorflow-cuda-full:
-    - v1.7.0
-    jupyter-tensorflow-full:
-    - v1.7.0
 quay.io:
   images:
     jetstack/cert-manager-cainjector:
@@ -131,7 +127,3 @@ registry.k8s.io:
     - v1.26.3
     kube-scheduler:
     - v1.26.3
-tensorflow:
-  images:
-    tensorflow:
-    - 2.5.1

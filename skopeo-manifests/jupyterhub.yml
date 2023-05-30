@@ -1,10 +1,10 @@
-jupyterhub:
+docker.io:
   images:
-    configurable-http-proxy:
+    jupyterhub/configurable-http-proxy:
     - 4.5.3
-    k8s-hub:
+    jupyterhub/k8s-hub:
     - 2.0.0
-    k8s-singleuser-sample:
+    jupyterhub/k8s-singleuser-sample:
     - 2.0.0
 k8s.gcr.io:
   images:

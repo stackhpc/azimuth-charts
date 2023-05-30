@@ -1,23 +1,19 @@
 docker.io:
   images:
+    jupyterhub/configurable-http-proxy:
+    - 4.5.3
+    jupyterhub/k8s-hub:
+    - 2.0.0
+    jupyterhub/k8s-singleuser-sample:
+    - 2.0.0
+    pangeo/base-notebook:
+    - 2022.10.31
     traefik:
     - 2.6.3
-jupyterhub:
-  images:
-    configurable-http-proxy:
-    - 4.5.3
-    k8s-hub:
-    - 2.0.0
-    k8s-singleuser-sample:
-    - 2.0.0
 k8s.gcr.io:
   images:
     kube-scheduler:
     - v1.23.10
-pangeo:
-  images:
-    base-notebook:
-    - 2022.10.31
 registry.k8s.io:
   images:
     coredns/coredns:
