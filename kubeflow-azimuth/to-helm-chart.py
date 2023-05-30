@@ -95,10 +95,6 @@ with open("kustomize-build-output.yml", "r") as input_file:
         )
 
         # Replace mirrored container images with path to stackhpc mirror
-        # for image in MIRRORED_IMAGES:
-        #     manifest_str = re.sub(
-        #         image, "ghcr.io/stackhpc/azimuth-charts/" + image, manifest_str
-        #     )
         for registry, contents in CONTAINER_MANIFEST.items():
             images = contents["images"]
             for image, versions in images.items():
@@ -107,6 +103,7 @@ with open("kustomize-build-output.yml", "r") as input_file:
                     # and rely on k8s defaulting to docker.io, we have to be careful
                     # with the logic here and handle several cases explicitly
 
+                    # Handle discrepancy in sha256 version tag format
                     image_url = (
                         f"{image}:{v}" if "sha256" not in v else f"{image}@sha256:{v}"
                     )
