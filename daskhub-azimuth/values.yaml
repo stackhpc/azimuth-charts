@@ -20,8 +20,9 @@ daskhub:
               handler=option_handler,
           )
     traefik:
-      image: ghcr.io/stackhpc/azimuth-charts/docker.io/library/traefik
-      tag: 2.6.3
+      image: 
+        name: ghcr.io/stackhpc/azimuth-charts/docker.io/library/traefik
+        tag: 2.6.3
 
   jupyterhub:
     prePuller:
