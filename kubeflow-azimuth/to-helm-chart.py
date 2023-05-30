@@ -116,7 +116,9 @@ with open("kustomize-build-output.yml", "r") as input_file:
                         new_prefix = "ghcr.io/stackhpc/azimuth-charts/"
                         # Replace image url in k8s manifest
                         manifest_str = re.sub(
-                            f"{registry}/{image_url}", new_prefix + f"{registry}/{image_url}", manifest_str
+                            f"{registry}/{image_url}",
+                            new_prefix + f"{registry}/{image_url}",
+                            manifest_str,
                         )
                     # Case where default registry is omitted upstream
                     elif image_url in manifest_str:
