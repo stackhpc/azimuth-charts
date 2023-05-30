@@ -18,6 +18,9 @@ jobs:
         id: semver
         uses: stackhpc/github-actions/semver@master
 
+      - name: Build Helm chart from kustomize manifests
+        run: cd kubeflow-azimuth/ && ./build-chart.sh
+
       - name: Publish Helm charts
         uses: stackhpc/github-actions/helm-publish@master
         with:

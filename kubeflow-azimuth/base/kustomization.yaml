@@ -1,0 +1,48 @@
+resources:
+  - "https://github.com/kubeflow/manifests/example/?ref=v1.7.0"
+
+# TODO: Can these patches to disable secure cookies be removed once https/dex/zenith config is added?
+patches:
+  - patch: |-
+      - op: replace
+        path: /data/JWA_APP_SECURE_COOKIES
+        value: "false"
+    target:
+      name: jupyter-web-app-parameters
+      kind: ConfigMap
+      namespace: kubeflow
+      labelSelector:
+        "app=jupyter-web-app, kustomize.component=jupyter-web-app"
+
+  - patch: |-
+      - op: replace
+        path: /data/TWA_APP_SECURE_COOKIES
+        value: "false"
+    target:
+      name: tensorboard-web-app-parameters
+      kind: ConfigMap
+      namespace: kubeflow
+      labelSelector:
+        "app=tensorboard-web-app, kustomize.component=tensorboard-web-app"
+
+  - patch: |-
+      - op: replace
+        path: /data/TWA_APP_SECURE_COOKIES
+        value: "false"
+    target:
+      name: tensorboards-web-app-parameters
+      kind: ConfigMap
+      namespace: kubeflow
+      labelSelector:
+        "app=tensorboards-web-app, kustomize.component=tensorboards-web-app"
+
+  - patch: |-
+      - op: replace
+        path: /data/VWA_APP_SECURE_COOKIES
+        value: "false"
+    target:
+      name: volumes-web-app-parameters
+      kind: ConfigMap
+      namespace: kubeflow
+      labelSelector:
+        "app=volumes-web-app, kustomize.component=volumes-web-app"

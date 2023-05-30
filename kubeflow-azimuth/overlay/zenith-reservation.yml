@@ -1,0 +1,10 @@
+apiVersion: zenith.stackhpc.com/v1alpha1
+kind: Reservation
+metadata:
+  name: kubeflow-azimuth
+  namespace: istio-system
+  annotations:
+    azimuth.stackhpc.com/service-label: "KubeFlow UI"
+    azimuth.stackhpc.com/service-icon-url: https://www.kubeflow.org/images/logo.svg
+spec:
+  credentialSecretName: kubeflow-azimuth-credential

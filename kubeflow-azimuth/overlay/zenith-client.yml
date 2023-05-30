@@ -1,0 +1,13 @@
+apiVersion: zenith.stackhpc.com/v1alpha1
+kind: Client
+metadata:
+  name: kubeflow-azimuth
+  namespace: istio-system
+spec:
+  reservationName: kubeflow-azimuth
+  upstream:
+    serviceName: istio-ingressgateway
+    port: 80
+  # TODO: Re-visit this once keycloak integration is added
+  # auth:
+  #   skip: true
