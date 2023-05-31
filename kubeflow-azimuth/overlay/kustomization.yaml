@@ -139,9 +139,9 @@ images:
   newName: ghcr.io/stackhpc/azimuth-charts/docker.io/kubeflownotebookswg/jupyter-tensorflow-cuda-full
 - name: docker.io/kubeflownotebookswg/jupyter-tensorflow-full
   newName: ghcr.io/stackhpc/azimuth-charts/docker.io/kubeflownotebookswg/jupyter-tensorflow-full
-- name: docker.io/library/mysql
+- name: mysql
   newName: ghcr.io/stackhpc/azimuth-charts/docker.io/library/mysql
-- name: docker.io/library/python
+- name: python
   newName: ghcr.io/stackhpc/azimuth-charts/docker.io/library/python
 - name: quay.io/jetstack/cert-manager-cainjector
   newName: ghcr.io/stackhpc/azimuth-charts/quay.io/jetstack/cert-manager-cainjector
