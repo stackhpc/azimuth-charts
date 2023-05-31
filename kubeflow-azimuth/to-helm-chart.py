@@ -61,11 +61,6 @@ json_schema = """
 with open(main_chart_path / "values.schema.json", "w") as schema_file:
     schema_file.write(json_schema)
 
-# Read the skopeo container manifest so that we can redirect image pulls to
-# stackhpc's ghcr mirror
-with open("../skopeo-manifests/kubeflow.yml", "r") as container_manifests_file:
-    CONTAINER_MANIFEST = yaml.safe_load(container_manifests_file)
-
 # Write manifest files
 with open("kustomize-build-output.yml", "r") as input_file:
     # NOTE: Read input file as str instead of yaml to preserve newlines
@@ -93,41 +88,6 @@ with open("kustomize-build-output.yml", "r") as input_file:
         manifest_str = re.sub(
             r"{{([^\{\}]*)}}", r'{{ "{{" }}\1{{ "}}" }}', manifest_str
         )
-
-        # Replace mirrored container images with path to stackhpc mirror
-        for registry, contents in CONTAINER_MANIFEST.items():
-            images = contents["images"]
-            for image, versions in images.items():
-                for v in versions:
-                    # NOTE: since some container image paths omit the registry
-                    # and rely on k8s defaulting to docker.io, we have to be careful
-                    # with the logic here and handle several cases explicitly
-
-                    # Handle discrepancy in sha256 version tag format
-                    image_url = (
-                        f"{image}:{v}" if "sha256" not in v else f"{image}@sha256:{v}"
-                    )
-
-                    # Case where registry is given upstream
-                    if f"{registry}/{image_url}" in manifest_str:
-                        new_prefix = "ghcr.io/stackhpc/azimuth-charts/"
-                        # Replace image url in k8s manifest
-                        manifest_str = re.sub(
-                            f"{registry}/{image_url}",
-                            new_prefix + f"{registry}/{image_url}",
-                            manifest_str,
-                        )
-                    # Case where default registry is omitted upstream
-                    elif image_url in manifest_str:
-                        new_prefix = "ghcr.io/stackhpc/azimuth-charts/docker.io/"
-                        # NOTE: Skopeo seems to sync these two images to ghcr as docker.io/library/<image>,
-                        # haven't worked out why so handle it here for now
-                        if image in ["python", "mysql"]:
-                            new_prefix += f"library/"
-                        # Replace image url in k8s manifest
-                        manifest_str = re.sub(
-                            image_url, new_prefix + image_url, manifest_str
-                        )
 
         # Write manifest to file
         # NOTE: Avoid using yaml.dumps here as it doesn't properly preserve multi-line
