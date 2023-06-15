@@ -23,7 +23,7 @@ IMAGES=(
 )
 for image in ${IMAGES[@]}; do
     # Backup suffix is required on MacOS
-    sed -i .bak "s|kubeflownotebookswg/${image}|ghcr.io/stackhpc/azimuth-charts/docker.io/kubeflownotebookswg/${image}|g" $OUTPUT_FILE
+    sed -i ".bak" "s|kubeflownotebookswg/${image}|ghcr.io/stackhpc/azimuth-charts/docker.io/kubeflownotebookswg/${image}|g" $OUTPUT_FILE
     # suffix to -i option is mandatory on MacOS sed, remove backup file here
     rm $OUTPUT_FILE.bak
 done
