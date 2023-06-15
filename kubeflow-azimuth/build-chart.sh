@@ -22,7 +22,7 @@ IMAGES=(
     "jupyter-tensorflow-cuda-full"
 )
 for image in ${IMAGES[@]}; do
-    # Handle fact that backup suffix is required on MacOS
+    # Backup suffix is required on MacOS
     sed -i .bak "s|kubeflownotebookswg/${image}|ghcr.io/stackhpc/azimuth-charts/docker.io/kubeflownotebookswg/${image}|g" $OUTPUT_FILE
     # suffix to -i option is mandatory on MacOS sed, remove backup file here
     rm $OUTPUT_FILE.bak
