@@ -4,14 +4,14 @@ entries:
   - annotations:
       azimuth.stackhpc.com/label: binderhub
     apiVersion: v2
-    appVersion: 5f62e7f
-    created: "2023-08-07T12:59:51.015154002Z"
+    appVersion: 5d5f04d
+    created: "2023-08-07T13:07:01.78627745Z"
     dependencies:
     - name: binderhub
       repository: https://jupyterhub.github.io/helm-chart/
       version: 1.0.0-0.dev.git.3170.h84b1db9
     description: Multi-user BinderHub Jupyter notebook environment.
-    digest: 9e15e82e8155f01e892fac7c43ebd153200594eba8b6c0c4c8fd777f39da577d
+    digest: e88d4b389ea768ef96949eec94ee4057c11961eb3344ff37161d9b4b1fcca04a
     icon: https://raw.githubusercontent.com/jupyterhub/binderhub/main/binderhub/static/images/logo_social.png
     keywords:
     - jupyter
@@ -25,7 +25,7 @@ entries:
       azimuth.stackhpc.com/label: binderhub
     apiVersion: v2
     appVersion: 39dfc31
-    created: "2023-08-07T12:59:51.009430314Z"
+    created: "2023-08-07T13:07:01.778027816Z"
     dependencies:
     - name: binderhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -45,7 +45,7 @@ entries:
       azimuth.stackhpc.com/label: binderhub
     apiVersion: v2
     appVersion: 173b6f4
-    created: "2023-08-07T12:59:51.003032927Z"
+    created: "2023-08-07T13:07:01.771504956Z"
     dependencies:
     - name: binderhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -65,7 +65,7 @@ entries:
       azimuth.stackhpc.com/label: binderhub
     apiVersion: v2
     appVersion: 8be817a
-    created: "2023-08-07T12:59:50.997789737Z"
+    created: "2023-08-07T13:07:01.762637759Z"
     dependencies:
     - name: binderhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -85,7 +85,7 @@ entries:
       azimuth.stackhpc.com/label: binderhub
     apiVersion: v2
     appVersion: 9fe2212
-    created: "2023-08-07T12:59:50.991118551Z"
+    created: "2023-08-07T13:07:01.756549443Z"
     dependencies:
     - name: binderhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -105,7 +105,7 @@ entries:
       azimuth.stackhpc.com/label: binderhub
     apiVersion: v2
     appVersion: 9b1f164
-    created: "2023-08-07T12:59:50.986010661Z"
+    created: "2023-08-07T13:07:01.748154093Z"
     dependencies:
     - name: binderhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -125,7 +125,7 @@ entries:
       azimuth.stackhpc.com/label: binderhub
     apiVersion: v2
     appVersion: 0368a49
-    created: "2023-08-07T12:59:50.979658174Z"
+    created: "2023-08-07T13:07:01.741529923Z"
     dependencies:
     - name: binderhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -145,7 +145,7 @@ entries:
       azimuth.stackhpc.com/label: binderhub
     apiVersion: v2
     appVersion: 90ef705
-    created: "2023-08-07T12:59:50.974499484Z"
+    created: "2023-08-07T13:07:01.731792438Z"
     dependencies:
     - name: binderhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -165,7 +165,7 @@ entries:
       azimuth.stackhpc.com/label: binderhub
     apiVersion: v2
     appVersion: d714fa9
-    created: "2023-08-07T12:59:50.968615696Z"
+    created: "2023-08-07T13:07:01.725375589Z"
     dependencies:
     - name: binderhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -186,7 +186,7 @@ entries:
       azimuth.stackhpc.com/label: DaskHub
     apiVersion: v2
     appVersion: 6aa158d
-    created: "2023-08-07T12:59:51.402344419Z"
+    created: "2023-08-07T13:07:02.265277808Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
@@ -206,7 +206,7 @@ entries:
       azimuth.stackhpc.com/label: DaskHub
     apiVersion: v2
     appVersion: 34aac8b
-    created: "2023-08-07T12:59:51.396135232Z"
+    created: "2023-08-07T13:07:02.256715042Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
@@ -226,7 +226,7 @@ entries:
       azimuth.stackhpc.com/label: DaskHub
     apiVersion: v2
     appVersion: 4900d5d
-    created: "2023-08-07T12:59:51.388346547Z"
+    created: "2023-08-07T13:07:02.249288191Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
@@ -246,7 +246,7 @@ entries:
       azimuth.stackhpc.com/label: DaskHub
     apiVersion: v2
     appVersion: 7cc3fcd
-    created: "2023-08-07T12:59:51.38215586Z"
+    created: "2023-08-07T13:07:02.239975149Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
@@ -266,7 +266,7 @@ entries:
       azimuth.stackhpc.com/label: DaskHub
     apiVersion: v2
     appVersion: 295f1ae
-    created: "2023-08-07T12:59:51.374506775Z"
+    created: "2023-08-07T13:07:02.232209763Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
@@ -286,7 +286,7 @@ entries:
       azimuth.stackhpc.com/label: DaskHub
     apiVersion: v2
     appVersion: e8c502e
-    created: "2023-08-07T12:59:51.366893091Z"
+    created: "2023-08-07T13:07:02.222911522Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
@@ -306,7 +306,7 @@ entries:
       azimuth.stackhpc.com/label: DaskHub
     apiVersion: v2
     appVersion: 29b285a
-    created: "2023-08-07T12:59:51.360688103Z"
+    created: "2023-08-07T13:07:02.214221143Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
@@ -326,7 +326,7 @@ entries:
       azimuth.stackhpc.com/label: DaskHub
     apiVersion: v2
     appVersion: d5da99e
-    created: "2023-08-07T12:59:51.353000519Z"
+    created: "2023-08-07T13:07:02.206847997Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
@@ -346,7 +346,7 @@ entries:
       azimuth.stackhpc.com/label: DaskHub
     apiVersion: v2
     appVersion: 807ac24
-    created: "2023-08-07T12:59:51.345995033Z"
+    created: "2023-08-07T13:07:02.197688371Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
@@ -366,7 +366,7 @@ entries:
       azimuth.stackhpc.com/label: DaskHub
     apiVersion: v2
     appVersion: a2a7b1d
-    created: "2023-08-07T12:59:51.646286926Z"
+    created: "2023-08-07T13:07:02.563011129Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
@@ -386,7 +386,7 @@ entries:
       azimuth.stackhpc.com/label: DaskHub
     apiVersion: v2
     appVersion: 354de67
-    created: "2023-08-07T12:59:51.639930539Z"
+    created: "2023-08-07T13:07:02.554320049Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
@@ -406,7 +406,7 @@ entries:
       azimuth.stackhpc.com/label: DaskHub
     apiVersion: v2
     appVersion: 0b639fd
-    created: "2023-08-07T12:59:51.632219554Z"
+    created: "2023-08-07T13:07:02.545199727Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
@@ -426,7 +426,7 @@ entries:
       azimuth.stackhpc.com/label: DaskHub
     apiVersion: v2
     appVersion: 1de9be4
-    created: "2023-08-07T12:59:51.625816067Z"
+    created: "2023-08-07T13:07:02.537971596Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
@@ -446,7 +446,7 @@ entries:
       azimuth.stackhpc.com/label: DaskHub
     apiVersion: v2
     appVersion: ad6a682
-    created: "2023-08-07T12:59:51.618488782Z"
+    created: "2023-08-07T13:07:02.529648354Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
@@ -466,7 +466,7 @@ entries:
       azimuth.stackhpc.com/label: DaskHub
     apiVersion: v2
     appVersion: 32f5dd2
-    created: "2023-08-07T12:59:51.611311997Z"
+    created: "2023-08-07T13:07:02.521672247Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
@@ -486,7 +486,7 @@ entries:
       azimuth.stackhpc.com/label: DaskHub
     apiVersion: v2
     appVersion: 91ad805
-    created: "2023-08-07T12:59:51.605113509Z"
+    created: "2023-08-07T13:07:02.512295498Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
@@ -506,7 +506,7 @@ entries:
       azimuth.stackhpc.com/label: DaskHub
     apiVersion: v2
     appVersion: 96705ca
-    created: "2023-08-07T12:59:51.597789524Z"
+    created: "2023-08-07T13:07:02.505043164Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
@@ -526,7 +526,7 @@ entries:
       azimuth.stackhpc.com/label: DaskHub
     apiVersion: v2
     appVersion: d0d9f05
-    created: "2023-08-07T12:59:51.591485137Z"
+    created: "2023-08-07T13:07:02.496234873Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
@@ -546,7 +546,7 @@ entries:
       azimuth.stackhpc.com/label: DaskHub
     apiVersion: v2
     appVersion: 63982ca
-    created: "2023-08-07T12:59:51.583602453Z"
+    created: "2023-08-07T13:07:02.488834425Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
@@ -566,7 +566,7 @@ entries:
       azimuth.stackhpc.com/label: DaskHub
     apiVersion: v2
     appVersion: d33dadb
-    created: "2023-08-07T12:59:51.576939966Z"
+    created: "2023-08-07T13:07:02.477291357Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
@@ -586,7 +586,7 @@ entries:
       azimuth.stackhpc.com/label: DaskHub
     apiVersion: v2
     appVersion: 8f06178
-    created: "2023-08-07T12:59:51.57014118Z"
+    created: "2023-08-07T13:07:02.469244643Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
@@ -606,7 +606,7 @@ entries:
       azimuth.stackhpc.com/label: DaskHub
     apiVersion: v2
     appVersion: 126b4df
-    created: "2023-08-07T12:59:51.563253594Z"
+    created: "2023-08-07T13:07:02.459844592Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
@@ -626,7 +626,7 @@ entries:
       azimuth.stackhpc.com/label: DaskHub
     apiVersion: v2
     appVersion: d9a0a0f
-    created: "2023-08-07T12:59:51.557028606Z"
+    created: "2023-08-07T13:07:02.448532047Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
@@ -646,7 +646,7 @@ entries:
       azimuth.stackhpc.com/label: DaskHub
     apiVersion: v2
     appVersion: 88af872
-    created: "2023-08-07T12:59:51.548921923Z"
+    created: "2023-08-07T13:07:02.440039588Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
@@ -666,7 +666,7 @@ entries:
       azimuth.stackhpc.com/label: DaskHub
     apiVersion: v2
     appVersion: 0b93f3f
-    created: "2023-08-07T12:59:51.542649835Z"
+    created: "2023-08-07T13:07:02.431580332Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
@@ -686,7 +686,7 @@ entries:
       azimuth.stackhpc.com/label: DaskHub
     apiVersion: v2
     appVersion: e4bf910
-    created: "2023-08-07T12:59:51.535191651Z"
+    created: "2023-08-07T13:07:02.424129379Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
@@ -706,7 +706,7 @@ entries:
       azimuth.stackhpc.com/label: DaskHub
     apiVersion: v2
     appVersion: 5d18b20
-    created: "2023-08-07T12:59:51.528226865Z"
+    created: "2023-08-07T13:07:02.414933248Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
@@ -726,7 +726,7 @@ entries:
       azimuth.stackhpc.com/label: DaskHub
     apiVersion: v2
     appVersion: 17d4d89
-    created: "2023-08-07T12:59:51.522107277Z"
+    created: "2023-08-07T13:07:02.407742021Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
@@ -746,7 +746,7 @@ entries:
       azimuth.stackhpc.com/label: DaskHub
     apiVersion: v2
     appVersion: 3021f82
-    created: "2023-08-07T12:59:51.515187191Z"
+    created: "2023-08-07T13:07:02.398798716Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
@@ -766,7 +766,7 @@ entries:
       azimuth.stackhpc.com/label: DaskHub
     apiVersion: v2
     appVersion: f6c940a
-    created: "2023-08-07T12:59:51.508959504Z"
+    created: "2023-08-07T13:07:02.390118738Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
@@ -786,7 +786,7 @@ entries:
       azimuth.stackhpc.com/label: DaskHub
     apiVersion: v2
     appVersion: 80473c7
-    created: "2023-08-07T12:59:51.501349419Z"
+    created: "2023-08-07T13:07:02.382846902Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
@@ -806,7 +806,7 @@ entries:
       azimuth.stackhpc.com/label: DaskHub
     apiVersion: v2
     appVersion: 50ca070
-    created: "2023-08-07T12:59:51.494738932Z"
+    created: "2023-08-07T13:07:02.373487355Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
@@ -826,7 +826,7 @@ entries:
       azimuth.stackhpc.com/label: DaskHub
     apiVersion: v2
     appVersion: 3ed77fb
-    created: "2023-08-07T12:59:51.487639047Z"
+    created: "2023-08-07T13:07:02.366225121Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
@@ -846,7 +846,7 @@ entries:
       azimuth.stackhpc.com/label: DaskHub
     apiVersion: v2
     appVersion: c156128
-    created: "2023-08-07T12:59:51.480159262Z"
+    created: "2023-08-07T13:07:02.356934781Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
@@ -866,7 +866,7 @@ entries:
       azimuth.stackhpc.com/label: DaskHub
     apiVersion: v2
     appVersion: c9cfd65
-    created: "2023-08-07T12:59:51.473965374Z"
+    created: "2023-08-07T13:07:02.349322611Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
@@ -886,7 +886,7 @@ entries:
       azimuth.stackhpc.com/label: DaskHub
     apiVersion: v2
     appVersion: 5f7d688
-    created: "2023-08-07T12:59:51.465954991Z"
+    created: "2023-08-07T13:07:02.340954164Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
@@ -906,7 +906,7 @@ entries:
       azimuth.stackhpc.com/label: DaskHub
     apiVersion: v2
     appVersion: 6c4e798
-    created: "2023-08-07T12:59:51.458703605Z"
+    created: "2023-08-07T13:07:02.332387998Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
@@ -926,7 +926,7 @@ entries:
       azimuth.stackhpc.com/label: DaskHub
     apiVersion: v2
     appVersion: 47d3179
-    created: "2023-08-07T12:59:51.452438918Z"
+    created: "2023-08-07T13:07:02.32460041Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
@@ -946,7 +946,7 @@ entries:
       azimuth.stackhpc.com/label: DaskHub
     apiVersion: v2
     appVersion: a77d8fb
-    created: "2023-08-07T12:59:51.444755033Z"
+    created: "2023-08-07T13:07:02.313947632Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
@@ -966,7 +966,7 @@ entries:
       azimuth.stackhpc.com/label: DaskHub
     apiVersion: v2
     appVersion: 73be504
-    created: "2023-08-07T12:59:51.438565746Z"
+    created: "2023-08-07T13:07:02.306618291Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
@@ -986,7 +986,7 @@ entries:
       azimuth.stackhpc.com/label: DaskHub
     apiVersion: v2
     appVersion: d736820
-    created: "2023-08-07T12:59:51.430923561Z"
+    created: "2023-08-07T13:07:02.297287647Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
@@ -1006,7 +1006,7 @@ entries:
       azimuth.stackhpc.com/label: DaskHub
     apiVersion: v2
     appVersion: 2e4afcd
-    created: "2023-08-07T12:59:51.423527676Z"
+    created: "2023-08-07T13:07:02.288800488Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
@@ -1026,7 +1026,7 @@ entries:
       azimuth.stackhpc.com/label: DaskHub
     apiVersion: v2
     appVersion: bd8d12f
-    created: "2023-08-07T12:59:51.417372189Z"
+    created: "2023-08-07T13:07:02.28140904Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
@@ -1046,7 +1046,7 @@ entries:
       azimuth.stackhpc.com/label: DaskHub
     apiVersion: v2
     appVersion: c332c8f
-    created: "2023-08-07T12:59:51.409567105Z"
+    created: "2023-08-07T13:07:02.272555345Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
@@ -1066,7 +1066,7 @@ entries:
       azimuth.stackhpc.com/label: DaskHub
     apiVersion: v2
     appVersion: 478b802
-    created: "2023-08-07T12:59:51.333139659Z"
+    created: "2023-08-07T13:07:02.181560939Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
@@ -1086,7 +1086,7 @@ entries:
       azimuth.stackhpc.com/label: DaskHub
     apiVersion: v2
     appVersion: f82a225
-    created: "2023-08-07T12:59:51.326862172Z"
+    created: "2023-08-07T13:07:02.173173991Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
@@ -1106,7 +1106,7 @@ entries:
       azimuth.stackhpc.com/label: DaskHub
     apiVersion: v2
     appVersion: 269700f
-    created: "2023-08-07T12:59:51.319258587Z"
+    created: "2023-08-07T13:07:02.165055569Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
@@ -1126,7 +1126,7 @@ entries:
       azimuth.stackhpc.com/label: DaskHub
     apiVersion: v2
     appVersion: 131a496
-    created: "2023-08-07T12:59:51.312445201Z"
+    created: "2023-08-07T13:07:02.155891142Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
@@ -1144,7 +1144,7 @@ entries:
     version: 0.1.0-dev.0.main.22
   - apiVersion: v2
     appVersion: "3629457"
-    created: "2023-08-07T12:59:51.305348115Z"
+    created: "2023-08-07T13:07:02.148567501Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
@@ -1162,7 +1162,7 @@ entries:
     version: 0.1.0-dev.0.main.21
   - apiVersion: v2
     appVersion: d5dc541
-    created: "2023-08-07T12:59:51.298355029Z"
+    created: "2023-08-07T13:07:02.141269163Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
@@ -1180,7 +1180,7 @@ entries:
     version: 0.1.0-dev.0.main.16
   - apiVersion: v2
     appVersion: b31a1bd
-    created: "2023-08-07T12:59:51.292364742Z"
+    created: "2023-08-07T13:07:02.133272054Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
@@ -1198,7 +1198,7 @@ entries:
     version: 0.1.0-dev.0.main.15
   - apiVersion: v2
     appVersion: ceb448e
-    created: "2023-08-07T12:59:51.285690855Z"
+    created: "2023-08-07T13:07:02.124819799Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
@@ -1216,7 +1216,7 @@ entries:
     version: 0.1.0-dev.0.main.14
   - apiVersion: v2
     appVersion: 1e30334
-    created: "2023-08-07T12:59:51.279512068Z"
+    created: "2023-08-07T13:07:02.117731382Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
@@ -1234,7 +1234,7 @@ entries:
     version: 0.1.0-dev.0.main.13
   - apiVersion: v2
     appVersion: b056bb0
-    created: "2023-08-07T12:59:51.272717181Z"
+    created: "2023-08-07T13:07:02.108743773Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
@@ -1252,7 +1252,7 @@ entries:
     version: 0.1.0-dev.0.main.12
   - apiVersion: v2
     appVersion: a299e54
-    created: "2023-08-07T12:59:51.266916093Z"
+    created: "2023-08-07T13:07:02.101882478Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
@@ -1270,7 +1270,7 @@ entries:
     version: 0.1.0-dev.0.main.11
   - apiVersion: v2
     appVersion: 3c995e6
-    created: "2023-08-07T12:59:51.260008007Z"
+    created: "2023-08-07T13:07:02.093250805Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
@@ -1288,7 +1288,7 @@ entries:
     version: 0.1.0-dev.0.main.10
   - apiVersion: v2
     appVersion: a661645
-    created: "2023-08-07T12:59:51.339769846Z"
+    created: "2023-08-07T13:07:02.19036633Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
@@ -1308,7 +1308,7 @@ entries:
       azimuth.stackhpc.com/label: DaskHub
     apiVersion: v2
     appVersion: e7b373a
-    created: "2023-08-07T12:59:51.254220119Z"
+    created: "2023-08-07T13:07:02.083631332Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
@@ -1328,7 +1328,7 @@ entries:
       azimuth.stackhpc.com/label: DaskHub
     apiVersion: v2
     appVersion: 33ea6e7
-    created: "2023-08-07T12:59:51.246568934Z"
+    created: "2023-08-07T13:07:02.07619538Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
@@ -1348,7 +1348,7 @@ entries:
       azimuth.stackhpc.com/label: DaskHub
     apiVersion: v2
     appVersion: 9d758f6
-    created: "2023-08-07T12:59:51.23866445Z"
+    created: "2023-08-07T13:07:02.06730008Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
@@ -1368,7 +1368,7 @@ entries:
       azimuth.stackhpc.com/label: DaskHub
     apiVersion: v2
     appVersion: 47d73e2
-    created: "2023-08-07T12:59:51.232326163Z"
+    created: "2023-08-07T13:07:02.059073148Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
@@ -1388,7 +1388,7 @@ entries:
       azimuth.stackhpc.com/label: DaskHub
     apiVersion: v2
     appVersion: 5e9865d
-    created: "2023-08-07T12:59:51.226057776Z"
+    created: "2023-08-07T13:07:02.051280259Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
@@ -1408,7 +1408,7 @@ entries:
       azimuth.stackhpc.com/label: DaskHub
     apiVersion: v2
     appVersion: 1c7ba01
-    created: "2023-08-07T12:59:51.218517691Z"
+    created: "2023-08-07T13:07:02.043219744Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
@@ -1428,7 +1428,7 @@ entries:
       azimuth.stackhpc.com/label: DaskHub
     apiVersion: v2
     appVersion: 1dbbdbc
-    created: "2023-08-07T12:59:51.211626605Z"
+    created: "2023-08-07T13:07:02.034263838Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
@@ -1448,7 +1448,7 @@ entries:
       azimuth.stackhpc.com/label: DaskHub
     apiVersion: v2
     appVersion: 1b29dcc
-    created: "2023-08-07T12:59:51.205404717Z"
+    created: "2023-08-07T13:07:02.026941397Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
@@ -1468,7 +1468,7 @@ entries:
       azimuth.stackhpc.com/label: DaskHub
     apiVersion: v2
     appVersion: ca35bb7
-    created: "2023-08-07T12:59:51.197587133Z"
+    created: "2023-08-07T13:07:02.017790671Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
@@ -1488,7 +1488,7 @@ entries:
       azimuth.stackhpc.com/label: DaskHub
     apiVersion: v2
     appVersion: 849c069
-    created: "2023-08-07T12:59:51.190376248Z"
+    created: "2023-08-07T13:07:02.010453829Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
@@ -1508,7 +1508,7 @@ entries:
       azimuth.stackhpc.com/label: DaskHub
     apiVersion: v2
     appVersion: a0223ed
-    created: "2023-08-07T12:59:51.18412796Z"
+    created: "2023-08-07T13:07:02.000929165Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
@@ -1528,7 +1528,7 @@ entries:
       azimuth.stackhpc.com/label: DaskHub
     apiVersion: v2
     appVersion: b6fe5f9
-    created: "2023-08-07T12:59:51.176219976Z"
+    created: "2023-08-07T13:07:01.992216384Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
@@ -1548,7 +1548,7 @@ entries:
       azimuth.stackhpc.com/label: DaskHub
     apiVersion: v2
     appVersion: 9a7870d
-    created: "2023-08-07T12:59:51.169879589Z"
+    created: "2023-08-07T13:07:01.984823936Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
@@ -1568,7 +1568,7 @@ entries:
       azimuth.stackhpc.com/label: DaskHub
     apiVersion: v2
     appVersion: 2f0abdb
-    created: "2023-08-07T12:59:51.162356505Z"
+    created: "2023-08-07T13:07:01.975309274Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
@@ -1588,7 +1588,7 @@ entries:
       azimuth.stackhpc.com/label: DaskHub
     apiVersion: v2
     appVersion: 130dc3d
-    created: "2023-08-07T12:59:51.155744818Z"
+    created: "2023-08-07T13:07:01.967766111Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
@@ -1608,7 +1608,7 @@ entries:
       azimuth.stackhpc.com/label: DaskHub
     apiVersion: v2
     appVersion: 880737d
-    created: "2023-08-07T12:59:51.148607732Z"
+    created: "2023-08-07T13:07:01.957842107Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
@@ -1628,7 +1628,7 @@ entries:
       azimuth.stackhpc.com/label: DaskHub
     apiVersion: v2
     appVersion: f7d9c2f
-    created: "2023-08-07T12:59:51.141746046Z"
+    created: "2023-08-07T13:07:01.949023514Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
@@ -1648,7 +1648,7 @@ entries:
       azimuth.stackhpc.com/label: DaskHub
     apiVersion: v2
     appVersion: 947ebc2
-    created: "2023-08-07T12:59:51.13492526Z"
+    created: "2023-08-07T13:07:01.941225726Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
@@ -1668,7 +1668,7 @@ entries:
       azimuth.stackhpc.com/label: DaskHub
     apiVersion: v2
     appVersion: 3fb4cff
-    created: "2023-08-07T12:59:51.127435275Z"
+    created: "2023-08-07T13:07:01.931624754Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
@@ -1688,7 +1688,7 @@ entries:
       azimuth.stackhpc.com/label: DaskHub
     apiVersion: v2
     appVersion: 2f32bdb
-    created: "2023-08-07T12:59:51.121098188Z"
+    created: "2023-08-07T13:07:01.923995082Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
@@ -1708,7 +1708,7 @@ entries:
       azimuth.stackhpc.com/label: DaskHub
     apiVersion: v2
     appVersion: 51beb5c
-    created: "2023-08-07T12:59:51.113557903Z"
+    created: "2023-08-07T13:07:01.914504822Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
@@ -1728,7 +1728,7 @@ entries:
       azimuth.stackhpc.com/label: DaskHub
     apiVersion: v2
     appVersion: 1e9b755
-    created: "2023-08-07T12:59:51.106220718Z"
+    created: "2023-08-07T13:07:01.906896353Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
@@ -1748,7 +1748,7 @@ entries:
       azimuth.stackhpc.com/label: DaskHub
     apiVersion: v2
     appVersion: 06c52e1
-    created: "2023-08-07T12:59:51.100014931Z"
+    created: "2023-08-07T13:07:01.897718424Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
@@ -1768,7 +1768,7 @@ entries:
       azimuth.stackhpc.com/label: DaskHub
     apiVersion: v2
     appVersion: 9c257b4
-    created: "2023-08-07T12:59:51.092662645Z"
+    created: "2023-08-07T13:07:01.889822925Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
@@ -1788,7 +1788,7 @@ entries:
       azimuth.stackhpc.com/label: DaskHub
     apiVersion: v2
     appVersion: ee0be7d
-    created: "2023-08-07T12:59:51.086457058Z"
+    created: "2023-08-07T13:07:01.879043235Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
@@ -1807,14 +1807,14 @@ entries:
   - annotations:
       azimuth.stackhpc.com/label: DaskHub
     apiVersion: v2
-    appVersion: 5f62e7f
-    created: "2023-08-07T12:59:51.078995873Z"
+    appVersion: 5d5f04d
+    created: "2023-08-07T13:07:01.866174933Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
       version: 2022.11.0
     description: Multi-user Jupyter notebook environment with Dask integration.
-    digest: 28d8622eb8e95352d0500fd4bd5e16d993cdad2ad2528a3962e29eefe4560dcb
+    digest: 9ba67dcba274df3a53bb9c7bce604aec7d168f5eb8a8f84dd91f8d512f45eeeb
     icon: https://docs.dask.org/en/stable/_images/dask_horizontal.svg
     keywords:
     - dask
@@ -1828,7 +1828,7 @@ entries:
       azimuth.stackhpc.com/label: DaskHub
     apiVersion: v2
     appVersion: 39dfc31
-    created: "2023-08-07T12:59:51.072695486Z"
+    created: "2023-08-07T13:07:01.856412445Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
@@ -1848,7 +1848,7 @@ entries:
       azimuth.stackhpc.com/label: DaskHub
     apiVersion: v2
     appVersion: 173b6f4
-    created: "2023-08-07T12:59:51.064487902Z"
+    created: "2023-08-07T13:07:01.847138407Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
@@ -1868,7 +1868,7 @@ entries:
       azimuth.stackhpc.com/label: DaskHub
     apiVersion: v2
     appVersion: 8be817a
-    created: "2023-08-07T12:59:51.057122717Z"
+    created: "2023-08-07T13:07:01.839699555Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
@@ -1888,7 +1888,7 @@ entries:
       azimuth.stackhpc.com/label: DaskHub
     apiVersion: v2
     appVersion: 9fe2212
-    created: "2023-08-07T12:59:51.05095273Z"
+    created: "2023-08-07T13:07:01.830309105Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
@@ -1908,7 +1908,7 @@ entries:
       azimuth.stackhpc.com/label: DaskHub
     apiVersion: v2
     appVersion: 9b1f164
-    created: "2023-08-07T12:59:51.043464845Z"
+    created: "2023-08-07T13:07:01.822001364Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
@@ -1928,7 +1928,7 @@ entries:
       azimuth.stackhpc.com/label: DaskHub
     apiVersion: v2
     appVersion: 0368a49
-    created: "2023-08-07T12:59:51.037209758Z"
+    created: "2023-08-07T13:07:01.812508304Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
@@ -1948,7 +1948,7 @@ entries:
       azimuth.stackhpc.com/label: DaskHub
     apiVersion: v2
     appVersion: 90ef705
-    created: "2023-08-07T12:59:51.029209274Z"
+    created: "2023-08-07T13:07:01.804839428Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
@@ -1968,7 +1968,7 @@ entries:
       azimuth.stackhpc.com/label: DaskHub
     apiVersion: v2
     appVersion: d714fa9
-    created: "2023-08-07T12:59:51.022955986Z"
+    created: "2023-08-07T13:07:01.794292561Z"
     dependencies:
     - name: daskhub
       repository: https://helm.dask.org/
@@ -1989,7 +1989,7 @@ entries:
       azimuth.stackhpc.com/label: JupyterHub
     apiVersion: v2
     appVersion: 6aa158d
-    created: "2023-08-07T12:59:51.948758014Z"
+    created: "2023-08-07T13:07:02.888933901Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -2009,7 +2009,7 @@ entries:
       azimuth.stackhpc.com/label: JupyterHub
     apiVersion: v2
     appVersion: 34aac8b
-    created: "2023-08-07T12:59:51.944579294Z"
+    created: "2023-08-07T13:07:02.884110913Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -2029,7 +2029,7 @@ entries:
       azimuth.stackhpc.com/label: JupyterHub
     apiVersion: v2
     appVersion: 4900d5d
-    created: "2023-08-07T12:59:51.933072638Z"
+    created: "2023-08-07T13:07:02.87835273Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -2049,7 +2049,7 @@ entries:
       azimuth.stackhpc.com/label: JupyterHub
     apiVersion: v2
     appVersion: 7cc3fcd
-    created: "2023-08-07T12:59:51.927951713Z"
+    created: "2023-08-07T13:07:02.873280817Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -2069,7 +2069,7 @@ entries:
       azimuth.stackhpc.com/label: JupyterHub
     apiVersion: v2
     appVersion: 295f1ae
-    created: "2023-08-07T12:59:51.923721793Z"
+    created: "2023-08-07T13:07:02.868318315Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -2089,7 +2089,7 @@ entries:
       azimuth.stackhpc.com/label: JupyterHub
     apiVersion: v2
     appVersion: e8c502e
-    created: "2023-08-07T12:59:51.911558434Z"
+    created: "2023-08-07T13:07:02.860203594Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -2109,7 +2109,7 @@ entries:
       azimuth.stackhpc.com/label: JupyterHub
     apiVersion: v2
     appVersion: 29b285a
-    created: "2023-08-07T12:59:51.907396213Z"
+    created: "2023-08-07T13:07:02.855330001Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -2129,7 +2129,7 @@ entries:
       azimuth.stackhpc.com/label: JupyterHub
     apiVersion: v2
     appVersion: d5da99e
-    created: "2023-08-07T12:59:51.899677876Z"
+    created: "2023-08-07T13:07:02.85027199Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -2149,7 +2149,7 @@ entries:
       azimuth.stackhpc.com/label: JupyterHub
     apiVersion: v2
     appVersion: 807ac24
-    created: "2023-08-07T12:59:51.887186415Z"
+    created: "2023-08-07T13:07:02.843591314Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -2169,7 +2169,7 @@ entries:
       azimuth.stackhpc.com/label: JupyterHub
     apiVersion: v2
     appVersion: a2a7b1d
-    created: "2023-08-07T12:59:52.19095449Z"
+    created: "2023-08-07T13:07:03.081858418Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -2189,7 +2189,7 @@ entries:
       azimuth.stackhpc.com/label: JupyterHub
     apiVersion: v2
     appVersion: 354de67
-    created: "2023-08-07T12:59:52.186558369Z"
+    created: "2023-08-07T13:07:03.076942521Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -2209,7 +2209,7 @@ entries:
       azimuth.stackhpc.com/label: JupyterHub
     apiVersion: v2
     appVersion: 0b639fd
-    created: "2023-08-07T12:59:52.175450115Z"
+    created: "2023-08-07T13:07:03.070739293Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -2229,7 +2229,7 @@ entries:
       azimuth.stackhpc.com/label: JupyterHub
     apiVersion: v2
     appVersion: 1de9be4
-    created: "2023-08-07T12:59:52.171007593Z"
+    created: "2023-08-07T13:07:03.065898003Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -2249,7 +2249,7 @@ entries:
       azimuth.stackhpc.com/label: JupyterHub
     apiVersion: v2
     appVersion: ad6a682
-    created: "2023-08-07T12:59:52.159516538Z"
+    created: "2023-08-07T13:07:03.061062514Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -2269,7 +2269,7 @@ entries:
       azimuth.stackhpc.com/label: JupyterHub
     apiVersion: v2
     appVersion: 32f5dd2
-    created: "2023-08-07T12:59:52.155351717Z"
+    created: "2023-08-07T13:07:03.054357036Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -2289,7 +2289,7 @@ entries:
       azimuth.stackhpc.com/label: JupyterHub
     apiVersion: v2
     appVersion: 91ad805
-    created: "2023-08-07T12:59:52.150828495Z"
+    created: "2023-08-07T13:07:03.049562051Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -2309,7 +2309,7 @@ entries:
       azimuth.stackhpc.com/label: JupyterHub
     apiVersion: v2
     appVersion: 96705ca
-    created: "2023-08-07T12:59:52.140964647Z"
+    created: "2023-08-07T13:07:03.043102297Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -2329,7 +2329,7 @@ entries:
       azimuth.stackhpc.com/label: JupyterHub
     apiVersion: v2
     appVersion: d0d9f05
-    created: "2023-08-07T12:59:52.136629226Z"
+    created: "2023-08-07T13:07:03.035299408Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -2349,7 +2349,7 @@ entries:
       azimuth.stackhpc.com/label: JupyterHub
     apiVersion: v2
     appVersion: 63982ca
-    created: "2023-08-07T12:59:52.125598273Z"
+    created: "2023-08-07T13:07:03.030463919Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -2369,7 +2369,7 @@ entries:
       azimuth.stackhpc.com/label: JupyterHub
     apiVersion: v2
     appVersion: d33dadb
-    created: "2023-08-07T12:59:52.121274352Z"
+    created: "2023-08-07T13:07:03.024730139Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -2389,7 +2389,7 @@ entries:
       azimuth.stackhpc.com/label: JupyterHub
     apiVersion: v2
     appVersion: 8f06178
-    created: "2023-08-07T12:59:52.117054531Z"
+    created: "2023-08-07T13:07:03.018996359Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -2409,7 +2409,7 @@ entries:
       azimuth.stackhpc.com/label: JupyterHub
     apiVersion: v2
     appVersion: 126b4df
-    created: "2023-08-07T12:59:52.107040583Z"
+    created: "2023-08-07T13:07:03.01417057Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -2429,7 +2429,7 @@ entries:
       azimuth.stackhpc.com/label: JupyterHub
     apiVersion: v2
     appVersion: d9a0a0f
-    created: "2023-08-07T12:59:52.101564856Z"
+    created: "2023-08-07T13:07:03.008299076Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -2449,7 +2449,7 @@ entries:
       azimuth.stackhpc.com/label: JupyterHub
     apiVersion: v2
     appVersion: 88af872
-    created: "2023-08-07T12:59:52.093225316Z"
+    created: "2023-08-07T13:07:03.002767817Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -2469,7 +2469,7 @@ entries:
       azimuth.stackhpc.com/label: JupyterHub
     apiVersion: v2
     appVersion: 0b93f3f
-    created: "2023-08-07T12:59:52.082069261Z"
+    created: "2023-08-07T13:07:02.997969631Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -2489,7 +2489,7 @@ entries:
       azimuth.stackhpc.com/label: JupyterHub
     apiVersion: v2
     appVersion: e4bf910
-    created: "2023-08-07T12:59:52.077807141Z"
+    created: "2023-08-07T13:07:02.991676295Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -2509,7 +2509,7 @@ entries:
       azimuth.stackhpc.com/label: JupyterHub
     apiVersion: v2
     appVersion: 5d18b20
-    created: "2023-08-07T12:59:52.073184218Z"
+    created: "2023-08-07T13:07:02.986844506Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -2529,7 +2529,7 @@ entries:
       azimuth.stackhpc.com/label: JupyterHub
     apiVersion: v2
     appVersion: 17d4d89
-    created: "2023-08-07T12:59:52.060888259Z"
+    created: "2023-08-07T13:07:02.982099626Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -2549,7 +2549,7 @@ entries:
       azimuth.stackhpc.com/label: JupyterHub
     apiVersion: v2
     appVersion: 3021f82
-    created: "2023-08-07T12:59:52.056316736Z"
+    created: "2023-08-07T13:07:02.976991309Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -2569,7 +2569,7 @@ entries:
       azimuth.stackhpc.com/label: JupyterHub
     apiVersion: v2
     appVersion: f6c940a
-    created: "2023-08-07T12:59:52.045081182Z"
+    created: "2023-08-07T13:07:02.971370741Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -2589,7 +2589,7 @@ entries:
       azimuth.stackhpc.com/label: JupyterHub
     apiVersion: v2
     appVersion: 80473c7
-    created: "2023-08-07T12:59:52.040712661Z"
+    created: "2023-08-07T13:07:02.96642054Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -2609,7 +2609,7 @@ entries:
       azimuth.stackhpc.com/label: JupyterHub
     apiVersion: v2
     appVersion: 50ca070
-    created: "2023-08-07T12:59:52.036315439Z"
+    created: "2023-08-07T13:07:02.961103602Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -2629,7 +2629,7 @@ entries:
       azimuth.stackhpc.com/label: JupyterHub
     apiVersion: v2
     appVersion: 3ed77fb
-    created: "2023-08-07T12:59:52.028661302Z"
+    created: "2023-08-07T13:07:02.955377823Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -2649,7 +2649,7 @@ entries:
       azimuth.stackhpc.com/label: JupyterHub
     apiVersion: v2
     appVersion: c156128
-    created: "2023-08-07T12:59:52.021590568Z"
+    created: "2023-08-07T13:07:02.950525932Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -2669,7 +2669,7 @@ entries:
       azimuth.stackhpc.com/label: JupyterHub
     apiVersion: v2
     appVersion: c9cfd65
-    created: "2023-08-07T12:59:52.017341647Z"
+    created: "2023-08-07T13:07:02.945363109Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -2689,7 +2689,7 @@ entries:
       azimuth.stackhpc.com/label: JupyterHub
     apiVersion: v2
     appVersion: 5f7d688
-    created: "2023-08-07T12:59:52.006957797Z"
+    created: "2023-08-07T13:07:02.938680433Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -2709,7 +2709,7 @@ entries:
       azimuth.stackhpc.com/label: JupyterHub
     apiVersion: v2
     appVersion: 6c4e798
-    created: "2023-08-07T12:59:52.002631876Z"
+    created: "2023-08-07T13:07:02.933919352Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -2729,7 +2729,7 @@ entries:
       azimuth.stackhpc.com/label: JupyterHub
     apiVersion: v2
     appVersion: 47d3179
-    created: "2023-08-07T12:59:51.991988424Z"
+    created: "2023-08-07T13:07:02.928432497Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -2749,7 +2749,7 @@ entries:
       azimuth.stackhpc.com/label: JupyterHub
     apiVersion: v2
     appVersion: a77d8fb
-    created: "2023-08-07T12:59:51.984821589Z"
+    created: "2023-08-07T13:07:02.922493096Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -2769,7 +2769,7 @@ entries:
       azimuth.stackhpc.com/label: JupyterHub
     apiVersion: v2
     appVersion: 73be504
-    created: "2023-08-07T12:59:51.973702835Z"
+    created: "2023-08-07T13:07:02.917720113Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -2789,7 +2789,7 @@ entries:
       azimuth.stackhpc.com/label: JupyterHub
     apiVersion: v2
     appVersion: d736820
-    created: "2023-08-07T12:59:51.969464015Z"
+    created: "2023-08-07T13:07:02.909755907Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -2809,7 +2809,7 @@ entries:
       azimuth.stackhpc.com/label: JupyterHub
     apiVersion: v2
     appVersion: 2e4afcd
-    created: "2023-08-07T12:59:51.965194994Z"
+    created: "2023-08-07T13:07:02.90494232Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -2829,7 +2829,7 @@ entries:
       azimuth.stackhpc.com/label: JupyterHub
     apiVersion: v2
     appVersion: bd8d12f
-    created: "2023-08-07T12:59:51.96034747Z"
+    created: "2023-08-07T13:07:02.899927613Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -2849,7 +2849,7 @@ entries:
       azimuth.stackhpc.com/label: JupyterHub
     apiVersion: v2
     appVersion: c332c8f
-    created: "2023-08-07T12:59:51.953069835Z"
+    created: "2023-08-07T13:07:02.893703083Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -2869,7 +2869,7 @@ entries:
       azimuth.stackhpc.com/label: JupyterHub
     apiVersion: v2
     appVersion: 478b802
-    created: "2023-08-07T12:59:51.868623425Z"
+    created: "2023-08-07T13:07:02.823202051Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -2889,7 +2889,7 @@ entries:
       azimuth.stackhpc.com/label: JupyterHub
     apiVersion: v2
     appVersion: f82a225
-    created: "2023-08-07T12:59:51.85511576Z"
+    created: "2023-08-07T13:07:02.807344347Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -2909,7 +2909,7 @@ entries:
       azimuth.stackhpc.com/label: JupyterHub
     apiVersion: v2
     appVersion: 269700f
-    created: "2023-08-07T12:59:51.849840134Z"
+    created: "2023-08-07T13:07:02.801479953Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -2929,7 +2929,7 @@ entries:
       azimuth.stackhpc.com/label: JupyterHub
     apiVersion: v2
     appVersion: 131a496
-    created: "2023-08-07T12:59:51.845687414Z"
+    created: "2023-08-07T13:07:02.796451245Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -2947,7 +2947,7 @@ entries:
     version: 0.1.0-dev.0.main.22
   - apiVersion: v2
     appVersion: "3629457"
-    created: "2023-08-07T12:59:51.841635994Z"
+    created: "2023-08-07T13:07:02.791674261Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -2965,7 +2965,7 @@ entries:
     version: 0.1.0-dev.0.main.21
   - apiVersion: v2
     appVersion: d5dc541
-    created: "2023-08-07T12:59:51.837293873Z"
+    created: "2023-08-07T13:07:02.785540641Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -2983,7 +2983,7 @@ entries:
     version: 0.1.0-dev.0.main.16
   - apiVersion: v2
     appVersion: b31a1bd
-    created: "2023-08-07T12:59:51.83251325Z"
+    created: "2023-08-07T13:07:02.780668848Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -3001,7 +3001,7 @@ entries:
     version: 0.1.0-dev.0.main.15
   - apiVersion: v2
     appVersion: ceb448e
-    created: "2023-08-07T12:59:51.828319229Z"
+    created: "2023-08-07T13:07:02.775837859Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -3019,7 +3019,7 @@ entries:
     version: 0.1.0-dev.0.main.14
   - apiVersion: v2
     appVersion: 1e30334
-    created: "2023-08-07T12:59:51.823217205Z"
+    created: "2023-08-07T13:07:02.769950964Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -3037,7 +3037,7 @@ entries:
     version: 0.1.0-dev.0.main.13
   - apiVersion: v2
     appVersion: b056bb0
-    created: "2023-08-07T12:59:51.819063284Z"
+    created: "2023-08-07T13:07:02.765021265Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -3055,7 +3055,7 @@ entries:
     version: 0.1.0-dev.0.main.12
   - apiVersion: v2
     appVersion: a299e54
-    created: "2023-08-07T12:59:51.815098565Z"
+    created: "2023-08-07T13:07:02.760184276Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -3073,7 +3073,7 @@ entries:
     version: 0.1.0-dev.0.main.11
   - apiVersion: v2
     appVersion: 3c995e6
-    created: "2023-08-07T12:59:51.809710439Z"
+    created: "2023-08-07T13:07:02.754025453Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -3091,7 +3091,7 @@ entries:
     version: 0.1.0-dev.0.main.10
   - apiVersion: v2
     appVersion: a661645
-    created: "2023-08-07T12:59:51.882762694Z"
+    created: "2023-08-07T13:07:02.83881183Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -3109,7 +3109,7 @@ entries:
     version: 0.1.0-dev.0.main.9
   - apiVersion: v2
     appVersion: fda1e8f
-    created: "2023-08-07T12:59:51.878498473Z"
+    created: "2023-08-07T13:07:02.83317806Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -3127,7 +3127,7 @@ entries:
     version: 0.1.0-dev.0.main.8
   - apiVersion: v2
     appVersion: 6beca33
-    created: "2023-08-07T12:59:51.872653145Z"
+    created: "2023-08-07T13:07:02.827656602Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -3145,7 +3145,7 @@ entries:
     version: 0.1.0-dev.0.main.7
   - apiVersion: v2
     appVersion: 4dfdc66
-    created: "2023-08-07T12:59:51.864498105Z"
+    created: "2023-08-07T13:07:02.816654989Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -3163,7 +3163,7 @@ entries:
     version: 0.1.0-dev.0.main.5
   - apiVersion: v2
     appVersion: d34ffa8
-    created: "2023-08-07T12:59:51.859043679Z"
+    created: "2023-08-07T13:07:02.812009619Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -3183,7 +3183,7 @@ entries:
       azimuth.stackhpc.com/label: JupyterHub
     apiVersion: v2
     appVersion: e7b373a
-    created: "2023-08-07T12:59:51.805668219Z"
+    created: "2023-08-07T13:07:02.749395984Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -3203,7 +3203,7 @@ entries:
       azimuth.stackhpc.com/label: JupyterHub
     apiVersion: v2
     appVersion: 33ea6e7
-    created: "2023-08-07T12:59:51.801503399Z"
+    created: "2023-08-07T13:07:02.7446127Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -3223,7 +3223,7 @@ entries:
       azimuth.stackhpc.com/label: JupyterHub
     apiVersion: v2
     appVersion: 9d758f6
-    created: "2023-08-07T12:59:51.795960672Z"
+    created: "2023-08-07T13:07:02.738443676Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -3243,7 +3243,7 @@ entries:
       azimuth.stackhpc.com/label: JupyterHub
     apiVersion: v2
     appVersion: 47d73e2
-    created: "2023-08-07T12:59:51.791872252Z"
+    created: "2023-08-07T13:07:02.733025928Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -3263,7 +3263,7 @@ entries:
       azimuth.stackhpc.com/label: JupyterHub
     apiVersion: v2
     appVersion: 5e9865d
-    created: "2023-08-07T12:59:51.787013129Z"
+    created: "2023-08-07T13:07:02.728171337Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -3283,7 +3283,7 @@ entries:
       azimuth.stackhpc.com/label: JupyterHub
     apiVersion: v2
     appVersion: 1c7ba01
-    created: "2023-08-07T12:59:51.782464907Z"
+    created: "2023-08-07T13:07:02.72315383Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -3303,7 +3303,7 @@ entries:
       azimuth.stackhpc.com/label: JupyterHub
     apiVersion: v2
     appVersion: 1dbbdbc
-    created: "2023-08-07T12:59:51.778358587Z"
+    created: "2023-08-07T13:07:02.716645571Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -3323,7 +3323,7 @@ entries:
       azimuth.stackhpc.com/label: JupyterHub
     apiVersion: v2
     appVersion: 1b29dcc
-    created: "2023-08-07T12:59:51.772669559Z"
+    created: "2023-08-07T13:07:02.706644959Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -3343,7 +3343,7 @@ entries:
       azimuth.stackhpc.com/label: JupyterHub
     apiVersion: v2
     appVersion: ca35bb7
-    created: "2023-08-07T12:59:51.768575839Z"
+    created: "2023-08-07T13:07:02.701351324Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -3363,7 +3363,7 @@ entries:
       azimuth.stackhpc.com/label: JupyterHub
     apiVersion: v2
     appVersion: 849c069
-    created: "2023-08-07T12:59:51.764457419Z"
+    created: "2023-08-07T13:07:02.696543138Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -3383,7 +3383,7 @@ entries:
       azimuth.stackhpc.com/label: JupyterHub
     apiVersion: v2
     appVersion: a0223ed
-    created: "2023-08-07T12:59:51.758787792Z"
+    created: "2023-08-07T13:07:02.691463124Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -3403,7 +3403,7 @@ entries:
       azimuth.stackhpc.com/label: JupyterHub
     apiVersion: v2
     appVersion: b6fe5f9
-    created: "2023-08-07T12:59:51.754698772Z"
+    created: "2023-08-07T13:07:02.685532624Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -3423,7 +3423,7 @@ entries:
       azimuth.stackhpc.com/label: JupyterHub
     apiVersion: v2
     appVersion: 9a7870d
-    created: "2023-08-07T12:59:51.749751248Z"
+    created: "2023-08-07T13:07:02.680735538Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -3443,7 +3443,7 @@ entries:
       azimuth.stackhpc.com/label: JupyterHub
     apiVersion: v2
     appVersion: 2f0abdb
-    created: "2023-08-07T12:59:51.745390027Z"
+    created: "2023-08-07T13:07:02.674391096Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -3463,7 +3463,7 @@ entries:
       azimuth.stackhpc.com/label: JupyterHub
     apiVersion: v2
     appVersion: 130dc3d
-    created: "2023-08-07T12:59:51.741255307Z"
+    created: "2023-08-07T13:07:02.669414493Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -3483,7 +3483,7 @@ entries:
       azimuth.stackhpc.com/label: JupyterHub
     apiVersion: v2
     appVersion: 880737d
-    created: "2023-08-07T12:59:51.736395883Z"
+    created: "2023-08-07T13:07:02.664606607Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -3503,7 +3503,7 @@ entries:
       azimuth.stackhpc.com/label: JupyterHub
     apiVersion: v2
     appVersion: f7d9c2f
-    created: "2023-08-07T12:59:51.731960162Z"
+    created: "2023-08-07T13:07:02.659440584Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -3523,7 +3523,7 @@ entries:
       azimuth.stackhpc.com/label: JupyterHub
     apiVersion: v2
     appVersion: 947ebc2
-    created: "2023-08-07T12:59:51.727659141Z"
+    created: "2023-08-07T13:07:02.653717705Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -3543,7 +3543,7 @@ entries:
       azimuth.stackhpc.com/label: JupyterHub
     apiVersion: v2
     appVersion: 3fb4cff
-    created: "2023-08-07T12:59:51.722017213Z"
+    created: "2023-08-07T13:07:02.648897017Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -3563,7 +3563,7 @@ entries:
       azimuth.stackhpc.com/label: JupyterHub
     apiVersion: v2
     appVersion: 2f32bdb
-    created: "2023-08-07T12:59:51.717930793Z"
+    created: "2023-08-07T13:07:02.642574578Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -3583,7 +3583,7 @@ entries:
       azimuth.stackhpc.com/label: JupyterHub
     apiVersion: v2
     appVersion: 51beb5c
-    created: "2023-08-07T12:59:51.712838569Z"
+    created: "2023-08-07T13:07:02.637698785Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -3603,7 +3603,7 @@ entries:
       azimuth.stackhpc.com/label: JupyterHub
     apiVersion: v2
     appVersion: 1e9b755
-    created: "2023-08-07T12:59:51.708440447Z"
+    created: "2023-08-07T13:07:02.632732682Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -3623,7 +3623,7 @@ entries:
       azimuth.stackhpc.com/label: JupyterHub
     apiVersion: v2
     appVersion: 06c52e1
-    created: "2023-08-07T12:59:51.704373728Z"
+    created: "2023-08-07T13:07:02.626899992Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -3643,7 +3643,7 @@ entries:
       azimuth.stackhpc.com/label: JupyterHub
     apiVersion: v2
     appVersion: 9c257b4
-    created: "2023-08-07T12:59:51.699477718Z"
+    created: "2023-08-07T13:07:02.621650461Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -3663,7 +3663,7 @@ entries:
       azimuth.stackhpc.com/label: JupyterHub
     apiVersion: v2
     appVersion: ee0be7d
-    created: "2023-08-07T12:59:51.694834428Z"
+    created: "2023-08-07T13:07:02.616712561Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -3682,14 +3682,14 @@ entries:
   - annotations:
       azimuth.stackhpc.com/label: JupyterHub
     apiVersion: v2
-    appVersion: 5f62e7f
-    created: "2023-08-07T12:59:51.690748936Z"
+    appVersion: 5d5f04d
+    created: "2023-08-07T13:07:02.610686652Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
       version: 2.0.0
     description: Multi-user Jupyter notebook environment.
-    digest: 70a36b0570c7777273ebc5d26db11955d50f4965f4a685c4a12da38d5bff96dd
+    digest: aa9df7c715a130a926c1dd10fdae3b1ab7a74c78c4735f4845864415cd476802
     icon: https://raw.githubusercontent.com/jupyterhub/helm-chart/gh-pages/images/hublogo.svg
     keywords:
     - jupyter
@@ -3703,7 +3703,7 @@ entries:
       azimuth.stackhpc.com/label: JupyterHub
     apiVersion: v2
     appVersion: 39dfc31
-    created: "2023-08-07T12:59:51.685234947Z"
+    created: "2023-08-07T13:07:02.605383115Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -3723,7 +3723,7 @@ entries:
       azimuth.stackhpc.com/label: JupyterHub
     apiVersion: v2
     appVersion: 173b6f4
-    created: "2023-08-07T12:59:51.681095755Z"
+    created: "2023-08-07T13:07:02.600576229Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -3743,7 +3743,7 @@ entries:
       azimuth.stackhpc.com/label: JupyterHub
     apiVersion: v2
     appVersion: 8be817a
-    created: "2023-08-07T12:59:51.676986164Z"
+    created: "2023-08-07T13:07:02.594721337Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -3763,7 +3763,7 @@ entries:
       azimuth.stackhpc.com/label: JupyterHub
     apiVersion: v2
     appVersion: 9fe2212
-    created: "2023-08-07T12:59:51.671393075Z"
+    created: "2023-08-07T13:07:02.589185577Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -3783,7 +3783,7 @@ entries:
       azimuth.stackhpc.com/label: JupyterHub
     apiVersion: v2
     appVersion: 9b1f164
-    created: "2023-08-07T12:59:51.667225684Z"
+    created: "2023-08-07T13:07:02.584163369Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -3803,7 +3803,7 @@ entries:
       azimuth.stackhpc.com/label: JupyterHub
     apiVersion: v2
     appVersion: 0368a49
-    created: "2023-08-07T12:59:51.662298893Z"
+    created: "2023-08-07T13:07:02.578094155Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -3823,7 +3823,7 @@ entries:
       azimuth.stackhpc.com/label: JupyterHub
     apiVersion: v2
     appVersion: 90ef705
-    created: "2023-08-07T12:59:51.656392105Z"
+    created: "2023-08-07T13:07:02.573285268Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -3843,7 +3843,7 @@ entries:
       azimuth.stackhpc.com/label: JupyterHub
     apiVersion: v2
     appVersion: d714fa9
-    created: "2023-08-07T12:59:51.652182914Z"
+    created: "2023-08-07T13:07:02.568453479Z"
     dependencies:
     - name: jupyterhub
       repository: https://jupyterhub.github.io/helm-chart/
@@ -3864,7 +3864,7 @@ entries:
       azimuth.stackhpc.com/label: KubeFlow
     apiVersion: v1
     appVersion: 6aa158d
-    created: "2023-08-07T12:59:53.787416965Z"
+    created: "2023-08-07T13:07:04.53306373Z"
     description: A KubeFlow machine learning environment
     digest: 1db891c91df8a9c62eae3c091f40054dc6ec099f11eac9a7d34e8d21c70ebb18
     icon: https://www.kubeflow.org/images/logo.svg
@@ -3876,7 +3876,7 @@ entries:
       azimuth.stackhpc.com/label: KubeFlow
     apiVersion: v1
     appVersion: 34aac8b
-    created: "2023-08-07T12:59:53.755550481Z"
+    created: "2023-08-07T13:07:04.491610136Z"
     description: A KubeFlow machine learning environment
     digest: 1bc91ffb8aadef30b141f5b5c7904f3350354db5825eeae6ed9a427ca9c67141
     icon: https://www.kubeflow.org/images/logo.svg
@@ -3888,7 +3888,7 @@ entries:
       azimuth.stackhpc.com/label: KubeFlow
     apiVersion: v1
     appVersion: 4900d5d
-    created: "2023-08-07T12:59:53.720045175Z"
+    created: "2023-08-07T13:07:04.454922525Z"
     description: A KubeFlow machine learning environment
     digest: c20309545caed1f0d1efcceb0b8b3e0cc6d40e6c5c4e825f980dd74c8c27001e
     icon: https://www.kubeflow.org/images/logo.svg
@@ -3900,7 +3900,7 @@ entries:
       azimuth.stackhpc.com/label: KubeFlow
     apiVersion: v1
     appVersion: 7cc3fcd
-    created: "2023-08-07T12:59:53.686579581Z"
+    created: "2023-08-07T13:07:04.419672959Z"
     description: A KubeFlow machine learning environment
     digest: fba8c6cfe090a7c287758bbb37b7c736ea5ca3d6a52081bc369ae7d62d42ca6f
     icon: https://www.kubeflow.org/images/logo.svg
@@ -3912,7 +3912,7 @@ entries:
       azimuth.stackhpc.com/label: KubeFlow
     apiVersion: v1
     appVersion: 295f1ae
-    created: "2023-08-07T12:59:53.654206094Z"
+    created: "2023-08-07T13:07:04.383533202Z"
     description: A KubeFlow machine learning environment
     digest: dfd049a3573a536c3dcf515f25e6732365bcd9c9bb4d223cd9c58f4c54865c12
     icon: https://www.kubeflow.org/images/logo.svg
@@ -3924,7 +3924,7 @@ entries:
       azimuth.stackhpc.com/label: KubeFlow
     apiVersion: v1
     appVersion: e8c502e
-    created: "2023-08-07T12:59:53.622212808Z"
+    created: "2023-08-07T13:07:04.346986105Z"
     description: A KubeFlow machine learning environment
     digest: b76112abd6f55c7205ba31d0573a1fc06ffbcd61a33362e35379bc7c57434087
     icon: https://www.kubeflow.org/images/logo.svg
@@ -3936,7 +3936,7 @@ entries:
       azimuth.stackhpc.com/label: KubeFlow
     apiVersion: v1
     appVersion: 29b285a
-    created: "2023-08-07T12:59:53.589551819Z"
+    created: "2023-08-07T13:07:04.31144831Z"
     description: A KubeFlow machine learning environment
     digest: 6189a4b1ff9d7dda20141ebe675054eb5d67f2bf7858584d0190e3d03eb80390
     icon: https://www.kubeflow.org/images/logo.svg
@@ -3948,7 +3948,7 @@ entries:
       azimuth.stackhpc.com/label: KubeFlow
     apiVersion: v1
     appVersion: d5da99e
-    created: "2023-08-07T12:59:53.558189938Z"
+    created: "2023-08-07T13:07:04.273701991Z"
     description: A KubeFlow machine learning environment
     digest: 441b5f82ba525f0ed75ed793151c58dbe16edd30a0f5c838cad77571e1d8b7cb
     icon: https://www.kubeflow.org/images/logo.svg
@@ -3960,7 +3960,7 @@ entries:
       azimuth.stackhpc.com/label: KubeFlow
     apiVersion: v1
     appVersion: 807ac24
-    created: "2023-08-07T12:59:53.525041646Z"
+    created: "2023-08-07T13:07:04.238450125Z"
     description: A KubeFlow machine learning environment
     digest: 35b14d88e418efbb5d0e55677cd1df9fd304e866b5e0ad3d110cede3eb9f2046
     icon: https://www.kubeflow.org/images/logo.svg
@@ -3972,7 +3972,7 @@ entries:
       azimuth.stackhpc.com/label: KubeFlow
     apiVersion: v1
     appVersion: 478b802
-    created: "2023-08-07T12:59:53.492565657Z"
+    created: "2023-08-07T13:07:04.201882126Z"
     description: A KubeFlow machine learning environment
     digest: f2636dc2d66a9f24bf7e9e712efe3f1105991cf41d624fa31f4c3dd563b8fdcf
     icon: https://www.kubeflow.org/images/logo.svg
@@ -3984,7 +3984,7 @@ entries:
       azimuth.stackhpc.com/label: KubeFlow
     apiVersion: v1
     appVersion: 5e9865d
-    created: "2023-08-07T12:59:53.461765579Z"
+    created: "2023-08-07T13:07:04.164101604Z"
     description: A KubeFlow machine learning environment
     digest: c215da8b2c6f251eca73c2e67cb4573e482e557699728f144ddd0c2a753ce60e
     icon: https://www.kubeflow.org/images/logo.svg
@@ -3996,7 +3996,7 @@ entries:
       azimuth.stackhpc.com/label: KubeFlow
     apiVersion: v1
     appVersion: 1c7ba01
-    created: "2023-08-07T12:59:53.431256302Z"
+    created: "2023-08-07T13:07:04.128320884Z"
     description: A KubeFlow machine learning environment
     digest: fe7d77c9a463da6e446388dd11d1ac9f4b41266a323371a3bc9ab14fe0ad4570
     icon: https://www.kubeflow.org/images/logo.svg
@@ -4008,7 +4008,7 @@ entries:
       azimuth.stackhpc.com/label: KubeFlow
     apiVersion: v1
     appVersion: 1dbbdbc
-    created: "2023-08-07T12:59:53.402030433Z"
+    created: "2023-08-07T13:07:04.09398591Z"
     description: A KubeFlow machine learning environment
     digest: d53493216cc2eb59ce2fc25f221663ef529141977a32d25ba39cb41cb985c528
     icon: https://www.kubeflow.org/images/logo.svg
@@ -4020,7 +4020,7 @@ entries:
       azimuth.stackhpc.com/label: KubeFlow
     apiVersion: v1
     appVersion: 1b29dcc
-    created: "2023-08-07T12:59:53.364014313Z"
+    created: "2023-08-07T13:07:04.054315697Z"
     description: A KubeFlow machine learning environment
     digest: a20b01f1b3dd1308e49001589696f415677a625599bc0fcc6aee55fcc2d8ab49
     icon: https://www.kubeflow.org/images/logo.svg
@@ -4032,7 +4032,7 @@ entries:
       azimuth.stackhpc.com/label: KubeFlow
     apiVersion: v1
     appVersion: ca35bb7
-    created: "2023-08-07T12:59:53.333936039Z"
+    created: "2023-08-07T13:07:04.009455359Z"
     description: A KubeFlow machine learning environment
     digest: 84cc3755b2fa846fa82c6f93514ba0b8ce5fcb43e024984f2b4ee2488a994580
     icon: https://www.kubeflow.org/images/logo.svg
@@ -4044,7 +4044,7 @@ entries:
       azimuth.stackhpc.com/label: KubeFlow
     apiVersion: v1
     appVersion: 849c069
-    created: "2023-08-07T12:59:53.303405962Z"
+    created: "2023-08-07T13:07:03.972546325Z"
     description: A KubeFlow machine learning environment
     digest: a7540e53c1dde55050d29cf811d792a1fed44c56a6ae0c658c482585c6b2ebab
     icon: https://www.kubeflow.org/images/logo.svg
@@ -4056,7 +4056,7 @@ entries:
       azimuth.stackhpc.com/label: KubeFlow
     apiVersion: v1
     appVersion: a0223ed
-    created: "2023-08-07T12:59:53.272743584Z"
+    created: "2023-08-07T13:07:03.935762204Z"
     description: A KubeFlow machine learning environment
     digest: 480963dbaf279d517eae4f007bd13a348f7949c7b39be0cdb819cfeaf1e3016c
     icon: https://www.kubeflow.org/images/logo.svg
@@ -4068,7 +4068,7 @@ entries:
       azimuth.stackhpc.com/label: KubeFlow
     apiVersion: v1
     appVersion: b6fe5f9
-    created: "2023-08-07T12:59:53.240610498Z"
+    created: "2023-08-07T13:07:03.898074491Z"
     description: A KubeFlow machine learning environment
     digest: a2e72496eb87c48c690b9f5782aad385fd562a9c562df19db523a97978279718
     icon: https://www.kubeflow.org/images/logo.svg
@@ -4080,7 +4080,7 @@ entries:
       azimuth.stackhpc.com/label: KubeFlow
     apiVersion: v1
     appVersion: 9a7870d
-    created: "2023-08-07T12:59:53.188965499Z"
+    created: "2023-08-07T13:07:03.863841328Z"
     description: A KubeFlow machine learning environment
     digest: 4b614c3b99f8bac97564e2f7638b1b510df8372c77306eb352b11c4a708349dc
     icon: https://www.kubeflow.org/images/logo.svg
@@ -4092,7 +4092,7 @@ entries:
       azimuth.stackhpc.com/label: KubeFlow
     apiVersion: v1
     appVersion: 2f0abdb
-    created: "2023-08-07T12:59:53.124918728Z"
+    created: "2023-08-07T13:07:03.824565154Z"
     description: A KubeFlow machine learning environment
     digest: 30c9771ee8472cdccb9ebbf1dff69614e707bcc7583bc06acc8ae770418905e6
     icon: https://www.kubeflow.org/images/logo.svg
@@ -4104,7 +4104,7 @@ entries:
       azimuth.stackhpc.com/label: KubeFlow
     apiVersion: v1
     appVersion: 130dc3d
-    created: "2023-08-07T12:59:53.084962831Z"
+    created: "2023-08-07T13:07:03.78775113Z"
     description: A KubeFlow machine learning environment
     digest: 3b58656ee4e831f81845972b2bf47de96431195c698ced889c0e096fea8faee3
     icon: https://www.kubeflow.org/images/logo.svg
@@ -4116,7 +4116,7 @@ entries:
       azimuth.stackhpc.com/label: KubeFlow
     apiVersion: v1
     appVersion: 880737d
-    created: "2023-08-07T12:59:53.035857893Z"
+    created: "2023-08-07T13:07:03.751897203Z"
     description: A KubeFlow machine learning environment
     digest: a66e5766f109ab8a6a4c639ec49d98ac039e77b571abb89bc8e9477ae55ae522
     icon: https://www.kubeflow.org/images/logo.svg
@@ -4128,7 +4128,7 @@ entries:
       azimuth.stackhpc.com/label: KubeFlow
     apiVersion: v1
     appVersion: f7d9c2f
-    created: "2023-08-07T12:59:53.002718332Z"
+    created: "2023-08-07T13:07:03.720507327Z"
     description: A KubeFlow machine learning environment
     digest: 9d3f841894325db464c62ecadccfb7c899cdd846954ad46d29ffa025434127b6
     icon: https://www.kubeflow.org/images/logo.svg
@@ -4140,7 +4140,7 @@ entries:
       azimuth.stackhpc.com/label: KubeFlow
     apiVersion: v1
     appVersion: 947ebc2
-    created: "2023-08-07T12:59:52.950271377Z"
+    created: "2023-08-07T13:07:03.681748506Z"
     description: A KubeFlow machine learning environment
     digest: 1dc5c27dec986ce46d1a080a8c534864606d46fb82a6ae56bc0d704ccc0b99aa
     icon: https://www.kubeflow.org/images/logo.svg
@@ -4152,7 +4152,7 @@ entries:
       azimuth.stackhpc.com/label: KubeFlow
     apiVersion: v1
     appVersion: 3fb4cff
-    created: "2023-08-07T12:59:52.902581345Z"
+    created: "2023-08-07T13:07:03.644452033Z"
     description: A KubeFlow machine learning environment
     digest: 0b81f0922191d62d859fea1b8e88b587d41d6999f3077091d9018db0de444e51
     icon: https://www.kubeflow.org/images/logo.svg
@@ -4164,7 +4164,7 @@ entries:
       azimuth.stackhpc.com/label: KubeFlow
     apiVersion: v1
     appVersion: 2f32bdb
-    created: "2023-08-07T12:59:52.852454302Z"
+    created: "2023-08-07T13:07:03.60468891Z"
     description: A KubeFlow machine learning environment
     digest: 2a377c7583066b59d17ad04c9361681539b035377d1db005ed4f7361bf8bc4aa
     icon: https://www.kubeflow.org/images/logo.svg
@@ -4176,7 +4176,7 @@ entries:
       azimuth.stackhpc.com/label: KubeFlow
     apiVersion: v1
     appVersion: 51beb5c
-    created: "2023-08-07T12:59:52.788908494Z"
+    created: "2023-08-07T13:07:03.566005797Z"
     description: A KubeFlow machine learning environment
     digest: ecf476752b6aad7b07700873a1b04a6b87a8002872ecfafad3659df1da76d1e0
     icon: https://www.kubeflow.org/images/logo.svg
@@ -4188,7 +4188,7 @@ entries:
       azimuth.stackhpc.com/label: KubeFlow
     apiVersion: v1
     appVersion: 1e9b755
-    created: "2023-08-07T12:59:52.753908024Z"
+    created: "2023-08-07T13:07:03.529357789Z"
     description: A KubeFlow machine learning environment
     digest: e4aebbbc9861af2d2dace305ef8fb5e57e133af8a9289e98464a48cd02d8f933
     icon: https://www.kubeflow.org/images/logo.svg
@@ -4200,7 +4200,7 @@ entries:
       azimuth.stackhpc.com/label: KubeFlow
     apiVersion: v1
     appVersion: 06c52e1
-    created: "2023-08-07T12:59:52.691109219Z"
+    created: "2023-08-07T13:07:03.490596368Z"
     description: A KubeFlow machine learning environment
     digest: 7b3b23914236547e586938bd3c778eab8a0b4041a9ed98c2cc72d3e8c23ba083
     icon: https://www.kubeflow.org/images/logo.svg
@@ -4210,7 +4210,7 @@ entries:
     version: 0.1.0-dev.0.feature-kubeflow-v1.30
   - apiVersion: v1
     appVersion: 9c257b4
-    created: "2023-08-07T12:59:52.662674681Z"
+    created: "2023-08-07T13:07:03.446322189Z"
     digest: 93d8b9cc54c39063d8e77ad9c1782b1d7ea90fb5df3446caf03d4f6c1bdaa6ca
     name: kubeflow-azimuth
     urls:
@@ -4219,10 +4219,10 @@ entries:
   - annotations:
       azimuth.stackhpc.com/label: KubeFlow
     apiVersion: v1
-    appVersion: 5f62e7f
-    created: "2023-08-07T12:59:52.623855992Z"
+    appVersion: 5d5f04d
+    created: "2023-08-07T13:07:03.409800194Z"
     description: A KubeFlow machine learning environment
-    digest: baeb0f48efb3014581fde7d08faf8a4157b6b9fef41152adc889b70245314d54
+    digest: 36039f79c66893c89f2835c2e255e142fba274ee0a3369dd0ca45abbdc885b3c
     icon: https://www.kubeflow.org/images/logo.svg
     name: kubeflow-azimuth
     urls:
@@ -4232,7 +4232,7 @@ entries:
       azimuth.stackhpc.com/label: KubeFlow
     apiVersion: v1
     appVersion: 39dfc31
-    created: "2023-08-07T12:59:52.582524691Z"
+    created: "2023-08-07T13:07:03.374380611Z"
     description: A KubeFlow machine learning environment
     digest: daa215a3cc39b5e4425977fddf7b209b7111e1553222362e343c2ba570e7c69c
     icon: https://www.kubeflow.org/images/logo.svg
@@ -4244,7 +4244,7 @@ entries:
       azimuth.stackhpc.com/label: KubeFlow
     apiVersion: v1
     appVersion: 173b6f4
-    created: "2023-08-07T12:59:52.528227628Z"
+    created: "2023-08-07T13:07:03.33779851Z"
     description: A KubeFlow machine learning environment
     digest: 81c1857e21343b68ea346b3301ada1655bff659df4e7f135913437c497f6a58a
     icon: https://www.kubeflow.org/images/logo.svg
@@ -4256,7 +4256,7 @@ entries:
       azimuth.stackhpc.com/label: KubeFlow
     apiVersion: v1
     appVersion: 8be817a
-    created: "2023-08-07T12:59:52.487128428Z"
+    created: "2023-08-07T13:07:03.298286013Z"
     description: A KubeFlow machine learning environment
     digest: b9568ca467172f4e19a9d1b2005f9e1a1d1c20783e004a539373abfd7dcec384
     icon: https://www.kubeflow.org/images/logo.svg
@@ -4268,7 +4268,7 @@ entries:
       azimuth.stackhpc.com/label: KubeFlow
     apiVersion: v1
     appVersion: 9fe2212
-    created: "2023-08-07T12:59:52.425212328Z"
+    created: "2023-08-07T13:07:03.264954941Z"
     description: A KubeFlow machine learning environment
     digest: c2a6b3985bc67c135700b0ecf97d17c819eb8ab3cafe2922ee200f2f193153e1
     icon: https://www.kubeflow.org/images/logo.svg
@@ -4280,7 +4280,7 @@ entries:
       azimuth.stackhpc.com/label: KubeFlow
     apiVersion: v1
     appVersion: 9b1f164
-    created: "2023-08-07T12:59:52.377400095Z"
+    created: "2023-08-07T13:07:03.228707574Z"
     description: A KubeFlow machine learning environment
     digest: f45dc5aa526d0d66a9b308849d56eda41ff5323ef236654f40c9ecf083b3a4aa
     icon: https://www.kubeflow.org/images/logo.svg
@@ -4292,7 +4292,7 @@ entries:
       azimuth.stackhpc.com/label: KubeFlow
     apiVersion: v1
     appVersion: 0368a49
-    created: "2023-08-07T12:59:52.340968119Z"
+    created: "2023-08-07T13:07:03.192504112Z"
     description: A KubeFlow machine learning environment
     digest: ad2622b8ff32e79ec29505fbb3a487ad0f24016bcd98fde827f5ddbc9399b655
     icon: https://www.kubeflow.org/images/logo.svg
@@ -4304,7 +4304,7 @@ entries:
       azimuth.stackhpc.com/label: KubeFlow
     apiVersion: v1
     appVersion: 90ef705
-    created: "2023-08-07T12:59:52.298922114Z"
+    created: "2023-08-07T13:07:03.15591181Z"
     description: A KubeFlow machine learning environment
     digest: c46a2a232c5bbc102d4e033572afe74ca3a653391056a683b62a7f68c15aba17
     icon: https://www.kubeflow.org/images/logo.svg
@@ -4316,7 +4316,7 @@ entries:
       azimuth.stackhpc.com/label: KubeFlow
     apiVersion: v1
     appVersion: d714fa9
-    created: "2023-08-07T12:59:52.25274889Z"
+    created: "2023-08-07T13:07:03.118185893Z"
     description: A KubeFlow machine learning environment
     digest: 9cfc029f8d4a087100ce8b8227f47ada84f45398a38e24ac475872c2ea5193bc
     icon: https://www.kubeflow.org/images/logo.svg
@@ -4327,7 +4327,7 @@ entries:
   kubeflow-crds:
   - apiVersion: v1
     appVersion: 6aa158d
-    created: "2023-08-07T12:59:54.78120572Z"
+    created: "2023-08-07T13:07:05.729148532Z"
     digest: 2e76895468b8ece264138b693686132007e51cbed49240d85f89c11f85403443
     name: kubeflow-crds
     urls:
@@ -4335,7 +4335,7 @@ entries:
     version: 0.1.0-dev.0.skopeo.124
   - apiVersion: v1
     appVersion: 34aac8b
-    created: "2023-08-07T12:59:54.755574172Z"
+    created: "2023-08-07T13:07:05.697431223Z"
     digest: 3c5a22d3c637efbde3c66b933e9cab8dc4c6c13bb6cfbcf131b7bdcd343194f6
     name: kubeflow-crds
     urls:
@@ -4343,7 +4343,7 @@ entries:
     version: 0.1.0-dev.0.skopeo.120
   - apiVersion: v1
     appVersion: 4900d5d
-    created: "2023-08-07T12:59:54.73284984Z"
+    created: "2023-08-07T13:07:05.667036348Z"
     digest: 854b36ee74a4ec2718cc2b7878ba7eee48a537db6763d1aaac95b41c52adac8b
     name: kubeflow-crds
     urls:
@@ -4351,7 +4351,7 @@ entries:
     version: 0.1.0-dev.0.skopeo.119
   - apiVersion: v1
     appVersion: 7cc3fcd
-    created: "2023-08-07T12:59:54.707702695Z"
+    created: "2023-08-07T13:07:05.632672872Z"
     digest: 92df0d5d9afd587effebbe6652ba693a5df7d53a083aabc3f1ee877db06df96c
     name: kubeflow-crds
     urls:
@@ -4359,7 +4359,7 @@ entries:
     version: 0.1.0-dev.0.skopeo.118
   - apiVersion: v1
     appVersion: 295f1ae
-    created: "2023-08-07T12:59:54.681606044Z"
+    created: "2023-08-07T13:07:05.602396609Z"
     digest: 8efcf489afc03d1bb6d7795deb464a6bb650e40de58832a7cb29f632b9fc7721
     name: kubeflow-crds
     urls:
@@ -4367,7 +4367,7 @@ entries:
     version: 0.1.0-dev.0.skopeo.115
   - apiVersion: v1
     appVersion: e8c502e
-    created: "2023-08-07T12:59:54.654160785Z"
+    created: "2023-08-07T13:07:05.573492685Z"
     digest: f927d8261f29073fea0685198f5fb792373e7ce967f54c4a1aef699d391d683d
     name: kubeflow-crds
     urls:
@@ -4375,7 +4375,7 @@ entries:
     version: 0.1.0-dev.0.skopeo.114
   - apiVersion: v1
     appVersion: 29b285a
-    created: "2023-08-07T12:59:54.629695043Z"
+    created: "2023-08-07T13:07:05.543006101Z"
     digest: ecf8392e7db298444f91858869339891ed5bfaae9b8ddc754ec62cf0f5426780
     name: kubeflow-crds
     urls:
@@ -4383,7 +4383,7 @@ entries:
     version: 0.1.0-dev.0.skopeo.112
   - apiVersion: v1
     appVersion: d5da99e
-    created: "2023-08-07T12:59:54.6050287Z"
+    created: "2023-08-07T13:07:05.509170678Z"
     digest: 26949fbbcf50f2615ac3990190ecb52548f0ee24968241daddfa2076ccdf5d8c
     name: kubeflow-crds
     urls:
@@ -4391,7 +4391,7 @@ entries:
     version: 0.1.0-dev.0.skopeo.111
   - apiVersion: v1
     appVersion: 807ac24
-    created: "2023-08-07T12:59:54.579676853Z"
+    created: "2023-08-07T13:07:05.479388565Z"
     digest: 31e55bd34a79502ccbe955642a88e0bd6853e289a1133421da42fbb06c6c1358
     name: kubeflow-crds
     urls:
@@ -4399,7 +4399,7 @@ entries:
     version: 0.1.0-dev.0.skopeo.110
   - apiVersion: v1
     appVersion: 478b802
-    created: "2023-08-07T12:59:54.553814003Z"
+    created: "2023-08-07T13:07:05.45107Z"
     digest: 17bdb5072b6ac5c00c95968cb75a4276fe025a1cb7784caa43a08713590197b9
     name: kubeflow-crds
     urls:
@@ -4407,7 +4407,7 @@ entries:
     version: 0.1.0-dev.0.main.69
   - apiVersion: v1
     appVersion: 5e9865d
-    created: "2023-08-07T12:59:54.529331662Z"
+    created: "2023-08-07T13:07:05.419145971Z"
     digest: 4fd0d5f28614af8ab1161e5a36cfe8440cb39e995a7e867f37f3e71887b49ebc
     name: kubeflow-crds
     urls:
@@ -4415,7 +4415,7 @@ entries:
     version: 0.1.0-dev.0.feature-kubeflow-v1.68
   - apiVersion: v1
     appVersion: 1c7ba01
-    created: "2023-08-07T12:59:54.502888809Z"
+    created: "2023-08-07T13:07:05.393855512Z"
     digest: 102a2e9ffeabf5666f360039fede83ae680a0541141de16c4f5f33ce2585238e
     name: kubeflow-crds
     urls:
@@ -4423,7 +4423,7 @@ entries:
     version: 0.1.0-dev.0.feature-kubeflow-v1.67
   - apiVersion: v1
     appVersion: 1dbbdbc
-    created: "2023-08-07T12:59:54.47732206Z"
+    created: "2023-08-07T13:07:05.36200819Z"
     digest: f3d4e677c75043aff869aa885b071bcad75b583decd044aee2e8749002a2b834
     name: kubeflow-crds
     urls:
@@ -4431,7 +4431,7 @@ entries:
     version: 0.1.0-dev.0.feature-kubeflow-v1.66
   - apiVersion: v1
     appVersion: 1b29dcc
-    created: "2023-08-07T12:59:54.452505817Z"
+    created: "2023-08-07T13:07:05.3324512Z"
     digest: 5c75f6e9b7585c84a2cad3a15f417d205726be3b4418352a4d93600efbe9e9e8
     name: kubeflow-crds
     urls:
@@ -4439,7 +4439,7 @@ entries:
     version: 0.1.0-dev.0.feature-kubeflow-v1.65
   - apiVersion: v1
     appVersion: ca35bb7
-    created: "2023-08-07T12:59:54.42880728Z"
+    created: "2023-08-07T13:07:05.301249043Z"
     digest: ebae114f008aaee64de3313da8ccb2654c79fd57ebe2d6b17bdb561ced32d3b0
     name: kubeflow-crds
     urls:
@@ -4447,7 +4447,7 @@ entries:
     version: 0.1.0-dev.0.feature-kubeflow-v1.60
   - apiVersion: v1
     appVersion: 849c069
-    created: "2023-08-07T12:59:54.403133731Z"
+    created: "2023-08-07T13:07:05.270702853Z"
     digest: 632359b35585678016e82b9c9460c8f7d10696f2895689eed059776edccd1d6b
     name: kubeflow-crds
     urls:
@@ -4455,7 +4455,7 @@ entries:
     version: 0.1.0-dev.0.feature-kubeflow-v1.59
   - apiVersion: v1
     appVersion: a0223ed
-    created: "2023-08-07T12:59:54.377706084Z"
+    created: "2023-08-07T13:07:05.239807828Z"
     digest: eb85c7ca787d241ebf332068fccdf0bfd8e9297207cd1afee60374e7ea0e2fa0
     name: kubeflow-crds
     urls:
@@ -4463,7 +4463,7 @@ entries:
     version: 0.1.0-dev.0.feature-kubeflow-v1.57
   - apiVersion: v1
     appVersion: b6fe5f9
-    created: "2023-08-07T12:59:54.348305913Z"
+    created: "2023-08-07T13:07:05.210150227Z"
     digest: 3d47117f82e19b1375d8fc51a66900ba66b437820505cb2d024e3b4d1449f568
     name: kubeflow-crds
     urls:
@@ -4471,7 +4471,7 @@ entries:
     version: 0.1.0-dev.0.feature-kubeflow-v1.55
   - apiVersion: v1
     appVersion: 9a7870d
-    created: "2023-08-07T12:59:54.322862366Z"
+    created: "2023-08-07T13:07:05.178881564Z"
     digest: c3c9fa9ef16a11c09736a887a0f906b519ca49367a62cf4409dbca1b0fa38436
     name: kubeflow-crds
     urls:
@@ -4479,7 +4479,7 @@ entries:
     version: 0.1.0-dev.0.feature-kubeflow-v1.54
   - apiVersion: v1
     appVersion: 2f0abdb
-    created: "2023-08-07T12:59:54.297750521Z"
+    created: "2023-08-07T13:07:05.15007485Z"
     digest: 5a0f489f1ad49e3d3cc20fa4a18782b505360a5ac9046172ff5868c00c0dbe3a
     name: kubeflow-crds
     urls:
@@ -4487,7 +4487,7 @@ entries:
     version: 0.1.0-dev.0.feature-kubeflow-v1.46
   - apiVersion: v1
     appVersion: 130dc3d
-    created: "2023-08-07T12:59:54.272822176Z"
+    created: "2023-08-07T13:07:05.117285033Z"
     digest: 64450208ab541131f950f4ed2eed318229e94440765046f955960ec1233e7005
     name: kubeflow-crds
     urls:
@@ -4495,7 +4495,7 @@ entries:
     version: 0.1.0-dev.0.feature-kubeflow-v1.42
   - apiVersion: v1
     appVersion: 880737d
-    created: "2023-08-07T12:59:54.246190622Z"
+    created: "2023-08-07T13:07:05.088288399Z"
     digest: d1fcfe949c4ef41642aa7dfb79f53640022f9c81a2960905f6f0e0ef9a200cef
     name: kubeflow-crds
     urls:
@@ -4503,7 +4503,7 @@ entries:
     version: 0.1.0-dev.0.feature-kubeflow-v1.41
   - apiVersion: v1
     appVersion: f7d9c2f
-    created: "2023-08-07T12:59:54.220060471Z"
+    created: "2023-08-07T13:07:05.053913922Z"
     digest: dcb969dc199c2c23f1f20b1fd63dde515d0425c7ca6dc9a796c494250bedd050
     name: kubeflow-crds
     urls:
@@ -4511,7 +4511,7 @@ entries:
     version: 0.1.0-dev.0.feature-kubeflow-v1.40
   - apiVersion: v1
     appVersion: 947ebc2
-    created: "2023-08-07T12:59:54.190167798Z"
+    created: "2023-08-07T13:07:05.019880279Z"
     digest: 3b526c908b5110cb9a6931db66bba3a12741010e2b8d19c39efd9ab68b34ee13
     name: kubeflow-crds
     urls:
@@ -4519,7 +4519,7 @@ entries:
     version: 0.1.0-dev.0.feature-kubeflow-v1.38
   - apiVersion: v1
     appVersion: 3fb4cff
-    created: "2023-08-07T12:59:54.163670944Z"
+    created: "2023-08-07T13:07:04.990968954Z"
     digest: 7a3f60d5ae2c924fe3290cc8900c4771747871b15e32e863603d4389d83f2ae1
     name: kubeflow-crds
     urls:
@@ -4527,7 +4527,7 @@ entries:
     version: 0.1.0-dev.0.feature-kubeflow-v1.34
   - apiVersion: v1
     appVersion: 2f32bdb
-    created: "2023-08-07T12:59:54.141283714Z"
+    created: "2023-08-07T13:07:04.958564376Z"
     digest: 37639ac6ac7af73fda0501ddf63119c50307b522c664fac948b96f8df8c9d760
     name: kubeflow-crds
     urls:
@@ -4535,7 +4535,7 @@ entries:
     version: 0.1.0-dev.0.feature-kubeflow-v1.33
   - apiVersion: v1
     appVersion: 51beb5c
-    created: "2023-08-07T12:59:54.116492071Z"
+    created: "2023-08-07T13:07:04.928122396Z"
     digest: c9edf7fbba4d41052a3eec5408ae9c7e64bb8c528d816d999904a9b374f242f4
     name: kubeflow-crds
     urls:
@@ -4543,7 +4543,7 @@ entries:
     version: 0.1.0-dev.0.feature-kubeflow-v1.32
   - apiVersion: v1
     appVersion: 1e9b755
-    created: "2023-08-07T12:59:54.092448532Z"
+    created: "2023-08-07T13:07:04.897440092Z"
     digest: 5ce83a1e0c508a70136c0a7b4e484b204801abe3d4f28d2b0e176e23bc0cf016
     name: kubeflow-crds
     urls:
@@ -4551,7 +4551,7 @@ entries:
     version: 0.1.0-dev.0.feature-kubeflow-v1.31
   - apiVersion: v1
     appVersion: 06c52e1
-    created: "2023-08-07T12:59:54.067578888Z"
+    created: "2023-08-07T13:07:04.862453953Z"
     digest: ce54074381e822d9097b64e89d7e447199ae0fc646cf31d5a02e8c516e826534
     name: kubeflow-crds
     urls:
@@ -4559,23 +4559,23 @@ entries:
     version: 0.1.0-dev.0.feature-kubeflow-v1.30
   - apiVersion: v1
     appVersion: 9c257b4
-    created: "2023-08-07T12:59:54.043460348Z"
+    created: "2023-08-07T13:07:04.832943867Z"
     digest: 5d4ff7f6a06fd402119b122218e57e52ba7516bed4b3218426f1c885381e03a9
     name: kubeflow-crds
     urls:
     - kubeflow-crds-0.1.0-dev.0.feature-kubeflow-v1.29.tgz
     version: 0.1.0-dev.0.feature-kubeflow-v1.29
   - apiVersion: v1
-    appVersion: 5f62e7f
-    created: "2023-08-07T12:59:54.017803099Z"
-    digest: d6b73ded6085d86fd475af73b5e8f01d6fb220e26b4f5ebc7edda5696ff258ab
+    appVersion: 5d5f04d
+    created: "2023-08-07T13:07:04.803241862Z"
+    digest: 8a11ca60406f16151501ae66869dd385f26ef0f6c8f29050e5878e5dd3c18310
     name: kubeflow-crds
     urls:
     - kubeflow-crds-0.1.0-dev.0.feature-binderhub.79.tgz
     version: 0.1.0-dev.0.feature-binderhub.79
   - apiVersion: v1
     appVersion: 39dfc31
-    created: "2023-08-07T12:59:53.992309352Z"
+    created: "2023-08-07T13:07:04.77534394Z"
     digest: 249dced47cbc5fe3bebe8b3916cbd45e9870ef41a6fb165b07caa216bf7d3344
     name: kubeflow-crds
     urls:
@@ -4583,7 +4583,7 @@ entries:
     version: 0.1.0-dev.0.feature-binderhub.78
   - apiVersion: v1
     appVersion: 173b6f4
-    created: "2023-08-07T12:59:53.967265007Z"
+    created: "2023-08-07T13:07:04.742973865Z"
     digest: 90184d6696a227be09cf79109ec8e3f426d9c13ae0d99aaf1fb65aa73fdc38c3
     name: kubeflow-crds
     urls:
@@ -4591,7 +4591,7 @@ entries:
     version: 0.1.0-dev.0.feature-binderhub.77
   - apiVersion: v1
     appVersion: 8be817a
-    created: "2023-08-07T12:59:53.942872965Z"
+    created: "2023-08-07T13:07:04.714476282Z"
     digest: 649be5119d839ae6f5ba1b9a800ce5fb3f458ee2a4fc0a2d9cfe4a6b83a406ec
     name: kubeflow-crds
     urls:
@@ -4599,7 +4599,7 @@ entries:
     version: 0.1.0-dev.0.feature-binderhub.76
   - apiVersion: v1
     appVersion: 9fe2212
-    created: "2023-08-07T12:59:53.917896721Z"
+    created: "2023-08-07T13:07:04.683652164Z"
     digest: 127993d6fc2339f9483477088c80609b827f043f46be987760c58f50e9baa974
     name: kubeflow-crds
     urls:
@@ -4607,7 +4607,7 @@ entries:
     version: 0.1.0-dev.0.feature-binderhub.75
   - apiVersion: v1
     appVersion: 9b1f164
-    created: "2023-08-07T12:59:53.887848147Z"
+    created: "2023-08-07T13:07:04.653218885Z"
     digest: 9c426fd07f1004132e203ebf60d17ebf66c3a03dbb72efdf8c9ea940e0751a9c
     name: kubeflow-crds
     urls:
@@ -4615,7 +4615,7 @@ entries:
     version: 0.1.0-dev.0.feature-binderhub.74
   - apiVersion: v1
     appVersion: 0368a49
-    created: "2023-08-07T12:59:53.863566206Z"
+    created: "2023-08-07T13:07:04.62509724Z"
     digest: 7923593eff2efd4c2fd518b0e1336308ebb80f6e90b97891390498e5f02eb237
     name: kubeflow-crds
     urls:
@@ -4623,7 +4623,7 @@ entries:
     version: 0.1.0-dev.0.feature-binderhub.73
   - apiVersion: v1
     appVersion: 90ef705
-    created: "2023-08-07T12:59:53.83833576Z"
+    created: "2023-08-07T13:07:04.596481445Z"
     digest: 3afa9bff03e8e74e818ce446e98d15a3a3d139d2454234fe54cd19da3cf00e26
     name: kubeflow-crds
     urls:
@@ -4631,10 +4631,10 @@ entries:
     version: 0.1.0-dev.0.feature-binderhub.72
   - apiVersion: v1
     appVersion: d714fa9
-    created: "2023-08-07T12:59:53.813218614Z"
+    created: "2023-08-07T13:07:04.565943756Z"
     digest: 34cdb2fa1e55d9a489ddd18b2905cc05a0254efaf5e27563395cdeb80b1ecd64
     name: kubeflow-crds
     urls:
     - kubeflow-crds-0.1.0-dev.0.feature-binderhub.71.tgz
     version: 0.1.0-dev.0.feature-binderhub.71
-generated: "2023-08-07T12:59:50.962599008Z"
+generated: "2023-08-07T13:07:01.715139253Z"
