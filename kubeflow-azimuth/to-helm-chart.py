@@ -62,12 +62,12 @@ with open(main_chart_path / 'values.schema.json', 'w') as schema_file:
     
 # Write NOTES.txt for chart to be consumed by Azimuth UI
 notes_txt = """
-This app is currently in a proof-of-concept stage and does not yet provide full integration with Azimuth's standard authentication and access management features. The default login credentials for this platform are
+This app is currently at a proof-of-concept stage and does not yet provide full integration with Azimuth's standard authentication and access management features. The default login credentials for this platform are
 - username: user@example.com 
 - password: 12341234
 Full integration with the Azimuth identity provider is planned for a future release.
 """
-with open(main_chart_path / 'NOTES.txt', 'w') as notes_file:
+with open(main_chart_path / 'templates' / 'NOTES.txt', 'w') as notes_file:
     notes_file.write(notes_txt)
 
 # Write manifest files
