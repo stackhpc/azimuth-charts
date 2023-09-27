@@ -7,7 +7,7 @@ icon: https://docs.dask.org/en/stable/_images/dask_horizontal.svg
 keywords: [dask, daskhub]
 dependencies:
   - name: daskhub
-    version: 2022.11.0
+    version: jh3.0.3-dg2023.9.0
     repository: https://helm.dask.org/
 
 annotations:
