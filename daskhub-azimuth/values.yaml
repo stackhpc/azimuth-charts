@@ -27,6 +27,11 @@ daskhub:
       continuous:
         enabled: false
 
+    # The user scheduler is currently broken when there is only a single node
+    scheduling:
+      userScheduler:
+        enabled: false
+
     # For the proxy, we only need a ClusterIP service as Zenith will punch it out
     proxy:
       service:
