@@ -334,6 +334,7 @@ binderhub:
     # already exists in the underlying JupyterHub chart but not in the BinderHub chart. The following code snippet is adapted from:
     # https://github.com/jupyterhub/zero-to-jupyterhub-k8s/blob/e1e1b49fba13c1e1c0ee454baf5998e8bc2ec725/jupyterhub/files/hub/jupyterhub_config.py#L483C1-L492   
     read-config-volumes.py: |
+      import os, glob
       config_dir = "/etc/binderhub/config/extra_config.d"
       if os.path.isdir(config_dir):
           for file_path in sorted(glob.glob(f"{config_dir}/*.py")):
