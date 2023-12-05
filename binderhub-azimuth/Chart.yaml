@@ -1,0 +1,17 @@
+apiVersion: v2
+name: binderhub-azimuth
+description: Multi-user BinderHub Jupyter notebook environment.
+type: application
+version: 0.0.1
+appVersion: 0.2.0
+icon: https://raw.githubusercontent.com/jupyterhub/binderhub/main/binderhub/static/logo.svg
+keywords: [jupyter, binderhub]
+
+dependencies:
+  - name: binderhub
+    # version: 1.0.0-0.dev.git.3170.h84b1db9
+    version: 1.0.0-0.dev.git.3171.h88669a1
+    repository: https://jupyterhub.github.io/helm-chart/
+
+annotations:
+  azimuth.stackhpc.com/label: BinderHub

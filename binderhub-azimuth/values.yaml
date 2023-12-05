@@ -1,0 +1,345 @@
+zenith:
+  binder:
+    iconUrl: https://raw.githubusercontent.com/jupyterhub/binderhub/main/docs/source/_static/images/favicon.png
+    description:
+    label: BinderHub
+  jupyterhub:
+    iconUrl: https://raw.githubusercontent.com/jupyter/design/master/logos/Logo%20Mark/logomark-orangebody-greyplanets/logomark-orangebody-greyplanets.png
+    description:
+    label: JupyterHub
+  # Name for the Role and RoleBinding resources which
+  # allow binderhub pods to list Zenith reservations
+  rbacName: binderhub-zenith
+
+# Use yaml anchors to avoid repetition
+registry:
+  image: docker.io/registry
+  tag: 2.8.3
+  serviceName: binderhub-registry
+  # This url domain name should match the name of the Service
+  # resource which exposes the local container registry
+  url: &registry-url http://binderhub-registry:80
+  username: &registry-username registry-user
+  password: # Randomly generated within Azimuth UI (see azimuth-ui.schema.yaml)
+  nodeport: 31783
+  storage:
+    capacity: # Set in Azimuth UI
+  credentialsSecretName: binderhub-registry-creds
+  imagePullSecretName: binderhub-registry-image-pull
+
+# Whether or not to use https when constructing OAuth
+# redirect URLs for binderhub <--> jupyterhub flow
+binderhub_oauth_use_https: true
+
+binderhub:
+  jupyterhub:
+    proxy:
+      service:
+        # Don't use a Loadbalancer for jupyterhub since 
+        # service will sit behind Zenith
+        type: ClusterIP
+      chp:
+        networkPolicy:
+          enabled: false
+    prePuller:
+      hook:
+        enabled: false
+      continuous:
+        enabled: false
+    hub:
+      # We install the kubernetes client here so that we can use it to look
+      # up zenith service urls for setting various config options dynamically
+      args:
+        - bash
+        - -c
+        - "pip install kubernetes && jupyterhub --config /usr/local/etc/jupyterhub/jupyterhub_config.py --upgrade-db"
+      config:
+        JupyterHub:
+          authenticator_class: RemoteUserAuthenticator
+        BinderSpawner:
+          auth_enabled: true
+      # Config for deferring to JupyterHub for auth as suggested here:
+      # https://binderhub.readthedocs.io/en/latest/authentication.html
+      redirectToServer: false
+      services:
+        binder:
+          oauth_no_confirm: true
+          oauth_client_id: service-binderhub
+          # NOTE: This gets overwritten dynamically in both binderhub.extraConfig
+          # and in binderhub.jupyterhub.hub.extraConfig
+          oauth_redirect_uri: "http://placeholder.com"
+      loadRoles:
+        user:
+          scopes:
+            - self
+            - "access:services"
+      # Allow each user to have multiple serviers running
+      # (i.e. a few binderhub images and a stock jupyterhub instance)
+      allowNamedServers: true
+      # Number of servers allowed per user.
+      # Set to 0 for no limit.
+      namedServerLimitPerUser:
+
+      networkPolicy:
+        enabled: false
+      # Use mounted ConfigMap instead of extraConfig directly to allow
+      # Helm templating into python snippets
+      extraVolumes:
+      - name: hub-extra-config
+        configMap:
+          # Note: Name must match ConfigMap in templates/hub-config.yml
+          name: hub-extra-config
+      extraVolumeMounts:
+      - name: hub-extra-config
+        mountPath: /usr/local/etc/jupyterhub/jupyterhub_config.d/
+
+      extraConfig:
+        # NOTE(sd109): This is based on the official binderhub mixin
+        # but is included here so that we can modify the start method
+        # ourselves. There might be a better way of doing that, but I
+        # haven't yet figured out how...
+        # We can't just add another mixin on top because of the call to
+        # return super().start() at the end of the method which means
+        # that the BinderSpawnerMixin still gets called and then errors
+        # out because there's no token supplied. It looks like this
+        # shouldn't happen because of the `if not self.auth_enabled`
+        # condition but it does. Maybe we are still missing some
+        # binder-specific auth config?
+        0-binderspawnermixin: |
+          """
+          Helpers for creating BinderSpawners
+
+          FIXME:
+          This file is defined in binderhub/binderspawner_mixin.py
+          and is copied to helm-chart/binderhub/values.yaml
+          by ci/check_embedded_chart_code.py
+
+          The BinderHub repo is just used as the distribution mechanism for this spawner,
+          BinderHub itself doesn't require this code.
+
+          Longer term options include:
+          - Move BinderSpawnerMixin to a separate Python package and include it in the Z2JH Hub
+            image
+          - Override the Z2JH hub with a custom image built in this repository
+          - Duplicate the code here and in binderhub/binderspawner_mixin.py
+          """
+          from tornado import web
+          from traitlets import Bool, Unicode
+          from traitlets.config import Configurable
+
+
+          class BinderSpawnerMixin(Configurable):
+              """
+              Mixin to convert a JupyterHub container spawner to a BinderHub spawner
+
+              Container spawner must support the following properties that will be set
+              via spawn options:
+              - image: Container image to launch
+              - token: JupyterHub API token
+              """
+
+              def __init__(self, *args, **kwargs):
+                  # Is this right? Is it possible to having multiple inheritance with both
+                  # classes using traitlets?
+                  # https://stackoverflow.com/questions/9575409/calling-parent-class-init-with-multiple-inheritance-whats-the-right-way
+                  # https://github.com/ipython/traitlets/pull/175
+                  super().__init__(*args, **kwargs)
+
+              auth_enabled = Bool(
+                  False,
+                  help="""
+                  Enable authenticated binderhub setup.
+
+                  Requires `jupyterhub-singleuser` to be available inside the repositories
+                  being built.
+                  """,
+                  config=True,
+              )
+
+              cors_allow_origin = Unicode(
+                  "",
+                  help="""
+                  Origins that can access the spawned notebooks.
+
+                  Sets the Access-Control-Allow-Origin header in the spawned
+                  notebooks. Set to '*' to allow any origin to access spawned
+                  notebook servers.
+
+                  See also BinderHub.cors_allow_origin in binderhub config
+                  for controlling CORS policy for the BinderHub API endpoint.
+                  """,
+                  config=True,
+              )
+
+              def get_args(self):
+                  if self.auth_enabled:
+                      args = super().get_args()
+                  else:
+                      args = [
+                          "--ip=0.0.0.0",
+                          f"--port={self.port}",
+                          f"--NotebookApp.base_url={self.server.base_url}",
+                          # f"--NotebookApp.token={self.user_options['token']}",
+                          "--NotebookApp.trust_xheaders=True",
+                      ]
+                      if self.default_url:
+                          args.append(f"--NotebookApp.default_url={self.default_url}")
+
+                      if self.cors_allow_origin:
+                          args.append("--NotebookApp.allow_origin=" + self.cors_allow_origin)
+                      # allow_origin=* doesn't properly allow cross-origin requests to single files
+                      # see https://github.com/jupyter/notebook/pull/5898
+                      if self.cors_allow_origin == "*":
+                          args.append("--NotebookApp.allow_origin_pat=.*")
+                      args += self.args
+                      # ServerApp compatibility: duplicate NotebookApp args
+                      for arg in list(args):
+                          if arg.startswith("--NotebookApp."):
+                              args.append(arg.replace("--NotebookApp.", "--ServerApp."))
+                  return args
+
+              def start(self):
+                  if not self.auth_enabled:
+                      # if "token" not in self.user_options:
+                      #     raise web.HTTPError(400, "token required")
+                      if "image" not in self.user_options:
+                          # raise web.HTTPError(400, "image required")
+                          # Use the default jupyterhub image
+                          self.image = "jupyterhub/k8s-singleuser-sample:3.0.3"
+                  if "image" in self.user_options:
+                      self.image = self.user_options["image"]
+                  return super().start()
+
+              def get_env(self):
+                  env = super().get_env()
+                  if "repo_url" in self.user_options:
+                      env["BINDER_REPO_URL"] = self.user_options["repo_url"]
+                  for key in (
+                      "binder_ref_url",
+                      "binder_launch_host",
+                      "binder_persistent_request",
+                      "binder_request",
+                  ):
+                      if key in self.user_options:
+                          env[key.upper()] = self.user_options[key]
+                  return env
+        customspawner.py: |
+          from kubespawner import KubeSpawner
+
+          # Until https://github.com/jupyterhub/kubespawner/issues/498 is fixed
+          # https://discourse.jupyter.org/t/advanced-z2jh-deeply-customizing-the-spawner/8432
+          class CustomSpawner(BinderSpawnerMixin, LocalRegistryMixin, KubeSpawner):
+
+              def _build_common_labels(self, extra_labels):
+                  labels = super()._build_common_labels(extra_labels)
+                  label_username = "jupyter-" + labels['hub.jupyter.org/username']
+                  labels['hub.jupyter.org/username'] = label_username
+                  return labels
+
+          c.KubeSpawner.image_pull_secrets = ["binderhub-registry-image-pull"]
+          c.JupyterHub.spawner_class = CustomSpawner
+
+        # Configure the JupyterHub authentication to respect the
+        # X-Remote-User header sent by Zenith from Azimuth
+        remoteuser.py: |
+          from jupyterhub.auth import Authenticator
+          from jupyterhub.handlers import BaseHandler
+
+          from tornado import web
+
+          class RemoteUserLoginHandler(BaseHandler):
+              def get(self):
+                  remote_user = self.request.headers.get("X-Remote-User")
+                  if not remote_user:
+                      raise web.HTTPError(401)
+                  user = self.user_from_username(remote_user)
+                  self.set_login_cookie(user)
+                  next_url = self.get_next_url(user)
+                  self.redirect(next_url)
+
+          class RemoteUserAuthenticator(Authenticator):
+              def get_handlers(self, app):
+                  return [(r'/login', RemoteUserLoginHandler)]
+
+              async def authenticate(self, *args, **kwargs):
+                  raise NotImplementedError()
+        
+          c.JupyterHub.authenticator_class = RemoteUserAuthenticator
+
+    # Don't cull user pods since we're limiting the number
+    # of allowed concurrent sessions per user instead. Also,
+    # culling would cause data loss since we have to mount PVs
+    # at ~/data and instead of ~/ for binder-built images
+    # (see comments below on homeMountPath value)
+    cull:
+      users: false
+
+    singleuser:
+      cmd: jupyterhub-singleuser
+      storage:
+        # Use PVCs
+        type: dynamic
+        # NOTE: We can't mount the PVC at the user's home dir otherwise
+        # it will overwrite any files included in the binder repo
+        homeMountPath: /home/jovyan/data
+        dynamic:
+          volumeNameTemplate: backing-volume
+      networkPolicy:
+        enabled: false
+      defaultUrl: /lab
+      extraEnv:
+        JUPYTERHUB_SINGLEUSER_APP: "jupyter_server.serverapp.ServerApp"
+  
+  imageBuilderType: dind
+  dind:
+    daemonset:
+      extraArgs:
+        - "--insecure-registry"
+        - "binderhub-registry:80"
+
+  # Don't use a Loadbalancer for binderhub since service will sit behind Zenith
+  service:
+    type: ClusterIP
+
+  # Configure binder to use installed local container registry
+  registry:
+    url: *registry-url
+    username: *registry-username
+    password: # Set to mirror global registry.password value (see azimuth-ui.schema.yaml)
+  
+  config:
+    BinderHub:
+      # Auth is handled by Zenith
+      auth_enabled: true
+      # Local url should be set explicitly here since (external) 
+      # hub_url is overwritten dynamically in extraConfig
+      hub_url_local: http://hub:8081/
+      use_registry: true
+      image_prefix: binderhub-registry:80/azimuth/
+    DockerRegistry:
+      token_url: None
+
+  extraVolumes:
+  - name: binder-extra-config
+    configMap:
+      # Note: Name must match ConfigMap in templates/binder-config.yml
+      name: binder-extra-config
+  extraVolumeMounts:
+  - name: binder-extra-config
+    mountPath: /etc/binderhub/config/extra_config.d/
+
+  extraConfig:
+    # This snippet allows us to mount config maps into the binder pod and use them as python files for extra configuration. The advantage of this approach
+    # vs including the configuration directly in this `extraConfig` section is that we are then able to use Helm templating in the config maps. This functionality
+    # already exists in the underlying JupyterHub chart but not in the BinderHub chart. The following code snippet is adapted from:
+    # https://github.com/jupyterhub/zero-to-jupyterhub-k8s/blob/e1e1b49fba13c1e1c0ee454baf5998e8bc2ec725/jupyterhub/files/hub/jupyterhub_config.py#L483C1-L492   
+    read-config-volumes.py: |
+      config_dir = "/etc/binderhub/config/extra_config.d"
+      if os.path.isdir(config_dir):
+          for file_path in sorted(glob.glob(f"{config_dir}/*.py")):
+              file_name = os.path.basename(file_path)
+              print(f"Loading {config_dir} config: {file_name}")
+              with open(file_path) as f:
+                  file_content = f.read()
+              # compiling makes debugging easier: https://stackoverflow.com/a/437857
+              exec(compile(source=file_content, filename=file_name, mode="exec"))

@@ -1,0 +1,91 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "binderhub-azimuth.fullname" . | printf "%s-registry"}}
+  labels: {{ include "binderhub-azimuth.labels" . | nindent 4 }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: docker-registry
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: docker-registry # Must match spec.selector field of Service
+    spec:
+      containers:
+      - image: {{ printf "%s:%s" .Values.registry.image .Values.registry.tag }}
+        name: registry
+        volumeMounts:
+        - mountPath: /var/lib/registry
+          name: registry-storage
+        - mountPath: /auth
+          name: registry-creds
+        ports:
+          - containerPort: 5000
+            name: registry-http
+        env:
+        - name: REGISTRY_AUTH
+          value: htpasswd
+        - name: REGISTRY_AUTH_HTPASSWD_REALM
+          value: "Registry Realm"
+        - name: REGISTRY_AUTH_HTPASSWD_PATH
+          value: /auth/htpasswd
+      volumes:
+        - name: registry-storage
+          persistentVolumeClaim:
+            claimName: {{ include "binderhub-azimuth.fullname" . | printf "%s-registry"}}
+        - name: registry-creds
+          secret:
+            secretName: binderhub-registry-creds
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ include "binderhub-azimuth.fullname" . | printf "%s-registry"}}
+  labels: {{ include "binderhub-azimuth.labels" . | nindent 4 }}
+spec:
+  accessModes:
+    - ReadWriteOnce
+  volumeMode: Filesystem
+  resources:
+    requests:
+      storage: {{ .Values.registry.storage.capacity }}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Values.registry.serviceName }}
+  labels: {{ include "binderhub-azimuth.labels" . | nindent 4 }}
+spec:
+  ports:
+  - name: registry
+    protocol: TCP
+    port: 80
+    targetPort: registry-http
+    nodePort: {{ .Values.registry.nodeport }}
+  type: NodePort
+  selector:
+    app: docker-registry
+---
+{{- with .Values.registry }}
+apiVersion: v1
+data:
+  htpasswd: {{ htpasswd .username .password | b64enc }}
+kind: Secret
+metadata:
+  name: {{ .credentialsSecretName }}
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: {{ .imagePullSecretName }}
+type: kubernetes.io/dockerconfigjson
+data:
+  .dockerconfigjson: >
+    {{ printf "{\"auths\":{\"localhost:%d\":{\"auth\":\"%s\"}}}"
+    (int .nodeport) (printf "%s:%s" .username .password | b64enc)
+    | b64enc }}
+{{- end }}
