@@ -290,12 +290,18 @@ binderhub:
       extraEnv:
         JUPYTERHUB_SINGLEUSER_APP: "jupyter_server.serverapp.ServerApp"
   
-  imageBuilderType: dind
-  dind:
+  imageBuilderType: pink
+  pink:
     daemonset:
-      extraArgs:
-        - "--insecure-registry"
-        - "binderhub-registry:80"
+      extraVolumes:
+      - name: binderhub-registry-config
+        configMap:
+          # NOTE: This should match the name of the config map in templates/binderhub-registry-config.yml
+          name: binderhub-registry-config
+      extraVolumeMounts:
+      - name: binderhub-registry-config
+        mountPath: /etc/containers/registries.conf.d/001-binderhub.conf
+        subPath: 001-binderhub.conf
 
   # Don't use a Loadbalancer for binderhub since service will sit behind Zenith
   service:
