@@ -1,0 +1,11 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  # Note: Name must match .Values.binderhub.binder.extraVolumes entry
+  name: binderhub-registry-config
+data:
+  001-binderhub.conf: |
+    [[registry]]
+    location = "{{ .Values.registry.serviceName }}:80"
+    insecure = true
