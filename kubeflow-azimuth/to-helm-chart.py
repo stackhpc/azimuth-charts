@@ -37,7 +37,7 @@ apiVersion: v1
 name: kubeflow-azimuth
 version: 0.0.2
 icon: https://raw.githubusercontent.com/stackhpc/azimuth-charts/main/kubeflow-azimuth/logo.svg
-description: A KubeFlow machine learning environment
+description: \"A KubeFlow machine learning environment (requires a cluster with 12+ CPUs and 16GB+ of RAM).\"
 dependencies:
   - name: kubeflow-crds
     version: ">=0-0"
@@ -59,6 +59,18 @@ json_schema = """
 """
 with open(main_chart_path / 'values.schema.json', 'w') as schema_file:
     schema_file.write(json_schema)
+    
+# Write NOTES.txt for chart to be consumed by Azimuth UI
+notes_txt = """
+For more information on using KubeFlow see the [official documentation](https://www.kubeflow.org/docs/started/introduction/).
+
+DISCLAIMER: This app is currently at a proof-of-concept stage and does not yet provide full integration with Azimuth's standard authentication and access management features. The default login credentials for this platform are
+- username: user@example.com 
+- password: 12341234
+Full integration with the Azimuth identity provider is planned for a future release.
+"""
+with open(main_chart_path / 'templates' / 'NOTES.txt', 'w') as notes_file:
+    notes_file.write(notes_txt)
 
 # Write manifest files
 with open('kustomize-build-output.yml', 'r') as input_file:
