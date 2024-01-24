@@ -1,0 +1,48 @@
+---
+apiVersion: zenith.stackhpc.com/v1alpha1
+kind: Client
+metadata:
+  name: {{ include "binderhub-azimuth.fullname" . }}
+  labels: {{ include "binderhub-azimuth.labels" . | nindent 4 }}
+spec:
+  reservationName: {{ include "binderhub-azimuth.fullname" . }}
+  upstream:
+    serviceName: binder
+---
+apiVersion: zenith.stackhpc.com/v1alpha1
+kind: Reservation
+metadata:
+  name: {{ include "binderhub-azimuth.fullname" . }}
+  labels: {{ include "binderhub-azimuth.labels" . | nindent 4 }}
+  annotations:
+    azimuth.stackhpc.com/service-label: {{ quote .Values.zenith.binder.label }}
+    azimuth.stackhpc.com/service-icon-url: {{ .Values.zenith.binder.iconUrl }}
+    {{- with .Values.zenith.binder.description }}
+    azimuth.stackhpc.com/service-description: {{ quote . }}
+    {{- end }}
+spec:
+  credentialSecretName: {{ include "binderhub-azimuth.fullname" . }}-credential
+---
+apiVersion: zenith.stackhpc.com/v1alpha1
+kind: Client
+metadata:
+  name: {{ include "binderhub-azimuth.fullname" . | printf "%s-jupyterhub" }}
+  labels: {{ include "binderhub-azimuth.labels" . | nindent 4 }}
+spec:
+  reservationName: {{ include "binderhub-azimuth.fullname" . | printf "%s-jupyterhub" }}
+  upstream:
+    serviceName: proxy-public
+---
+apiVersion: zenith.stackhpc.com/v1alpha1
+kind: Reservation
+metadata:
+  name: {{ include "binderhub-azimuth.fullname" . | printf "%s-jupyterhub" }}
+  labels: {{ include "binderhub-azimuth.labels" . | nindent 4 }}
+  annotations:
+    azimuth.stackhpc.com/service-label: {{ quote .Values.zenith.jupyterhub.label }}
+    azimuth.stackhpc.com/service-icon-url: {{ .Values.zenith.jupyterhub.iconUrl }}
+    {{- with .Values.zenith.jupyterhub.description }}
+    azimuth.stackhpc.com/service-description: {{ quote . }}
+    {{- end }}
+spec:
+  credentialSecretName: {{ include "binderhub-azimuth.fullname" . | printf "%s-jupyterhub" }}-credential
