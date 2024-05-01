@@ -1,0 +1,9 @@
+zenithClient:
+  iconUrl: https://raw.githubusercontent.com/argoproj/argo-cd/release-2.11/docs/assets/logo.png
+  description:
+  label: "Argo CD"
+
+argo:
+  config:
+    params:
+      server.insecure: true

@@ -1,0 +1,17 @@
+apiVersion: v2
+name: argocd-azimuth
+description: A ArgoCD deployment for GitOps-based application deployment.
+type: application
+version: 0.1.0
+appVersion: 0.1.0
+icon: https://raw.githubusercontent.com/argoproj/argo-cd/release-2.11/docs/assets/argocd-ui.gif
+# OR
+# icon: https://raw.githubusercontent.com/argoproj/argo-cd/release-2.11/docs/assets/argo.png
+
+dependencies:
+  - name: argo-cd
+    version: 6.7.18
+    repository: https://argoproj.github.io/argo-helm
+
+annotations:
+  azimuth.stackhpc.com/label: JupyterHub

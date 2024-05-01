@@ -1,0 +1,1 @@
+Argo CD provides an environment for declarative continuous deployment of version-controlled Kubernetes apps.
