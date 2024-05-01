@@ -12,4 +12,4 @@ dependencies:
     repository: https://argoproj.github.io/argo-helm
 
 annotations:
-  azimuth.stackhpc.com/label: JupyterHub
+  azimuth.stackhpc.com/label: Argo CD
