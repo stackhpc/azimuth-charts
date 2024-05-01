@@ -6,4 +6,4 @@ metadata:
 spec:
   reservationName: {{ include "argocd-azimuth.fullname" . }}
   upstream:
-    serviceName: argo-cd-argocd-server
+    serviceName: {{ .Release.Name }}-argocd-server
