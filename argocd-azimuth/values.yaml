@@ -3,7 +3,8 @@ zenithClient:
   description:
   label: "Argo CD"
 
-argo:
-  config:
+argo-cd:
+  configs:
     params:
       server.insecure: true
+      server.disable.auth: true
