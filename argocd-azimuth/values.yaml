@@ -8,3 +8,6 @@ argo-cd:
     params:
       server.insecure: true
       server.disable.auth: true
+  crds:
+    # CRDs should be uninstalled as part of Helm chart
+    keep: false
