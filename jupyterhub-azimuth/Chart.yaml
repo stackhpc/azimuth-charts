@@ -9,7 +9,7 @@ keywords: [jupyter, jupyterhub]
 
 dependencies:
   - name: jupyterhub
-    version: 3.0.3
+    version: 4.0.0-0.dev.git.6606.he7fe8840
     repository: https://jupyterhub.github.io/helm-chart/
 
 annotations:
