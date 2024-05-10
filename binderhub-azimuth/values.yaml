@@ -20,10 +20,10 @@ registry:
   # resource which exposes the local container registry
   url: &registry-url http://binderhub-registry:80
   username: &registry-username registry-user
-  password: # Randomly generated within Azimuth UI (see azimuth-ui.schema.yaml)
+  password: 'testtest' # Randomly generated within Azimuth UI (see azimuth-ui.schema.yaml)
   nodeport: 31783
   storage:
-    capacity: # Set in Azimuth UI
+    capacity: '10Gi' # Set in Azimuth UI
   credentialsSecretName: binderhub-registry-creds
   imagePullSecretName: binderhub-registry-image-pull
 
@@ -78,7 +78,7 @@ binderhub:
       allowNamedServers: true
       # Number of servers allowed per user.
       # Set to 0 for no limit.
-      namedServerLimitPerUser:
+      namedServerLimitPerUser: 0
 
       networkPolicy:
         enabled: false
@@ -289,7 +289,12 @@ binderhub:
       defaultUrl: /lab
       extraEnv:
         JUPYTERHUB_SINGLEUSER_APP: "jupyter_server.serverapp.ServerApp"
-  
+      cpu:
+        limit: 1
+      memory:
+        limit: '2G'
+      
+
   imageBuilderType: pink
   pink:
     daemonset:
@@ -311,8 +316,8 @@ binderhub:
   registry:
     url: *registry-url
     username: *registry-username
-    password: # Set to mirror global registry.password value (see azimuth-ui.schema.yaml)
-  
+    password: 'test' # Set to mirror global registry.password value (see azimuth-ui.schema.yaml)
+    
   config:
     BinderHub:
       # Auth is handled by Zenith
