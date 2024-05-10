@@ -1,0 +1,13 @@
+zenithClient:
+  iconUrl: https://raw.githubusercontent.com/argoproj/argo-cd/release-2.11/docs/assets/logo.png
+  description:
+  label: "Argo CD"
+
+argo-cd:
+  configs:
+    params:
+      server.insecure: true
+      server.disable.auth: true
+  crds:
+    # CRDs should be uninstalled as part of Helm chart
+    keep: false
