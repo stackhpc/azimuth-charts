@@ -8,7 +8,7 @@ open-webui:
     enabled: true
     persistentVolume:
       enabled: true
-    nameOverride: ollama
+    fullNameOverride: ollama
 
   extraEnvVars:
     # - name: WEBUI_AUTH
