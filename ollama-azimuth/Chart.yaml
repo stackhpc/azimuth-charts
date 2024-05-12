@@ -1,0 +1,15 @@
+apiVersion: v2
+name: open-webui-azimuth
+description: An Ollama + Open WebUI environment for private hosting of Large Language Models.
+type: application
+version: 0.1.0
+appVersion: 0.1.0
+icon: https://raw.githubusercontent.com/open-webui/open-webui/v0.1.124/static/logo.svg
+
+dependencies:
+  - name: open-webui
+    version: 2.0.2
+    repository: https://helm.openwebui.com/
+
+annotations:
+  azimuth.stackhpc.com/label: Ollama

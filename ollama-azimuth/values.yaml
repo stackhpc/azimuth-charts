@@ -1,0 +1,17 @@
+zenithClient:
+  iconUrl: https://raw.githubusercontent.com/jupyter/design/master/logos/Logo%20Mark/logomark-orangebody-greyplanets/logomark-orangebody-greyplanets.png
+  description:
+  label: "Jupyter Notebook"
+
+open-webui:
+  ollama:
+    enabled: true
+    persistentVolume:
+      enabled: true
+  extraEnvVars:
+    # - name: WEBUI_AUTH
+    #   value: false
+    - name: WEBUI_AUTH_TRUSTED_EMAIL_HEADER
+      value: X-Remote-User
+    # - name: DEFAULT_USER_ROLE
+    #   value: admin

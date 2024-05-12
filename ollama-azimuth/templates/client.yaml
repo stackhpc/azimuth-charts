@@ -1,0 +1,9 @@
+apiVersion: zenith.stackhpc.com/v1alpha1
+kind: Client
+metadata:
+  name: {{ include "open-webui-azimuth.fullname" . }}
+  labels: {{ include "open-webui-azimuth.labels" . | nindent 4 }}
+spec:
+  reservationName: {{ include "open-webui-azimuth.fullname" . }}
+  upstream:
+    serviceName: open-webui
