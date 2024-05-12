@@ -4,6 +4,9 @@ zenithClient:
   label: "Open WebUI"
 
 open-webui:
+  image:
+    repository: docker.io/sd327/open-webui
+    tag: latest
   ollama:
     enabled: true
     persistentVolume:
