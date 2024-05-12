@@ -1,5 +1,5 @@
 apiVersion: v2
-name: open-webui-azimuth
+name: ollama-azimuth
 description: An Ollama + Open WebUI environment for private hosting of Large Language Models.
 type: application
 version: 0.1.0
