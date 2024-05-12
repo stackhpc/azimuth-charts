@@ -4,7 +4,7 @@ description: An Ollama + Open WebUI environment for private hosting of Large Lan
 type: application
 version: 0.1.0
 appVersion: 0.1.0
-icon: https://raw.githubusercontent.com/open-webui/open-webui/v0.1.124/static/logo.svg
+icon: https://raw.githubusercontent.com/ollama/ollama/v0.1.37/app/assets/app.ico
 
 dependencies:
   - name: open-webui

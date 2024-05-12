@@ -29,8 +29,8 @@
                         },
                         "replicaCount": {
                             "type": "integer",
-                            "title": "GPUs",
-                            "description": "The number of Ollama backend instances. Use > 1 for loadbalancing of requests (see [these docs](https://docs.openwebui.com/tutorial/ollama) for more information).",
+                            "title": "Backend Replicas",
+                            "description": "The number of Ollama backend instances. Use > 1 for [loadbalancing](https://docs.openwebui.com/tutorial/ollama) of requests.",
                             "minimum": 1,
                             "default": 1
                         }

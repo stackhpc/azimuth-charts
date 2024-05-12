@@ -1,17 +1,25 @@
 zenithClient:
-  iconUrl: https://raw.githubusercontent.com/jupyter/design/master/logos/Logo%20Mark/logomark-orangebody-greyplanets/logomark-orangebody-greyplanets.png
+  iconUrl: https://raw.githubusercontent.com/open-webui/open-webui/v0.1.124/static/logo.svg
   description:
-  label: "Jupyter Notebook"
+  label: "Open WebUI"
 
 open-webui:
   ollama:
     enabled: true
     persistentVolume:
       enabled: true
+    nameOverride: ollama
+
   extraEnvVars:
     # - name: WEBUI_AUTH
     #   value: false
+
+    # NOTE(sd109): Header-based auth doesn't work in all cases as
+    # of 12/5/24 since Zenith passes the OpenStack username as the
+    # header value but e.g. on Arcus this value is scottd_stack
+    # which open-webui catches as an invalid email
     - name: WEBUI_AUTH_TRUSTED_EMAIL_HEADER
       value: X-Remote-User
+
     # - name: DEFAULT_USER_ROLE
     #   value: admin
