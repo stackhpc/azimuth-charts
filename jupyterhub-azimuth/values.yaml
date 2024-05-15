@@ -68,7 +68,3 @@ jupyterhub:
     defaultUrl: /lab
     extraEnv:
       JUPYTERHUB_SINGLEUSER_APP: "jupyter_server.serverapp.ServerApp"
-    # cpu:
-    #   limit: 1
-    # memory:
-    #   limit: '2G'

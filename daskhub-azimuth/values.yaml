@@ -6,9 +6,6 @@ zenithClient:
 daskhub:
   dask-gateway:
     gateway:
-      # auth:
-      #   jupyterhub:
-      #     apiToken: 448f787268fdef1d96c1054b88a28f405f0e636406996c7bcddcc40aa9e2fc2e
       extraConfig:
         optionHandler: |
           from dask_gateway_server.options import Options, Integer, Float, String
@@ -44,9 +41,6 @@ daskhub:
           enabled: false
 
     hub:
-      # services:
-      #   dask-gateway:
-      #     apiToken: 448f787268fdef1d96c1054b88a28f405f0e636406996c7bcddcc40aa9e2fc2e
       networkPolicy:
         enabled: false
       # Configure the authentication to respect the X-Remote-User header sent by Zenith from Azimuth
@@ -98,7 +92,3 @@ daskhub:
       extraEnv:
         DASK_GATEWAY__CLUSTER__OPTIONS__IMAGE: '{{JUPYTER_IMAGE_SPEC}}'
         JUPYTERHUB_SINGLEUSER_APP: "jupyter_server.serverapp.ServerApp"
-      # cpu:
-      #   limit: 1
-      # memory:
-      #   limit: '10G'
