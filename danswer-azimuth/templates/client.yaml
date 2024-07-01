@@ -6,4 +6,4 @@ metadata:
 spec:
   reservationName: {{ include "danswer-azimuth.fullname" . }}
   upstream:
-    serviceName: {{ .Release.Name }}-danswer-server
+    serviceName: {{ .Release.Name }}-nginx
