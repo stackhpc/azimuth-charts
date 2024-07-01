@@ -3,4 +3,26 @@ zenithClient:
   description:
   label: "Danswer"
 
-# danswer:
+vespaVolumeSize: &vespa-capacity 10Gi
+
+danswer-stack:
+  configMap:
+    AUTH_TYPE: basic
+    DISABLE_TELEMETRY: true
+    DISABLE_LLM_CHOOSE_SEARCH: true
+  nginx:
+    service:
+      type: ClusterIP
+  vespa:
+    service:
+      type: ClusterIP
+    volumeClaimTemplates:
+      - metadata:
+          name: vespa-storage
+        spec:
+          accessModes:
+            - ReadWriteOnce
+          resources:
+            requests:
+              storage: *vespa-capacity
+
