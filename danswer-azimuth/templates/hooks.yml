@@ -96,7 +96,7 @@ spec:
         - sts
         - vespa
         - -p
-        - {{ printf "{'spec':{'template':{'metadata':{'labels':{'app.kubernetes.io/instance':'%s'}}}}}" .Release.Name | quote }}
+        - {{ printf "{'spec':{'template':{'metadata':{'labels':{'app.kubernetes.io/instance':'%s'}}}}}" .Release.Name | replace "'" "\"" | squote }}
       restartPolicy: Never
       # TODO: Is there a better service account to use with profile delete permissions?
       #       It seems that kubeflow-namespaced SAs can't reach the kube-api-server and
