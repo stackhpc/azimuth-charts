@@ -1,5 +1,5 @@
 resources:
-  - "https://github.com/kubeflow/manifests/example/?ref=v1.7.0"
+  - "https://github.com/kubeflow/manifests/example/?ref=v1.8.1"
 
 # TODO: Can these patches to disable secure cookies be removed once https/dex/zenith config is added?
 patches:

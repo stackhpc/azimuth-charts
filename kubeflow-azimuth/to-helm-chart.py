@@ -64,9 +64,13 @@ with open(main_chart_path / 'values.schema.json', 'w') as schema_file:
 notes_txt = """
 For more information on using KubeFlow see the [official documentation](https://www.kubeflow.org/docs/started/introduction/).
 
-DISCLAIMER: This app is currently at a proof-of-concept stage and does not yet provide full integration with Azimuth's standard authentication and access management features. The default login credentials for this platform are
+DISCLAIMER: This app is currently at a proof-of-concept stage and does not yet provide full integration with Azimuth's standard authentication and access management features.
+
+The default login credentials for this platform are:
+
 - username: user@example.com 
 - password: 12341234
+
 Full integration with the Azimuth identity provider is planned for a future release.
 """
 with open(main_chart_path / 'templates' / 'NOTES.txt', 'w') as notes_file:

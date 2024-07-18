@@ -90,5 +90,5 @@ daskhub:
         enabled: false
       defaultUrl: /lab
       extraEnv:
-        DASK_GATEWAY__CLUSTER__OPTIONS__IMAGE: '{JUPYTER_IMAGE_SPEC}'
+        DASK_GATEWAY__CLUSTER__OPTIONS__IMAGE: '{{JUPYTER_IMAGE_SPEC}}'
         JUPYTERHUB_SINGLEUSER_APP: "jupyter_server.serverapp.ServerApp"

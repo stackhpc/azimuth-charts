@@ -289,7 +289,7 @@ binderhub:
       defaultUrl: /lab
       extraEnv:
         JUPYTERHUB_SINGLEUSER_APP: "jupyter_server.serverapp.ServerApp"
-  
+
   imageBuilderType: pink
   pink:
     daemonset:
@@ -312,7 +312,7 @@ binderhub:
     url: *registry-url
     username: *registry-username
     password: # Set to mirror global registry.password value (see azimuth-ui.schema.yaml)
-  
+
   config:
     BinderHub:
       # Auth is handled by Zenith
